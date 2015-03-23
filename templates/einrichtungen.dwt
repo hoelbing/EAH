@@ -1,0 +1,16 @@
+
+<!-- InstanceBeginEditable name="Einrichtung" --><!-- start: einrichtungen -->
+<div id="einrichtungen"><p>{einrichtung}</p></div>
+<!-- end: einrichtungen -->
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="EinrichtungForm" -->
+<!-- start: einrichtungen -->
+<div id="einrichtungen">
+	<form name="frm_einrichtung" id="frm_einrichtung" action="{formaction}" method="post">
+		{select_einrichtung}
+	</form>
+</div>
+<!-- end: einrichtungen -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="SelectOption_Einrichtung" -->return array('id'=>'einrichtung_id','size'=>'1','class'=>'input_select','style'=>'width:220px;');<!-- InstanceEndEditable -->

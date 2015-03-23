@@ -1,0 +1,49 @@
+
+{filterliste}
+<form name="frm_delete" id="frm_delete" action="{formaction_loeschen}" method="post">
+	<input type="hidden" name="seite" id="seite" value="{seite_loeschen}" />
+	<input type="hidden" name="einrichtung_id" id="einrichtung_id" value="{einrichtung_id_loeschen}" />
+	<input type="hidden" name="action" id="action" value="loeschen" />
+	<input type="hidden" name="modus" id="modus" value="liste" />
+	<input type="hidden" name="postbuch_id" id="postbuch_id" value="" />
+</form>
+
+<!-- InstanceBeginEditable name="Fehler" --><!-- start: content_space -->
+<div class="content_space">
+
+	<h5 id="msg_titel">Information</h5>
+	<p>Es sind keine Eintr&auml;ge vorhanden.</p>
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->
+<!-- InstanceEndEditable -->
+
+{inhalt}
+
+<div class="clearfloat vspace_ten">&nbsp;</div>
+<!-- InstanceBeginEditable name="Datum" --><!-- start: accordion (message block) -->
+<h4 class="toggler a{datum_blank}"><a href="#a{datum_blank}">&raquo; {datum} : {wochentag}</a></h4>
+<div class="accordion">
+	<div class="accordion_space">
+
+		{eintrag}
+
+		<div class="clearfloat vspace_one">&nbsp;</div>
+	</div>
+</div>
+<!-- end: accordion (message block) -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="Eintrag" --><div class="msg" id="msg_entry{postbuch_id}">
+	<dl>
+		<dt><a href="{link_bearbeiten}" target="_top">{titel}</a></dt>
+		<dd>
+			<a href="#" title="{vorschau}" class="btn_info_list_entry show_tt"><img src="image/buttons/info-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
+			<!-- TemplateBeginEditable name="BtnBeantworten" --><a href="{link_beantworten}" target="_top" class="btn_answer_list_entry show_tt" title="Eintrag beantworten"><img src="image/buttons/beantworten-small.gif" width="14" height="14" border="0" alt="" title="" /></a><!-- TemplateEndEditable -->
+			<!-- TemplateBeginEditable name="BtnWeiterleiten" --><a href="{link_weiterleiten}" target="_top" class="btn_reply_list_entry show_tt" title="Eintrag weiterleiten"><img src="image/buttons/weiterleiten-small.gif" width="14" height="14" border="0" alt="" title="" /></a><!-- TemplateEndEditable -->
+			<a href="{link_bearbeiten}" target="_top" class="btn_open_list_entry show_tt" title="Eintrag bearbeiten"><img src="image/buttons/bearbeiten-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
+			<a href="#" class="btn_delete_list_entry show_tt prompt" title="Eintrag l&ouml;schen" rel="{postbuch_id}"><img src="image/buttons/loeschen-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
+		</dd>
+	</dl>
+</div>
+<!-- InstanceEndEditable -->

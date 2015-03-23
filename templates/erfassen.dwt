@@ -1,0 +1,52 @@
+
+<!-- start: content_space -->
+<div class="content_space">
+
+	<h5 id="msg_titel">{titel}</h5>
+
+	<form name="frm_msg" id="frm_msg" action="{formaction}" method="post">
+		{hidden}
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_medium" id="lbl_medium" for="medium_post" class="{fehler_medium}">Medium</label>
+		<input type="radio" name="medium" id="medium_post" value="post" class="input_radio"{extrapost} /><label name="lbl_medium_post" id="lbl_medium_post" for="medium_post" class="small">Post</label>
+		<input type="radio" name="medium" id="medium_email" value="email" class="input_radio"{extraemail} /><label name="lbl_medium_email" id="lbl_medium_email" for="medium_email" class="small">E-Mail</label>
+		<input type="radio" name="medium" id="medium_fax" value="fax" class="input_radio"{extrafax} /><label name="lbl_medium_fax" id="lbl_medium_fax" for="medium_fax" class="small">Fax</label></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<!-- TemplateBeginEditable name="EingabeDatumEingang" --><div class="frm_col"><label name="lbl_datum" id="lbl_datum" for="datum" class="{fehler_datum}">Eingangsdatum</label><input type="text" name="datum" id="datum" value="{datum}" class="input_text" style="width:90px;" /><input type="button" name="btn_datum_eingang" id="btn_datum_eingang" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "datum", ifFormat: "%d.%m.%Y", button: "btn_datum_eingang"});</script></div>
+		<div class="frm_col"><label name="lbl_datumextern" id="lbl_datumextern" for="datumextern" class="{fehler_datumextern}">Absendedatum</label><input type="text" name="datumextern" id="datumextern" value="{datumextern}" class="input_text" style="width:90px;" /><input type="button" name="btn_datum_extern" id="btn_datum_extern" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "datumextern", ifFormat: "%d.%m.%Y", button: "btn_datum_extern"});</script></div>
+		<!-- TemplateEndEditable -->
+
+		<!-- TemplateBeginEditable name="EingabeDatumAusgang" --><div class="frm_col"><label name="lbl_datum" id="lbl_datum" for="datum" class="{fehler_datum}">Ausgangsdatum</label><input type="text" name="datum" id="datum" value="{datum}" class="input_text" style="width:90px;" /><input type="button" name="btn_datum_eingang" id="btn_datum_eingang" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "datum", ifFormat: "%d.%m.%Y", button: "btn_datum_eingang"});</script></div>
+		<!-- TemplateEndEditable -->
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col" style="display:none;"><label name="lbl_kurzname" id="lbl_kurzname" for="kurzname" class="{fehler_kurzname}">Kurzname</label><input type="text" name="kurzname" id="kurzname" value="{kurzname}" class="input_text" style="width:200px;" /><input type="button" name="btn_finden" id="btn_finden" value="&raquo;Finden" class="input_button" /></div>
+		<!-- TemplateBeginEditable name="Absender" --><div class="frm_col"><label name="lbl_bezeichnung" id="lbl_bezeichnung" for="bezeichnung" class="{fehler_bezeichnung}">Absender</label><input type="text" name="bezeichnung" id="bezeichung" value="{bezeichnung}" class="input_text" style="width:350px;" /></div><!-- TemplateEndEditable -->
+		<!-- TemplateBeginEditable name="Empfaenger" --><div class="frm_col"><label name="lbl_bezeichnung" id="lbl_bezeichnung" for="bezeichnung" class="{fehler_bezeichnung}">Empf&auml;nger</label><input type="text" name="bezeichnung" id="bezeichung" value="{bezeichnung}" class="input_text" style="width:350px;" /></div><!-- TemplateEndEditable -->
+		<div class="frm_col"><label name="lbl_str" id="lbl_str" for="str" class="{fehler_str}">Stra&szlig;e</label><input type="text" name="str" id="str" value="{str}" class="input_text" style="width:350px;" /></div>
+		<div class="frm_col"><label name="lbl_plzort" id="lbl_plzort" for="plz" class="{fehler_anschrift}">PLZ, Ort</label><input type="text" name="plz" id="plz" value="{plz}" class="input_text" style="width:60px;" /><input type="text" name="ort" id="ort" value="{ort}" class="input_text" style="width:279px;" /></div>
+		<div class="frm_col"><label name="lbl_land" id="lbl_land" for="land" class="{fehler_land}">Land</label><input type="text" name="land" id="land" value="{land}" class="input_text" style="width:350px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_fax" id="lbl_fax" for="fax" class="{fehler_fax}">Fax</label><input type="text" name="fax" id="fax" value="{fax}" class="input_text" style="width:150px;" /></div>
+		<div class="frm_col"><label name="lbl_email" id="lbl_email" for="email" class="{fehler_email}">E-Mail</label><input type="text" name="email" id="email" value="{email}" class="input_text" style="width:350px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_bemerkung" id="lbl_bemerkung" for="bemerkung" class="{fehler_bemerkung}">Inhalt</label><textarea name="bemerkung" id="bemerkung" wrap="off" class="input_textarea" style="width:430px;height:150px;">{bemerkung}</textarea></div>
+
+		<div class="frm_col frm_col_submit"><input type="submit" name="btn_speichern" id="btn_speichern" value="Speichern" class="input_button" /><!-- TemplateBeginEditable name="SpeichernNeu" --><input type="submit" name="btn_speichern_neu" id="btn_speichern_neu" value="Speichern &amp; Neueintrag" class="input_button" /><!-- TemplateEndEditable --></div>
+	</form>
+
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->

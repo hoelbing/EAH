@@ -1,0 +1,96 @@
+
+{filterliste}
+
+<!-- TemplateBeginEditable name="Fehler" --><!-- start: content_space -->
+<div class="content_space">
+
+	<h5 id="msg_titel">Information</h5>
+	<p>Es sind keine Eintr&auml;ge vorhanden.</p>
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->
+<!-- TemplateEndEditable -->
+
+<!-- TemplateBeginEditable name="Daten" -->
+<!-- start: content_space -->
+<div class="content_space">
+
+	<form name="frm_delete" id="frm_delete" action="{formaction_loeschen}" method="post">
+		<input type="hidden" name="seite" id="seite" value="{seite_loeschen}" />
+		<input type="hidden" name="einrichtung_id" id="einrichtung_id" value="{einrichtung_id_loeschen}" />
+		<input type="hidden" name="action" id="action" value="loeschen" />
+		<input type="hidden" name="modus" id="modus" value="liste" />
+		<input type="hidden" name="postbuch_id" id="postbuch_id" value="{postbuch_id}" />
+	</form>
+
+	<h5 id="msg_titel">Postbucheintrag Nr. {eintrag_nr}</h5>
+
+	<form>
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_medium" id="lbl_medium" for="medium_post">Medium</label><input type="text" name="medium" id="medium" value="{medium}" readonly class="input_text readonly" style="width:90px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<!-- TemplateBeginEditable name="DatumEingang" -->
+		<div class="frm_col"><label name="lbl_datum" id="lbl_datum" for="datum">Eingangsdatum</label><input type="text" name="datum" id="datum" value="{datum}" readonly class="input_text readonly" style="width:90px;" /></div>
+		<div class="frm_col"><label name="lbl_datumextern" id="lbl_datumextern" for="datumextern">Absendedatum</label><input type="text" name="datumextern" id="datumextern" value="{datumextern}" readonly class="input_text readonly" style="width:90px;" /></div>
+		<!-- TemplateEndEditable -->
+
+		<!-- TemplateBeginEditable name="DatumAusgang" -->
+		<div class="frm_col"><label name="lbl_datum" id="lbl_datum" for="datum">Eingangsdatum</label><input type="text" name="datum" id="datum" value="{datum}" readonly class="input_text readonly" style="width:90px;" /></div>
+		<!-- TemplateEndEditable -->
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<!-- TemplateBeginEditable name="BezeichnungEingang" -->
+		<div class="frm_col"><label name="lbl_absender" id="lbl_absender" for="absender">Absender</label><input type="text" name="absender" id="bezeichnung" value="{bezeichnung}" readonly class="input_text readonly" style="width:350px;" /></div>
+		<!-- TemplateEndEditable -->
+		<!-- TemplateBeginEditable name="BezeichnungAusgang" -->
+		<div class="frm_col"><label name="lbl_absender" id="lbl_absender" for="absender">Empf&auml;nger</label><input type="text" name="absender" id="bezeichnung" value="{bezeichnung}" readonly class="input_text readonly" style="width:350px;" /></div>
+		<!-- TemplateEndEditable -->
+		<div class="frm_col"><label name="lbl_str" id="lbl_str" for="str">Stra&szlig;e</label><input type="text" name="str" id="str" value="{str}" readonly class="input_text readonly" style="width:350px;" /></div>
+		<div class="frm_col"><label name="lbl_plz" id="lbl_plz" for="plz">PLZ, Ort</label><input type="text" name="plz" id="plz" value="{plz}" readonly class="input_text readonly" style="width:60px;" /><input type="text" name="ort" id="ort" value="{ort}" readonly class="input_text readonly" style="width:279px;" /></div>
+		<div class="frm_col"><label name="lbl_land" id="lbl_land" for="land">Land</label><input type="text" name="land" id="land" value="{land}" readonly class="input_text readonly" style="width:350px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_fax" id="lbl_fax" for="fax">Fax</label><input type="text" name="fax" id="fax" value="{fax}" readonly class="input_text readonly" style="width:150px;" /></div>
+		<div class="frm_col"><label name="lbl_email" id="lbl_email" for="email">E-Mail</label><input type="text" name="email" id="email" value="{email}" readonly class="input_text readonly" style="width:350px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_bemerkung" id="lbl_bemerkung" for="bemerkung">Inhalt</label><textarea name="bemerkung" id="bemerkung" readonly class="input_textarea readonly" style="width:430px;height:150px;">{bemerkung}</textarea></div>
+
+		<!-- TemplateBeginEditable name="WeiterleitungAn" -->
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_weiterleitung" id="lbl_weiterleitung" for="weiterleitung">Weitergeleitet an</label><textarea name="weiterleitung" id="weiterleitung" readonly class="input_textarea readonly" style="width:430px;height:50px;">{weiterleitung}</textarea></div>
+		<!-- TemplateEndEditable -->
+
+		<!-- TemplateBeginEditable name="WeiterleitungVon" -->
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_weiterleitung" id="lbl_weiterleitung" for="weiterleitung">Weitergeleitet von</label><textarea name="weiterleitung" id="weiterleitung" readonly class="input_textarea readonly" style="width:430px;height:50px;">{weiterleitung}</textarea></div>
+		<!-- TemplateEndEditable -->
+
+		<!-- TemplateBeginEditable name="AntwortAn" -->
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_antwort" id="lbl_antwort" for="antwort">Antwort an</label><textarea name="antwort" id="antwort" readonly class="input_textarea readonly" style="width:430px;height:50px;">{antwort}</textarea></div>
+		<!-- TemplateEndEditable -->
+
+		<!-- TemplateBeginEditable name="AntwortAuf" -->
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_antwort" id="lbl_antwort" for="antwort">Antwort auf</label><textarea name="antwort" id="antwort" readonly class="input_textarea readonly" style="width:430px;height:50px;">{antwort}</textarea></div>
+		<!-- TemplateEndEditable -->
+
+	</form>
+
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->
+<!-- TemplateEndEditable -->

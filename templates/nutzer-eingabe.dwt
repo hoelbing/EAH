@@ -1,0 +1,37 @@
+
+<!-- start: content_space -->
+<div class="content_space">
+
+	<h5 id="msg_titel">{seitentitel}</h5>
+
+	<form name="frm_user" id="frm_user" action="{formaction}" method="post">
+		{hidden}
+		<div class="frm_col"><label name="lbl_typ_select" id="lbl_typ_select" for="typ_select">Nutzertyp</label>{select_typ_select}</div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_titel" id="lbl_titel" for="titel">Titel</label><input type="text" name="titel" id="titel" value="{titel}" class="input_text" style="width:200px;" /></div>
+		<div class="frm_col"><label name="lbl_vorname" id="lbl_vorname" for="vorname">Vorname</label><input type="text" name="vorname" id="vorname" value="{vorname}" class="input_text" style="width:200px;" /></div>
+		<div class="frm_col"><label name="lbl_name" id="lbl_name" for="name" class="{fehler_name}">Name</label><input type="text" name="name" id="name" value="{name}" class="input_text" style="width:200px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_ceinrichtung_id" id="lbl_ceinrichtung_id" for="ceinrichtung_id" class="{fehler_einrichtung}">Einrichtung</label>{select_einrichtung}<input type="submit" name="btn_ceinrichtung_id_plus" id="btn_ceinrichtung_id_plus" value="&nbsp;" class="input_button plus show_tt" title="Einrichtung hinzuf&uuml;gen" /></div>
+		<div class="frm_col spaceleft" id="optionen_ceinrichtung_neu" style="display:none;"><input type="text" name="ceinrichtung_name[0]" id="ceinrichtung_neu" class="input_text" style="width:350px;" /><label name="lbl_einrichtung_neu" id="lbl_einrichtung_neu" for="einrichtung_neu" class="small">(Name)</label></div>
+		<!-- InstanceBeginEditable name="EinrichtungEintrag" --><div class="frm_col spaceleft"><input type="submit" name="btn_loeschen_{nr}" value="&nbsp;" class="input_button loeschen_links show_tt" title="Einrichtung entfernen" /><input type="text" name="ceinrichtung_name[{nr}]" id="ceinrichtung_{nr}" value="{value}" class="input_text readonly2" readonly style="width:375px;" /></div><!-- InstanceEndEditable -->
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_anzeigename" id="lbl_anzeigename" for="anzeigename">Anzeigename</label><input type="text" name="anzeigename" id="anzeigename" value="{anzeigename}" class="input_text" style="width:350px;" /></div>
+		<div class="frm_col"><label name="lbl_login" id="lbl_login" for="login" class="{fehler_login}">Login</label><input type="text" name="login" id="login" value="{login}" class="input_text" style="width:200px;" /></div>
+		<div class="frm_col"><label name="lbl_passwort" id="lbl_passwort" for="passwort" class="{fehler_passwort}">Passwort</label><input type="password" name="passwort" id="passwort" value="{passwort}" class="input_text" style="width:200px;" /></div>
+		<div class="frm_col"><label name="lbl_blank_passwort2" id="lbl_blank_passwort2" for="passwort2" style="visibility:hidden;">&nbsp;</label><input type="password" name="passwort2" id="passwort2" value="{passwort2}" class="input_text" style="width:200px;" /><label name="lbl_passwort" id="lbl_passwort" for="passwort2" class="small{fehler_passwort2}">(Wiederholung)</label></div>
+
+		<div class="frm_col frm_col_submit"><input type="submit" name="btn_save" id="btn_save" value="Speichern" class="input_button" /></div>
+	</form>
+
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->
+<!-- InstanceBeginEditable name="SelectOption_Typ" -->return array('id'=>'typ_select','size'=>'1','class'=>'input_select','style'=>'width:275px;');<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="SelectOption_Einrichtung" -->return array('id'=>'ceinrichtung_id_select','size'=>'1','class'=>'input_select','style'=>'width:356px;');<!-- InstanceEndEditable -->

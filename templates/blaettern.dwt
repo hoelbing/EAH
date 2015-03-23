@@ -1,0 +1,17 @@
+
+<!-- start: button blaettern -->
+<div id="blaettern">
+	<ul id="blaettern_list"<!-- InstanceBeginEditable name="BlaetternTyp" --> class="small"<!-- InstanceEndEditable -->>
+		<!-- InstanceBeginEditable name="ButtonVorOff" --><li id="btn_vor_off"><img src="image/buttons/vor.gif" width="18" height="18" border="0" alt="" title="" /></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonVor" --><li id="btn_vor"><a href="{link_vor}" target="_top" class="show_tt" title="neuere Eintr&auml;ge"><img src="image/buttons/vor.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonNeueintrag" --><li id="btn_neueintrag"><a href="{link_neueintrag}" target="_top" class="show_tt" title="neuen Eintrag anlegen"><img src="image/buttons/neueintrag.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonBearbeiten" --><li id="btn_bearbeiten"><a href="{link_bearbeiten}" target="_top" class="show_tt" title="Eintrag bearbeiten"><img src="image/buttons/bearbeiten.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonWeiterleiten" --><li id="btn_weiterleiten"><a href="{link_weiterleiten}" target="_top" class="show_tt" title="Eintrag weiterleiten"><img src="image/buttons/weiterleiten.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonBeantworten" --><li id="btn_beantworten"><a href="{link_beantworten}" target="_top" class="show_tt" title="Eintrag beantworten"><img src="image/buttons/beantworten.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonLoeschen" --><li id="btn_loeschen"><a href="#" target="_top" class="show_tt" title="Eintrag l&ouml;schen"><img src="image/buttons/loeschen.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonZurueck" --><li id="btn_zurueck"><a href="{link_zurueck}" target="_top" class="show_tt" title="&auml;ltere Eintr&auml;ge"><img src="image/buttons/zurueck.gif" width="18" height="18" border="0" alt="" title="" /></a></li><!-- InstanceEndEditable -->
+		<!-- InstanceBeginEditable name="ButtonZurueckOff" --><li id="btn_zurueck_off"><img src="image/buttons/zurueck.gif" width="18" height="18" border="0" alt="" title="" /></li><!-- InstanceEndEditable -->
+	</ul>
+	<div class="clearfloat vspace_ten">&nbsp;</div>
+</div>
+<!-- end: button blaettern -->

@@ -1,0 +1,16 @@
+/**
+* iPosBu
+* css definition anhand von bestimmten body-ids passend umschreiben
+*
+* @author heiko pfefferkorn
+* @copyright 2006 i-fabrik GmbH
+* @version $Id: css_rewrite.dwt,v 1.3 2007/02/21 13:35:57 heiko Exp $
+*
+*/
+
+	/* Container (Gerüst) ----------------------------------- */
+	body#b_login #container ¦<¦
+		width	  : 400px;
+		background: #{farbe} url({pfad}image/bg_container-small.gif) repeat-y top left;
+	¦>¦
+	body#b_login #container_fixed_width ¦<¦ width: 380px; ¦>¦

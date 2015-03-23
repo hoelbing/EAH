@@ -1,0 +1,45 @@
+
+<!-- start: content_space -->
+<div class="content_space">
+
+	<h5 id="msg_titel">Filter</h5>
+
+	<form name="frm_msg" id="frm_msg" action="{formaction}" method="post">
+		{hidden}
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_medium" id="lbl_medium" for="medium_post" class="{fehler_medium}">Medium</label>
+		<input type="radio" name="medium" id="medium_alle" value="" class="input_radio"{extraalle} /><label name="lbl_medium_alle" id="lbl_medium_alle" for="medium_alle" class="small">Alle</label>
+		<input type="radio" name="medium" id="medium_post" value="post" class="input_radio"{extrapost} /><label name="lbl_medium_post" id="lbl_medium_post" for="medium_post" class="small">Post</label>
+		<input type="radio" name="medium" id="medium_email" value="email" class="input_radio"{extraemail} /><label name="lbl_medium_email" id="lbl_medium_email" for="medium_email" class="small">E-Mail</label>
+		<input type="radio" name="medium" id="medium_fax" value="fax" class="input_radio"{extrafax} /><label name="lbl_medium_fax" id="lbl_medium_fax" for="medium_fax" class="small">Fax</label></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_startdatum" id="lbl_startdatum" for="startdatum" class="{fehler_startdatum}">Startdatum</label><input type="text" name="startdatum" id="startdatum" value="{startdatum}" class="input_text" style="width:90px;" /><input type="button" name="btn_startdatum" id="btn_startdatum" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "startdatum", ifFormat: "%d.%m.%Y", button: "btn_startdatum"});</script></div>
+		<div class="frm_col"><label name="lbl_enddatum" id="lbl_enddatum" for="enddatum" class="{fehler_enddatum}">Enddatum</label><input type="text" name="enddatum" id="enddatum" value="{enddatum}" class="input_text" style="width:90px;" /><input type="button" name="btn_enddatum" id="btn_enddatum" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "enddatum", ifFormat: "%d.%m.%Y", button: "btn_enddatum"});</script></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_bezeichnung" id="lbl_bezeichnung" for="bezeichnung" class="{fehler_bezeichnung}">Adresse</label><input type="text" name="bezeichnung" id="bezeichung" value="{bezeichnung}" class="input_text" style="width:350px;" /></div>
+		<div class="frm_col"><label name="lbl_plzort" id="lbl_plzort" for="plz" class="{fehler_anschrift}">PLZ, Ort</label><input type="text" name="plz" id="plz" value="{plz}" class="input_text" style="width:60px;" /><input type="text" name="ort" id="ort" value="{ort}" class="input_text" style="width:279px;" /></div>
+		<div class="frm_col"><label name="lbl_land" id="lbl_land" for="land" class="{fehler_land}">Land</label><input type="text" name="land" id="land" value="{land}" class="input_text" style="width:350px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_fax" id="lbl_fax" for="fax" class="{fehler_fax}">Fax</label><input type="text" name="fax" id="fax" value="{fax}" class="input_text" style="width:150px;" /></div>
+		<div class="frm_col"><label name="lbl_email" id="lbl_email" for="email" class="{fehler_email}">E-Mail</label><input type="text" name="email" id="email" value="{email}" class="input_text" style="width:350px;" /></div>
+
+		<div class="frm_col frm_col_submit"><input type="submit" name="btn_speichern" id="btn_speichern" value="Anwenden" class="input_button" /></div>
+	</form>
+
+	{script}
+
+	<!-- InstanceEndEditable -->
+
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->

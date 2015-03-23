@@ -1,0 +1,12 @@
+
+<div id="contentfilter">
+	<h5>aktive Inhaltsfilter</h5>
+	<div class="filter_space">
+		{filter}
+		<div class="clearfloat vspace_ten">&nbsp;</div>
+	</div>
+</div>
+<!-- InstanceBeginEditable name="Filter" --><div class="filter"><a href="{link}" target="_top" class="show_tt" title="Filter l&ouml;schen">{titel} &quot;{value}&quot;</a></div>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="FilterLeer" --><div class="filter filter_clean">&nbsp;</div>
+<!-- InstanceEndEditable -->

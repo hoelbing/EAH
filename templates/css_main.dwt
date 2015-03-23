@@ -1,0 +1,466 @@
+/**
+* iPosBu
+* css definition
+*
+* @author heiko pfefferkorn
+* @copyright 2006 i-fabrik GmbH
+* @version $Id: css_main.dwt,v 1.5 2007/02/21 13:35:57 heiko Exp $
+*
+*/
+
+	/* GLOBALE DEFINITIONEN ------------------------------------------------------------------------------------------- */
+	html, body ¦<¦ height: 100%; ¦>¦
+	body ¦<¦
+		font            : {fsize} Verdana, Arial, Helvetica, Sans Serif;
+		color        	: #4c4c4c;
+		background-color: #fff;
+		text-align      : center;
+		overflow        : -moz-scrollbars-vertical;
+	¦>¦
+	body, h1, h4, h5, div, p, form, input, textarea, select, button ¦<¦
+		margin    : 0;
+		padding   : 0;
+	¦>¦
+	select, input, textarea, label ¦<¦ font: 1em Verdana, Arial, Helvetica, Sans Serif; ¦>¦
+
+	a:link, a:visited ¦<¦
+		color           : #fff;
+		text-decoration : none;
+		background-color: #4c4c4c;
+	¦>¦
+	a:hover, a:focus, a:active ¦<¦
+		color           : #fff;
+		background-color: #{farbe};
+	¦>¦
+
+	strong ¦<¦ color: #{farbe}; ¦>¦
+
+	h5 ¦<¦
+		position        : relative; /* stupid msie */
+		margin-bottom   : 5px;
+		padding         : 3px 5px;
+		border-left     : 2px solid #{farbe};
+		font-size		: 1em;
+		font-weight     : normal;
+		background-color: #f0f0f0;
+	¦>¦
+
+	/* Container (Gerüst) ----------------------------------- */
+	#container ¦<¦
+		position  : relative;
+		margin    : 0 auto;
+		min-height: 100%;
+		width	  : 620px;
+		height    : auto !important;
+		height    : 100%; /* stupid msie */
+		background: #{farbe} url({pfad}image/bg_container-big.gif) repeat-y top left;
+	¦>¦
+	#container_fixed_width ¦<¦
+		margin          : 0 auto;
+		width	        : 600px;
+		text-align      : left;
+		background-color: transparent;
+	¦>¦
+	#content ¦<¦
+		padding-top     : 10px;
+		background-color: #fff;
+	¦>¦
+	.content_space ¦<¦ padding: 0 0 9px 10px; ¦>¦
+
+	/* Header ----------------------------------------------- */
+	#header ¦<¦
+		position        : relative;
+		height          : 80px;
+		margin-bottom   : 0 !important;
+		background-color: transparent;
+	¦>¦
+	#header img.fix_png ¦<¦
+		position: absolute;
+		top     : 0px;
+		left    : 0px;
+	¦>¦
+	#header #einrichtungen ¦<¦
+		position: absolute;
+		top     : 10px;
+		right   : 10px;
+	¦>¦
+	#header #einrichtungen p ¦<¦
+	    padding: 2px 5px;
+		border : 1px solid #fff;
+		color  : #fff;
+	¦>¦
+
+	/* Toggle fontsize -------------------------------------- */
+	#toggle_fontsize ¦<¦
+		display : none;
+		position: absolute;
+		top     : 5px;
+		right   : -18px;
+	¦>¦
+	#toggle_fontsize dl ¦<¦
+		margin : 0;
+		padding: 0;
+	¦>¦
+	#toggle_fontsize dl dd ¦<¦
+		margin          : 0 0 5px 0;
+		width           : 18px;
+		height          : 18px;
+		font-size       : 11px;
+		line-height     : 18px;
+		background-color: #e5e5e5;
+		cursor          : pointer;
+		overflow        : hidden;
+	¦>¦
+	#toggle_fontsize dl dd.tfs_ov, #toggle_fontsize dl dd.tfs_cur ¦<¦ background-color: #{farbe}; ¦>¦
+
+
+	/* Footer ----------------------------------------------- */
+	#footer ¦<¦
+		padding         : 5px;
+		height          : 40px;
+		color           : #fff;
+		font-size       : 10px;
+		font-weight     : bold;
+		text-align      : right;
+		background-color: transparent;
+	¦>¦
+	#footer a ¦<¦
+		color           : #fff;
+		background-color: transparent;
+	¦>¦
+
+	/* Menu ------------------------------------------------- */
+	#menu ¦<¦ background-color: #fff;	¦>¦
+	#menu ul, #menu ul li ¦<¦
+		margin : 0;
+		padding: 0;
+	¦>¦
+	#menu ul ¦<¦
+		float           : right;
+		margin-top      : 10px;
+		list-style      : none;
+		background-color: transparent;
+	¦>¦
+	#menu ul li ¦<¦
+		float           : left;
+		background-color: #4c4c4c;
+		border-left     : 1px solid #fff;
+		height          : 18px;
+	¦>¦
+	#menu ul li a ¦<¦
+		display         : block;
+		padding         : 0 5px 0 5px;
+		font-size       : 1em;
+		color           : #fff;
+		font-weight     : bold;
+		line-height     : 18px;
+		background-color: #4c4c4c;
+	¦>¦
+	#menu ul li a:hover, #menu ul li a:focus ¦<¦ background-color: #{farbe}; ¦>¦
+	#menu ul li.current a ¦<¦ background-color: #{farbe} !important; ¦>¦
+
+
+	/* SOME ELEMENTS ------------------------------------------------------------------------------------------------------- */
+	/* Message Entry (Accordion effect) --------------------- */
+	h4 ¦<¦
+		position        : relative;
+		margin-top      : 1px;
+		font-size		: 1em;
+		font-weight     : normal;
+		background-color: #e5e5e5;
+		cursor          : pointer;
+	¦>¦
+	h4 a ¦<¦
+		padding         :3px 10px;
+		display         : block;
+		color           : #4c4c4c !important;
+		background-color: transparent !important;
+	¦>¦
+	h4.h4_cur, h4.h4_ov ¦<¦ background-color: #{farbe} !important; ¦>¦
+	h4.h4_cur a, h4.h4_ov a ¦<¦
+		color           : #fff !important;
+		background-color: transparent !important;
+	¦>¦
+	.accordion_space ¦<¦ padding: 10px 0 9px 10px; ¦>¦
+
+	.msg ¦<¦
+		margin-top      : 1px;
+		border-left     : 2px solid #4c4c4c;
+		height          : 18px;
+		background-color: #f4f4f4;
+		cursor          : default;
+	¦>¦
+	.msg dl, .msg dl dt, .msg dd ¦<¦
+		margin  : 0px;
+		padding : 0px;
+		height  : 18px;
+	¦>¦
+	.msg dl dt ¦<¦
+		float    : left;
+		width    : 485px;
+		overflow :  hidden;
+	¦>¦
+	.msg dl dt a ¦<¦
+		display         : block;
+		margin          : 0;
+		padding         : 0 0 0 8px;
+		line-height     : 18px;
+		color           : #4c4c4c !important;
+		background-color: transparent !important;
+	¦>¦
+	.msg dl dd ¦<¦ float: right; ¦>¦
+	.msg dl dd a ¦<¦
+		float           : left;
+		padding         : 0;
+		margin          : 2px 5px 0 0;
+		width           : 14px;
+		height          : 14px;
+		line-height     : 18px;
+
+	¦>¦
+	.msg.clear ¦<¦ border-left: 2px solid #{farbe}; ¦>¦
+	.msg.clear dl dt ¦<¦ width: 425px; ¦>¦
+	.msg.clear dl dd ¦<¦ display: none; ¦>¦
+
+	/* Filter ----------------------------------------------- */
+	#contentfilter h5 ¦<¦
+		padding-left    : 10px;
+		border-left     : 0px none;
+		font-size		: 1em;
+		font-weight     : normal;
+		color           : #fff;
+		background-color: #cc0000;
+	¦>¦
+	#contentfilter div.filter_space ¦<¦
+		margin-left: 5px;
+	¦>¦
+
+	#contentfilter div.filter ¦<¦
+		float           : left;
+		display         : inline;
+		margin          : 5px 0 0 5px;
+		height          : 18px;
+		width           : 292px;
+		font-size		: 1em;
+		font-weight     : normal;
+		line-height     : 18px;
+		background      : #f4f4f4 url({pfad}image/filter-off.gif) no-repeat center left;
+		overflow        : hidden;
+	¦>¦
+	#contentfilter div.filter a ¦<¦
+		display         : block;
+		padding-left    : 20px;
+		background-color: transparent;
+		color           : #4c4c4c;
+	¦>¦
+	#contentfilter div.filter.filter_ov ¦<¦ background: #f4f4f4 url({pfad}image/filter-ov.gif) no-repeat center left; ¦>¦
+	#contentfilter div.filter.filter_clean ¦<¦
+		background: none;
+		background-color: #f4f4f4;
+	¦>¦
+
+	/* Blaettern (Buttons) ---------------------------------- */
+	#blaettern ¦<¦ background-color: #fff; ¦>¦
+	#blaettern ul, #menu ul li ¦<¦
+		margin : 0;
+		padding: 0;
+	¦>¦
+	#blaettern ul ¦<¦
+		list-style      : none;
+		background-color: transparent;
+	¦>¦
+	#blaettern ul li ¦<¦
+		float           : right;
+		width           : 18px;
+		height          : 18px;
+		border-left     : 5px solid #fff;
+		background-color: transparent;
+		line-height     : 15px;
+		cursor          : pointer;
+		overflow        : hidden;
+	¦>¦
+	#blaettern ul li.bl_ov ¦<¦ background-color: #{farbe}; ¦>¦
+	#blaettern ul li a ¦<¦
+		display         : block;
+		background-color: #4c4c4c;
+	¦>¦
+	#blaettern ul li a:hover, #blaettern ul li a:focus ¦<¦ background-color: #{farbe}; ¦>¦
+	#blaettern ul.small li ¦<¦ border: 0px solid #fff; ¦>¦
+	#blaettern ul.small li#btn_neueintrag ¦<¦ margin-right: 5px; ¦>¦
+	#blaettern ul.small li#btn_zurueck, #blaettern ul.small li#btn_zurueck_off ¦<¦ float: left; ¦>¦
+	#blaettern ul.small li#btn_aktivieren, #blaettern ul.small li#btn_bearbeiten ¦<¦ display: none; ¦>¦
+	#blaettern ul.small li#btn_zurueck_off,
+	#blaettern ul.small li#btn_vor_off,
+	#blaettern ul li#btn_zurueck_off,
+	#blaettern ul li#btn_vor_off ¦<¦
+		background-color: #e5e5e5;
+		cursor: default;
+	¦>¦
+
+	/* Tooltips --------------------------------------------- */
+	div.tool-tip ¦<¦
+		border          : 1px solid #4c4c4c;
+		background-color: #fff;
+		text-align      : left;
+	¦>¦
+	div.tool-tip div.tool-title ¦<¦ display:none; ¦>¦
+	div.tool-text ¦<¦ padding: 5px; ¦>¦
+
+	/* Prompt box ------------------------------------------- */
+	#cbOverlay ¦<¦ background-color: #000; ¦>¦
+	.cbContainer ¦<¦
+		padding         : 5px 0 0 5px;
+		border          : 2px solid #cc0000;
+		background-color: #fff;
+	¦>¦
+	.cbBox, .cbHeader, cbContent, cbButtons ¦<¦
+		margin : 0;
+		padding: 0;
+	¦>¦
+	.cbBox ¦<¦
+		padding   : 0 5px 5px 0;
+		text-align: left;
+	¦>¦
+	.cbBox h3 ¦<¦ display: none; ¦>¦
+	.cbBox .cbButtons ¦<¦ margin-top: 10px; ¦>¦
+	.cbBox .cbButtons .input_button ¦<¦ margin-right: 5px; ¦>¦
+
+	/* FORMULAR ------------------------------------------------------------------------------------------------------------ */
+	label ¦<¦
+		display         : block;
+		padding-left    : 5px;
+		width           : 115px;
+		height          : 18px;
+		border-left     : 2px solid #4c4c4c;
+		line-height     : 18px;
+		background-color: #f8f8f8;
+	¦>¦
+	label.fehler ¦<¦
+		border-left     : 2px solid #cc0000;
+		color           : #fff;
+		background-color: #cc0000;
+	¦>¦
+	select, input, textarea ¦<¦
+	    margin          : 0px;
+	    padding         : 0px;
+		border          : 1px solid #c9c9c9;
+	    background-color: #fff;
+	¦>¦
+	select.readonly, input.readonly, textarea.readonly ¦<¦ color: #aeaeae; ¦>¦
+	div.frm_col ¦<¦
+		float      : none;
+		clear      : both;
+	¦>¦
+	div.frm_col label, div.frm_col input, div.frm_col select, div.frm_col textarea ¦<¦ float: left; margin-top: 1px; ¦>¦
+	div.frm_col label.small ¦<¦
+		margin          : 0 0 0 2px;
+		padding         : 0 5px 0 0;
+		width           : auto;
+		border          : 0px none;
+		background-color: transparent;
+	¦>¦
+	label.small.lbl_small_ov ¦<¦ color: #{farbe}; ¦>¦
+
+	div.frm_col.spaceleft ¦<¦ padding-left: 122px; ¦>¦
+	div.frm_col .input_text, div.frm_col .input_select, div.frm_col .input_textarea, .input_radio, .input_checkbox ¦<¦ margin-left: 5px;	¦>¦
+	div.frm_col .input_button ¦<¦ margin-right: 5px;	¦>¦
+	div.frm_col_submit ¦<¦
+		padding-left: 127px;
+	¦>¦
+	div.frm_col_submit input ¦<¦ margin-top: 4px !important; ¦>¦
+	.input_button.calendar ¦<¦
+		width     : 19px;
+		background: #4c4c4c url({pfad}image/buttons/kalender.gif) no-repeat center center;
+	¦>¦
+	.input_button.color ¦<¦
+		width     : 19px;
+		background: #4c4c4c url({pfad}image/buttons/farbwahl.gif) no-repeat center center;
+	¦>¦
+	.input_button.plus ¦<¦
+		width     : 19px;
+		background: #4c4c4c url({pfad}image/buttons/plus.gif) no-repeat center center;
+	¦>¦
+	.input_button.loeschen_links ¦<¦
+		margin-top : 2px !important;
+		margin-right: 0px !important;
+		margin-left : 5px !important;
+		width       : 14px;
+		height      : 14px;
+		background  : #4c4c4c url({pfad}image/buttons/loeschen-small.gif) no-repeat center center;
+	¦>¦
+	.input_button ¦<¦
+		padding  		: 2px 2px 1px;
+		border          : 0px none;
+		color		    : #fff;
+		font-size		: 1em;
+		font-weight     : bold;
+		background-color: #4c4c4c;
+		cursor          : pointer;
+	¦>¦
+	div.frm_col .input_button ¦<¦ margin-left: 1px; ¦>¦
+	.input_button_ov ¦<¦ background-color: #{farbe} !important; ¦>¦
+
+	.input_text ¦<¦
+	    padding: 1px 2px 2px;
+	    margin : 0;
+	¦>¦
+	.input_text.blank ¦<¦
+		border: 1px solid #fff;
+		cursor: default;
+	¦>¦
+	.input_textarea ¦<¦
+	    padding: 1px 1px 1px 2px;
+	    margin : 0;
+	¦>¦
+	.input_select ¦<¦
+	    padding: 1px 0 1px 2px;
+	    margin : 0;
+	¦>¦
+	.input_radio, .input_checkbox ¦<¦
+		border: 0px none;
+		background-color: transparent;
+	¦>¦
+	#einrichtung_id ¦<¦
+		border          : 1px solid #fff;
+		font-size       : 11px;
+		color           : #fff;
+		background-color: #{farbe};
+	¦>¦
+	.readonly ¦<¦
+		color : #aeaeae;
+		cursor: default;
+	¦>¦
+	.readonly2 ¦<¦
+		color           : #aeaeae;
+		border          : 0px none;
+		border-left     : 1px solid #4c4c4c;
+		cursor          : default;
+	¦>¦
+	.input_button.readonly ¦<¦
+		color: #fff;
+		background-color: #c9c9c9 !important;
+		cursor: default;
+	¦>¦
+
+	/* SOME ----------------------------------------------------------------------------------------------------------- */
+	.clearfloat ¦<¦
+	    float       : none;
+	    clear       : both;
+	    height      : 0px;
+	    font-size   : 0px;
+	    overflow    : hidden;
+	¦>¦
+	.float_left ¦<¦ float: left !important; ¦>¦
+	.float_right ¦<¦ float: right !important; ¦>¦
+	.vspace_one ¦<¦
+		height  : 1px;
+	    overflow: hidden;
+	¦>¦
+	.vspace_four ¦<¦
+		height  : 4px;
+	    overflow: hidden;
+	¦>¦
+	.vspace_ten ¦<¦
+		height  : 10px;
+	    overflow: hidden;
+	¦>¦
