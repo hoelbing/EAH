@@ -13,15 +13,10 @@
 
 	session_start();
 	$sessionid=session_id();
-	
-	$_SESSION["nutzer_id"];
-	$_SESSION["postbuch_modus"];
-	$_SESSION["filterdaten"];
-	/* Wird unter PHP 5.4 nicht mehr unterstützt
 	session_register('nutzer_id');
 	session_register('postbuch_modus');
-	session_register('filterdaten');*/
-	
+	session_register('filterdaten');
+
 	$_FORMVARS=array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST,$_SESSION);
 	$_FORMVARS=trim_array($_FORMVARS);
 

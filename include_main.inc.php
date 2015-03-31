@@ -16,8 +16,8 @@
   include_once('inc/projekt.inc.php');
 
   // Datenbankverbindung
-  $dbverbindung=sql_connect('localhost','EAHUsersql1','apDJdehv');
-  sql_select_db('EAHUsersql1');
+  $dbverbindung=sql_connect($dblogin['server'],$dblogin['nutzer'],$dblogin['passwort']);
+  sql_select_db($dblogin['database']);
 
   include_once('inc/session.inc.php');
 

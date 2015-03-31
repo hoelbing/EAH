@@ -23,7 +23,7 @@
   session_start();
   $sessionid=session_id();
 
-  $_SESSION["nutzer_id"];
+  session_register('nutzer_id');
 
 	$_FORMVARS=array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST,$_SESSION);
 	$_FORMVARS=trim_array($_FORMVARS);
