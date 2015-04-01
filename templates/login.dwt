@@ -2,9 +2,10 @@
 <div class="content_space">
 
 	<h5 id="msg_titel">Anmeldung</h5>
+	<h1>!!!DEVELOPMENT!!!</h1>
 
 	<form name="frm_login" id="frm_login" action="{formaction}" method="post">
-		<div class="clearfloat vspace_four">&nbsp;</div>
+	  <div class="clearfloat vspace_four">&nbsp;</div>
 		<div class="frm_col"><label name="lbl_login" id="lbl_login" for="login">Benutzername</label><input type="text" name="login" id="login" class="input_text" style="width:180px;" /></div>
 		<div class="frm_col"><label name="lbl_passwort" id="lbl_passwort" for="passwort">Passwort</label><input type="password" name="passwort" id="passwort" class="input_text" style="width:180px;" /></div>
 		<div class="frm_col frm_col_submit"><input type="submit" name="btn_login" id="btn_login" value="Login" class="input_button" /></div>
