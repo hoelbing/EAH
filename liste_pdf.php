@@ -1,15 +1,19 @@
 <?php
 /**
-* Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
-* mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der
-* Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
-*
-* Im Rahmen der Vorlesung wird sich Gedanken über einen Anforderungskatalog gemacht, der im Laufe der
-* Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
-* zusammengefasst und verwaltet.
-*
-* @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
-*/
+ * Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+ * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der
+ * Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
+ *
+ * Im Rahmen der Vorlesung wird sich Gedanken über einen Anforderungskatalog gemacht, der im Laufe der
+ * Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
+ * zusammengefasst und verwaltet.
+ *
+ * @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
+ */
+
+/**
+ * 
+ */
   function replacechars($text) {
 
     $text=str_replace("ä","a",$text);
@@ -25,11 +29,29 @@
   }
 
   ini_set("display_errors", 1);
-
+  
+/**
+  * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten
+  * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
+  * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden.
+  *
+  * Hier werden die Dateien: include_main.inc.php und inc/class.ezpdf.php aus dem Gesamtverzeichnis des 
+  * Postbuchs eingebunden.
+  * @param: include_main.inc.php
+  * @param: inc/class.ezpdf.php 
+  */
   include_once('include_main.inc.php');
   include_once('inc/class.ezpdf.php');
-
+  
+ /**
+  * session_start() erzeugt eine Session oder nimmt die aktuelle wieder auf, die auf der Session-Kennung
+  * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie übermittelt wurde.
+  */
   session_start();
+  
+/** session_id() wird verwendet, um die Session-ID der aktuellen Session zu erhalten oder zu setzen.
+  * Hier wird der Variable: $sessionid der Rückgabewert der Funktion session_id(); zugewiesen
+  */
   $sessionid=session_id();
 
   $_SESSION["nutzer_id"];

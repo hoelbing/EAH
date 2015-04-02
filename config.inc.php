@@ -19,6 +19,10 @@
 */
 
 	$templatepfad = 'templates/';
+	
+/**
+  * Die Dateiendung dwt steht für Adobe Dreamweaver Template.
+  */
 	$templatefiles = array('ausdruck'        => $templatepfad.'ausdruck.dwt',
 	                      'blaettern'        => $templatepfad.'blaettern.dwt',
 	                      'css_main'         => $templatepfad.'css_main.dwt',
