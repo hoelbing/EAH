@@ -6,6 +6,8 @@
 * @author Erik Reuter
 * @copyright 2007 i-fabrik GmbH
 * @version $Id: index.php,v 1.41 2007/02/12 13:14:16 heiko Exp $
+* 
+* Erster Test 
 *
 */
 
