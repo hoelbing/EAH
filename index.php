@@ -24,6 +24,9 @@
 	session_register('postbuch_modus');
 	session_register('filterdaten');*/
 	
+	
+	
+	//array_merge fügt mehrere Arrays zu einem Array zusammen 
 	$_FORMVARS=array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST,$_SESSION);
 	$_FORMVARS=trim_array($_FORMVARS);
 
