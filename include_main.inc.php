@@ -19,7 +19,17 @@
 */
 	
 /**
- * Zentrale include Datei, in der alle Dateien eingebunden werden 
+ * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten 
+ * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
+ * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden. 
+ * 
+ * Hier wird die nachfolgnd aufgeführten Dateien aus dem Gesamtverzeichnis bzw. Unterverzeichnissen 
+ * des Postbuchs eingebunden
+ * @param: logindaten.inc.php
+ * @param: config.inc.php
+ * @param: PHPMyLib/PHPMyLib.php
+ * @param: inc/functions.inc.php
+ * @param: inc/projekt.inc.php
  */
   include_once('logindaten.inc.php');
   include_once('config.inc.php');
