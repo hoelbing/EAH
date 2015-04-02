@@ -8,7 +8,8 @@
 * @version $Id: include_main.inc.php,v 1.1 2007/01/26 14:55:39 erik Exp $
 *
 */
-
+	
+  // Einbindung der anderen Dateien des Postbuches
   include_once('logindaten.inc.php');
   include_once('config.inc.php');
   include_once('PHPMyLib/PHPMyLib.php');
