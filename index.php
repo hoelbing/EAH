@@ -38,7 +38,9 @@
 * Hier wird der Variable: $sessionid der Rückgabewert der Funktion session_id(); zugewiesen
 */	
 	$sessionid=session_id();
-	
+/**
+ * 
+ */	
 	$_SESSION["nutzer_id"];
 	$_SESSION["postbuch_modus"];
 	$_SESSION["filterdaten"];
@@ -64,6 +66,9 @@
 
 	$anmeldefehler=false;
 
+/**
+ * 
+ */
 	if (!empty($_FORMVARS['action'])) {
 		switch ($_FORMVARS['action']) {
 			case 'anmelden':
@@ -84,7 +89,9 @@
 		}
 	}
 
-
+/**
+ * 
+ */	
 	if (empty($_FORMVARS['nutzer_id'])) {
 		$tpl_inhalt=new PTemplate(NULL,$templatefiles['login']);
 		$tpl_inhalt->addComponent('formaction',new PText($_FORMVARS['PHP_SELF'].'?action=anmelden&PHPSESSID='.$sessionid));
@@ -211,7 +218,9 @@
 			}
 		} // Ende : Auswertung Aktionen
 
-
+/**
+ * 
+ */
 		// Nutzerdaten einlesen
 		$sql_abfrage = "SELECT * FROM ".DBPREFIX."nutzer WHERE nutzer_id='".$_FORMVARS['nutzer_id']."'";
 		$sql_ergebnis= sql_query($sql_abfrage);

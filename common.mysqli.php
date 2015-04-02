@@ -7,6 +7,15 @@
 * @copyright 2006 i-fabrik GmbH
 * @version $Id: common.mysqli.php,v 1.3 2006/11/03 09:59:56 michael Exp $
 *
+* Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+* mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der 
+* Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
+* 
+* Im Rahmen der Vorlesung wird sich Gedanken über einen Anforderungskatalog gemacht, der im Laufe der 
+* Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
+* zusammengefasst und verwaltet. 
+* 
+* @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
 */
 
   // SQL-Befehlsanpassung fuer mySQLi
