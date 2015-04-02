@@ -18,7 +18,9 @@
 * @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
 */
 	
-  // Einbindung der anderen Dateien des Postbuches
+/**
+ * Zentrale include Datei, in der alle Dateien eingebunden werden 
+ */
   include_once('logindaten.inc.php');
   include_once('config.inc.php');
   include_once('PHPMyLib/PHPMyLib.php');
