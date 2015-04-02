@@ -7,7 +7,15 @@
 * @copyright 2007 i-fabrik GmbH
 * @version $Id: index.php,v 1.41 2007/02/12 13:14:16 heiko Exp $
 * 
-* Erster Test 
+* Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+* mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der 
+* Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
+* 
+* Im Rahmen der Vorlesung wird sich Gedanken über einen Vorlesungskatolg gemacht, der im Laufe der 
+* Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
+* Zusammengefasst und verwaltet. 
+* 
+* @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
 *
 */
 
