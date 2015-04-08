@@ -6,6 +6,15 @@
 * @copyright 2006 i-fabrik gmbh
 * @version $Id: main.js,v 1.29 2007/02/21 14:14:10 heiko Exp $
 *
+* Im Rahmen der Veranstaltung SofwareqaulitÃ¤t im SS 2015 des Studigang Wirstschaftsingenieurwesen
+* mit Fachrichtung Informationstechnik soll das Postuch ,das ursprÃ¼nglich von Erik Reuter von der 
+* UniversitÃ¤t Leipzig entwickelt wurde, auf die BedÃ¼rfnisse der EAH Jena angepasst werden.
+* 
+* Im Rahmen der Vorlesung wird sich Gedanken Ã¼ber einen Anforderungskatalog gemacht, der im Laufe der 
+* Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
+* zusammengefasst und verwaltet. 
+* 
+* @author: Tobias MÃ¶ller, BjÃ¶rn Hoffmann, Maik Tanneberg
 */
 
     /* fixMsIELeaks
@@ -119,7 +128,7 @@
                         $(id_name).value = this.getProperty('rel')
 
                     this.setProperty('href','#');
-                    var prompt_delete = new MooPrompt("", "Wollen Sie diesen Eintrag wirklich endgültig löschen? Eine Wiederherstellung ist nicht möglich.", {
+                    var prompt_delete = new MooPrompt("", "Wollen Sie diesen Eintrag wirklich endgï¿½ltig lï¿½schen? Eine Wiederherstellung ist nicht mï¿½glich.", {
                         width       : 260,
                         height      : 85,
                         buttons     : 2,
@@ -170,7 +179,7 @@
         },
         /* Property: toggle
          *
-         * Generieren und Zuweisen der Accordion-Funktionalität
+         * Generieren und Zuweisen der Accordion-Funktionalitï¿½t
          */
         toggle: function(){
             var t = this;
@@ -200,7 +209,7 @@
         },
         /* Property: open
          *
-         * Inaktives komplett geöffnetes 'Accordion'. Mousout- und Mouseoverstatus setzen.
+         * Inaktives komplett geï¿½ffnetes 'Accordion'. Mousout- und Mouseoverstatus setzen.
          */
         open: function(){
             var t = this;
@@ -215,8 +224,8 @@
         },
         /* Property: checkHash
          *
-         * Aufruf von 'SITE_ACCORDION.activ'. Prüft URL des Fensters und öffnet automatisch bei
-         * Vorhandensein eines übergebenen Ankernamens den dazugehörigen Accorion-Inhaltblock.
+         * Aufruf von 'SITE_ACCORDION.activ'. Prï¿½ft URL des Fensters und ï¿½ffnet automatisch bei
+         * Vorhandensein eines ï¿½bergebenen Ankernamens den dazugehï¿½rigen Accorion-Inhaltblock.
          *
          * @param   array  o  Array aller 'togglers_a'-Objekte -> siehe 'SITE_ACCORDION.activ'
          * @return  boolean
