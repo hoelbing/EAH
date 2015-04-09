@@ -2,7 +2,7 @@
 <div class="content_space">
 
 	<h5 id="msg_titel">Anmeldung</h5>
-	<h1>!!!DEVELOPMENT!!!</h1>
+	<h1>!!!DEVELOPMENT TEST!!!</h1>
 
 	<form name="frm_login" id="frm_login" action="{formaction}" method="post">
 	  <div class="clearfloat vspace_four">&nbsp;</div>
