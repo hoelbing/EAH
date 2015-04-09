@@ -55,10 +55,18 @@
 	session_register('filterdaten');*/
 	
 /**
+ * array_merge — Fügt die Elemente von zwei oder mehr Arrays zusammen, indem die Werte des einenan das Ende 
+ * des vorherigen angehängt werden. Das daraus resultierende Array wird zurückgegeben. 
+ * 
+ * @param: $_FORMVARS 
+ * 
+ * In der Variable $_FORMVARS werden die Variablen $_SERVER,$_COOKIE,$_GET,$_FILES,$_POST und $_SESSION zusammengeführt
+ * 
+ * 
  * 
  */	
 	
-	//array_merge fügt mehrere Arrays zu einem Array zusammen 
+	
 	$_FORMVARS=array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST,$_SESSION);
 	$_FORMVARS=trim_array($_FORMVARS);
 
