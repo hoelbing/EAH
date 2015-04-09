@@ -18,18 +18,25 @@
 * @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
 */
 
-  // SQL-Befehlsanpassung fuer mySQL
+/**
+ * Die Standdardbegfehle für MySQL unterliegen einem ständigen Wandel. Durch die 
+ * Deklararation von Funktionen mit dem sql_"Funktion" mit dem returnwert der aktuellen
+ * Entwicklung von mysql/ mysqli wird eine ständige Anpassung der MySQL Befehle umgangen.
+ */
 
 /**
- * 
- * Stellt Verbindung zur SQL-Datenbank her.
+ * mysql_connect - Stellt Verbindung zur SQL-Datenbank her.
+ * @param: $server
+ * @param: $nutzer
+ * @param: $passwort
  */
   function sql_connect($server,$nutzer,$passwort) {
     return mysql_connect($server,$nutzer,$passwort);
   }
 
 /**
- * 
+ * mysql_select_db — Auswahl einer MySQL Datenbank
+ * @param: $database
  */
   function sql_select_db($database) {
     return mysql_select_db($database);
@@ -50,48 +57,59 @@
   }
 
 /**
- * 
+ * mysql_fetch_row — Liefert einen Datensatz als indiziertes Array
+ * @param: $ergebnis
  */  
   function sql_fetch_row($ergebnis) {
     return mysql_fetch_row($ergebnis);
   }
 
 /**
- * 
+ * mysql_insert_id — Liefert die ID, die in der vorherigen Abfrage erzeugt wurde
  */
   function sql_insert_id() {
     return mysql_insert_id();
   }
 
 /**
- * 
+ * mysql_close — Schließt eine Verbindung zu MySQL ("Server")
+ * @param: $verbindung
  */
   function sql_close($verbindung) {
     return mysql_close($verbindung);
   }
 
 /**
- * 
+ * mysql_fetch_array — Liefert einen Datensatz als assoziatives Array, als numerisches Array oder beides 
+ * @param: $ergebnis
+ * @param: $typ
  */
   function sql_fetch_array($ergebnis,$typ) {
     return mysql_fetch_array($ergebnis,$typ);
   }
 /**
- * 
+ * mysql_fetch_assoc — Liefert einen Datensatz als assoziatives Array -> Die Nummern als Indizes sind kein Muss
+ * es ist auch möglich, die Indizes zu benennen. Dies nennt sich dann ein "Assoziatives Array". 
  */  
   function sql_fetch_assoc($ergebnis) {
     return mysql_fetch_assoc($ergebnis); 
   }   
 
 /**
- * 
+ * mysql_result — Liefert Ergebnis der Abfrage in der jeweiligen Datenbank
+ * @param: $ergebnis
+ * @param: $datensatz
+ * @param: $feld mit Startwert 0
  */  
   function sql_result($ergebnis,$datensatz,$feld=0) {
     return mysql_result($ergebnis,$datensatz,$feld);
   }
   
 /**
- * 
+ * mysql_num_rows — Liefert die Anzahl der Zeilen einer Ergebnismenge. 
+ * Diese Funktion ist nur gültig für Befehle wie SELECT oder SHOW, die eine 
+ * tatsächliche Ergebnismenge zurückeben. 
+ * @param: $ergebnis
  */
   function sql_num_rows($ergebnis) {
     return mysql_num_rows($ergebnis);
