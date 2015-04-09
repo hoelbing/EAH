@@ -22,6 +22,7 @@
 
 /**
  * 
+ * Stellt Verbindung zur SQL-Datenbank her.
  */
   function sql_connect($server,$nutzer,$passwort) {
     return mysql_connect($server,$nutzer,$passwort);
