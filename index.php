@@ -38,8 +38,12 @@
 * Hier wird der Variable: $sessionid der Rückgabewert der Funktion session_id(); zugewiesen
 */	
 	$sessionid=session_id();
+
+
 /**
+ * @param: $_SESSION 
  * 
+ * Anlegen der Variablen $_SESSION["nutzer_id"], $_SESSION["postbuch_modus"], $_SESSION["filterdaten"]; werden 
  */	
 	$_SESSION["nutzer_id"];
 	$_SESSION["postbuch_modus"];
@@ -75,6 +79,7 @@
 	$anmeldefehler=false;
 
 /**
+ * 
  * 
  */
 	if (!empty($_FORMVARS['action'])) {
