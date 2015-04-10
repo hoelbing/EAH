@@ -7,7 +7,7 @@
  * @copyright 2005 Erik Reuter
  * @version $Id: common.mysql.php,v 1.2 2005/12/13 17:26:10 sebastian Exp $
  *
- * Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+ * Im Rahmen der Veranstaltung Softwarequalität im SS 2015 des Studigang Wirstschaftsingenieurwesen
  * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der 
  * Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
  * 
@@ -63,7 +63,7 @@
   function sql_query($abfrage) {
     $ergebnis=mysql_query($abfrage);
 	
-    if (defined('DEBUG') && mysql_error()!='') {
+    if (defined('DEBUG') && mysql_error()!=''){
       echo $abfrage.'<br>';
       echo mysql_error().'<br>';
     }
