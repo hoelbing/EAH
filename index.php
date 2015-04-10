@@ -38,8 +38,14 @@
 * Hier wird der Variable: $sessionid der Rückgabewert der Funktion session_id(); zugewiesen
 */	
 	$sessionid=session_id();
+
+
 /**
  * 
+ * Ein assoziatives Array, das die Sessionvariablen enthält und dem aktuellen Skript zur Verfügung stellt. 
+ * @param: $_SESSION 
+ * 
+ * Anlegen der Variablen $_SESSION["nutzer_id"], $_SESSION["postbuch_modus"], $_SESSION["filterdaten"]; werden 
  */	
 	$_SESSION["nutzer_id"];
 	$_SESSION["postbuch_modus"];
@@ -61,9 +67,6 @@
  * @param: $_FORMVARS 
  * 
  * In der Variable $_FORMVARS werden die Variablen $_SERVER,$_COOKIE,$_GET,$_FILES,$_POST und $_SESSION zusammengeführt
- * 
- * 
- * 
  */	
 	
 	
@@ -75,6 +78,7 @@
 	$anmeldefehler=false;
 
 /**
+ * 
  * 
  */
 	if (!empty($_FORMVARS['action'])) {
