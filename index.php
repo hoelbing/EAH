@@ -41,6 +41,8 @@
 
 
 /**
+ * 
+ * Ein assoziatives Array, das die Sessionvariablen enthält und dem aktuellen Skript zur Verfügung stellt. 
  * @param: $_SESSION 
  * 
  * Anlegen der Variablen $_SESSION["nutzer_id"], $_SESSION["postbuch_modus"], $_SESSION["filterdaten"]; werden 
@@ -65,9 +67,6 @@
  * @param: $_FORMVARS 
  * 
  * In der Variable $_FORMVARS werden die Variablen $_SERVER,$_COOKIE,$_GET,$_FILES,$_POST und $_SESSION zusammengeführt
- * 
- * 
- * 
  */	
 	
 	
