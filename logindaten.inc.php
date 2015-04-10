@@ -7,7 +7,7 @@
  * @copyright 2007 i-fabrik GmbH
  * @version $Id: logindaten.inc.php,v 1.2 2007/01/26 14:55:39 erik Exp $
  *
- * Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+ * Im Rahmen der Veranstaltung Softwarequalität im SS 2015 des Studigang Wirstschaftsingenieurwesen
  * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der 
  * Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
  * 
@@ -29,11 +29,14 @@
   include_once('common.mysql.php');
 
 /**
- * define: Definiert während der Laufzeit eine benannte Konstante. 
+ * define - Definiert während der Laufzeit eine benannte Konstante. 
  * Hier wird die Konstante DBPREFIX definiert.
  */
   define('DBPREFIX','');
-
+  
+/**
+ * 
+ */
   $dblogin['server']    = 'localhost';
   $dblogin['nutzer']    = $_SERVER['DBUser'];
   $dblogin['passwort']  = $_SERVER['DBPass'];
