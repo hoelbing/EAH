@@ -28,7 +28,6 @@
  */
     $_FORMVARS  = array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST);
 
-    // content-type setzen
 /**
  * header() - wird zum Senden von HTTP-Anfangsinformationen (Headern) im Rohformat benutzt.
  * 
@@ -53,14 +52,14 @@
     //chdir($verzeichnis);
     
 /**
-  * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten
-  * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
-  * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden.
-  *
-  * Hier wird die Datei: include_main.inc.php aus dem Gesamtverzeichnis des Postbuchs eingebunden.Diese 
-  * enthält die Anmeldung an der MySQL Datenbank
-  * @param: include_main.inc.php
-  */    
+ * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten
+ * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
+ * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden.
+ *
+ * Hier wird die Datei: include_main.inc.php aus dem Gesamtverzeichnis des Postbuchs eingebunden.Diese 
+ * enthält die Anmeldung an der MySQL Datenbank
+ * @param: include_main.inc.php
+ */    
 	include_once('include_main.inc.php');
    
     $ausgabe = '';
@@ -77,10 +76,27 @@
 
 	$ausgabe = $tpl->outputStr();
 
-	// Klammern ersetzen '{' & '}' duerfen im template nicht vorhanden sein da sonst die templatebiliothek durcheinander kommt
+/**
+ * str_replace — Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+ * Diese Funktion gibt einen String oder ein Array zurück, in dem alle Vorkommen von search innerhalb von subject durch den angegebenen
+ * replace-Wert ersetzt wurden.
+ * 
+ * mixed str_replace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+ * 
+ * Klammern ersetzen '{' & '}' duerfen im template nicht vorhanden sein, da sonst die Templatebiliothek durcheinander kommt
+ * 
+ * ¦<¦ - ist ein Zeichen aus dem DWT Vermutung: Der Browser kommt mit dem DWT Zeichen nicht zurecht und benötigt {}
+ */
 	$ausgabe = str_replace( "¦<¦", "{", $ausgabe);
 	$ausgabe = str_replace( "¦>¦", "}", $ausgabe);
 
-	// generierten inhalt ausgeben */
+/**
+ * echo - Gibt alle Parameter aus.
+ * echo ist nicht wirklich eine Funktion sondern ein Sprach-Konstrukt, daher brauchen Sie keine Klammern verwenden. echo verhält sich
+ * im Gegensatz zu einigen anderen Sprach-Konstrukten nicht wie eine Funktion, deshalb kann es nicht immer in einem Funktionskontext 
+ * verwendet werden. Hinzu kommt, dass bei der Angabe mehrerer Parameter für echo diese nicht von Klammern umschlossen sein dürfen.
+ * 
+ * @var: $ausgabe;
+ */
 	echo $ausgabe;
 ?>
