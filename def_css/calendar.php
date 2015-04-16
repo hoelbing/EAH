@@ -27,8 +27,7 @@
  * In der Variable $_FORMVARS werden die Variablen $_SERVER,$_COOKIE,$_GET,$_FILES,$_POST und $_SESSION zusammengeführt
  */
     $_FORMVARS  = array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST);
-
-    // content-type setzen
+  
 /**
  * header() - wird zum Senden von HTTP-Anfangsinformationen (Headern) im Rohformat benutzt.
  * 
@@ -47,7 +46,7 @@
 	$verzeichnis = getcwd();
 
 /**
- * chdir - Wechseln des Verzeichnisses    
+ * chdir - Wechseln des Verzeichnisses  
  */ 
     chdir("../");
     //chdir($verzeichnis);
@@ -63,8 +62,18 @@
  * @param: include_main.inc.php
  */    
 	include_once('include_main.inc.php');
-   
+	
+/**
+ * Vermutung: Die Variable $ausgabe wird hier zum Beginn leer gesetzt.
+ */  
     $ausgabe = '';
+    
+/**
+ * in_array - Untersucht on ein Wert in einem Array vorhanden ist
+ * 
+ * empty - bestimmt ob eine Variable leer ist
+ * 
+ */   
 	$farbe   = (!empty($_FORMVARS['color']) && in_array($_FORMVARS['color'], $feld_farben)) ? $_FORMVARS['color'] : $feld_farben[0];
 
 /**
@@ -79,17 +88,35 @@
  */	
     $namred_data['sessionid'] = session_id();
 
+/**
+ * Initialisierung des Template
+ * 
+ * Hinzufügen der Templatecomponenete farbe die auf PText wirkt
+ * Hinzufügen der Templatecomponenete pfad die auf PText wirkt
+ * 
+ */
     // template initialisieren
     $tpl = new PTemplate( NULL, $templatefiles['css_calendar'] );
 	$tpl->addComponent('farbe', new PText($farbe));
     $tpl->addComponent('pfad',  new PText("../"));
 
 	$ausgabe = $tpl->outputStr();
-
-	// Klammern ersetzen '{' & '}' duerfen im template nicht vorhanden sein da sonst die templatebiliothek durcheinander kommt
+/**
+ * Diese Funktion gibt einen String oder ein Array zurück, in dem alle Vorkommen 
+ * von search innerhalb von subject durch den angegebenen replace-Wert ersetzt wurden.
+ * 
+ * mixed str_replace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+ * 
+ * Klammern ersetzen '{' & '}' duerfen im template nicht vorhanden sein da sonst die 
+ * templatebiliothek durcheinander kommt
+ */
 	$ausgabe = str_replace( "¦<¦", "{", $ausgabe);
 	$ausgabe = str_replace( "¦>¦", "}", $ausgabe);
 
-	// generierten inhalt ausgeben */
+/**
+ * echo — Gibt einen oder mehrere Strings aus
+ * Hier: Ausgabe des Inhaltes der in die Variable $ausgabe geschrieben wurde.
+ * @var: $ausgabe
+ */
 	echo $ausgabe;
 ?>
