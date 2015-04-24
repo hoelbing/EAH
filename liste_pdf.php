@@ -1,14 +1,14 @@
 <?php
 /**
- * Im Rahmen der Veranstaltung Sofwareqaulit�t im SS 2015 des Studigang Wirstschaftsingenieurwesen
- * mit Fachrichtung Informationstechnik soll das Postuch ,das urspr�nglich von Erik Reuter von der
- * Universit�t Leipzig entwickelt wurde, auf die Bed�rfnisse der EAH Jena angepasst werden.
+ * Im Rahmen der Veranstaltung Sofwareqaulitï¿½t im SS 2015 des Studigang Wirstschaftsingenieurwesen
+ * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprï¿½nglich von Erik Reuter von der
+ * Universitï¿½t Leipzig entwickelt wurde, auf die Bedï¿½rfnisse der EAH Jena angepasst werden.
  *
- * Im Rahmen der Vorlesung wird sich Gedanken �ber einen Anforderungskatalog gemacht, der im Laufe der
+ * Im Rahmen der Vorlesung wird sich Gedanken ï¿½ber einen Anforderungskatalog gemacht, der im Laufe der
  * Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
  * zusammengefasst und verwaltet.
  *
- * @author: Tobias M�ller, Bj�rn Hoffmann, Maik Tanneberg
+ * @author: Tobias Mï¿½ller, Bjï¿½rn Hoffmann, Maik Tanneberg
  */
 
 /**
@@ -16,13 +16,13 @@
  */
   function replacechars($text) {
 
-    $text=str_replace("ä","a",$text);
+    $text=str_replace("Ã¤","a",$text);
     $text=str_replace("A","A",$text);
-    $text=str_replace("ö","o",$text);
-    $text=str_replace("Ö","O",$text);
-    $text=str_replace("ü","u",$text);
-    $text=str_replace("Ü","U",$text);
-    $text=str_replace("ß","s",$text);
+    $text=str_replace("Ã¶","o",$text);
+    $text=str_replace("Ã–","O",$text);
+    $text=str_replace("Ã¼","u",$text);
+    $text=str_replace("Ãœ","U",$text);
+    $text=str_replace("ÃŸ","s",$text);
 
     return($text);
 
@@ -31,7 +31,7 @@
   ini_set("display_errors", 1);
   
 /**
-  * include_once bindet eine angegebene Datei ein und f�hrt sie als PHP-Skript aus. Dieses Verhalten
+  * include_once bindet eine angegebene Datei ein und fï¿½hrt sie als PHP-Skript aus. Dieses Verhalten
   * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
   * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden.
   *
@@ -45,12 +45,12 @@
   
  /**
   * session_start() erzeugt eine Session oder nimmt die aktuelle wieder auf, die auf der Session-Kennung
-  * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie �bermittelt wurde.
+  * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie ï¿½bermittelt wurde.
   */
   session_start();
   
 /** session_id() wird verwendet, um die Session-ID der aktuellen Session zu erhalten oder zu setzen.
-  * Hier wird der Variable: $sessionid der R�ckgabewert der Funktion session_id(); zugewiesen
+  * Hier wird der Variable: $sessionid der Rï¿½ckgabewert der Funktion session_id(); zugewiesen
   */
   $sessionid=session_id();
 

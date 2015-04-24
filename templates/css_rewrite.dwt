@@ -8,9 +8,9 @@
 *
 */
 
-	/* Container (Gerüst) ----------------------------------- */
-	body#b_login #container ¦<¦
+	/* Container (GerÃ¼st) ----------------------------------- */
+	body#b_login #container Â¦<Â¦
 		width	  : 400px;
 		background: #{farbe} url({pfad}image/bg_container-small.gif) repeat-y top left;
-	¦>¦
-	body#b_login #container_fixed_width ¦<¦ width: 380px; ¦>¦
+	Â¦>Â¦
+	body#b_login #container_fixed_width Â¦<Â¦ width: 380px; Â¦>Â¦

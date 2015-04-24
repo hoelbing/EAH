@@ -22,7 +22,7 @@ if ( !defined('PML_INCLUDED') ) {
 
 
 /**
-* Die Klasse PUtil enthält einige Methoden, die bei der Bearbeitung von Webseiten häufig anfallen.
+* Die Klasse PUtil enthÃ¤lt einige Methoden, die bei der Bearbeitung von Webseiten hÃ¤ufig anfallen.
 **/
 class PUtil {
 
@@ -30,7 +30,7 @@ class PUtil {
     * Diese Methode k&uuml;rzt div-Tags, so dass lediglich das align-Attribut erhalten bleibt
     * <b>Parameter:</b>
     * $html_source - HTML-Quelltext, welcher geparst werden soll
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der geparste Quelltext.
     **/
     function preg_replace_div($html) {
@@ -91,7 +91,7 @@ class PUtil {
     * Diese Methode konvertiert Internet- und eMail-Adressen in HTML Hyperlinks
     * <b>Parameter:</b>
     * $str - Zu parsender String
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der manipulierte String.
     **/
     function makeLinks($str) {
@@ -109,11 +109,11 @@ class PUtil {
     // PUtil::makeLinks
 
     /**
-    * Diese Methode dekodiert MIME-kodierte Wörter (bes. in Mail-Headern)
+    * Diese Methode dekodiert MIME-kodierte WÃ¶rter (bes. in Mail-Headern)
     * in 8-bit, wenn iso-8859-1 Kodierung vorliegt.
     * <b>Parameter:</b>
     * $str - der zu konvertierende String
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der konvertierte String.
     **/
     function decodeMIMEExt($str) {
@@ -124,7 +124,7 @@ class PUtil {
 
             if ( strtoupper($code)=='Q' ) {                                 // wir haben "Quoted printable"-Kodierung
                 $tmp = str_replace('_', ' ', $tmp);
-                // Ersetze alle kodierten Zeichen durch ihre 8-bit-Repräsentation
+                // Ersetze alle kodierten Zeichen durch ihre 8-bit-ReprÃ¤sentation
                 $tmp = preg_replace("/=([a-fA-F0-9][a-fA-F0-9])/e","chr(hexdec(\"\\1\"))", $tmp);
             } elseif ( strtoupper($code)=='B' ) {                           // wir haben "Base64"-Kodierung
                 $tmp = base64_decode($tmp);
@@ -141,19 +141,19 @@ class PUtil {
      * HTML-Zeichenfolgen
      * <b>Parameter:</b>
      * $str - der zu konvertierende String
-     * <b>Rückgabe:</b>
+     * <b>RÃ¼ckgabe:</b>
      * Der konvertierte String.
      */
     function replace_uml($str, $uml_flag=1) {
         if ( $uml_flag==1 ) $str = str_replace ('&', '&amp;', $str);
-        $str = str_replace ('Ä', '&Auml;', $str);
-        $str = str_replace ('ä', '&auml;', $str);
-        $str = str_replace ('Ü', '&Uuml;', $str);
-        $str = str_replace ('ü', '&uuml;', $str);
-        $str = str_replace ('Ö', '&Ouml;', $str);
-        $str = str_replace ('ö', '&ouml;', $str);
-        $str = str_replace ('ß', '&szlig;', $str);
-        $str = str_replace ('€', '&euro;', $str);
+        $str = str_replace ('Ã„', '&Auml;', $str);
+        $str = str_replace ('Ã¤', '&auml;', $str);
+        $str = str_replace ('Ãœ', '&Uuml;', $str);
+        $str = str_replace ('Ã¼', '&uuml;', $str);
+        $str = str_replace ('Ã–', '&Ouml;', $str);
+        $str = str_replace ('Ã¶', '&ouml;', $str);
+        $str = str_replace ('ÃŸ', '&szlig;', $str);
+        $str = str_replace ('â‚¬', '&euro;', $str);
 
         if ( $uml_flag==1 ) {
             $str = str_replace ('<', '&lt;', $str);
@@ -165,43 +165,43 @@ class PUtil {
 
 
     /**
-    * Diese Methode entfernt Umlaute (z.B. ä->ae, ß->ss)
+    * Diese Methode entfernt Umlaute (z.B. Ã¤->ae, ÃŸ->ss)
     * <b>Parameter:</b>
     * $str - der zu konvertierende String
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der konvertierte String.
     **/
     function remove_uml($str) {
-        $str = preg_replace ("/Ä([A-Z])/s", "AE\\1", $str);
-        $str = preg_replace ("/([A-Z])Ä/s", "\\1AE", $str);
-        $str = preg_replace ("/Ü([A-Z])/s", "UE\\1", $str);
-        $str = preg_replace ("/([A-Z])Ü/s", "\\1UE", $str);
-        $str = preg_replace ("/Ö([A-Z])/s", "OE\\1", $str);
-        $str = preg_replace ("/([A-Z])Ö/s", "\\1OE", $str);
-        $str = str_replace ('Ä', 'Ae', $str);
-        $str = str_replace ('ä', 'ae', $str);
-        $str = str_replace ('Ü', 'Ue', $str);
-        $str = str_replace ('ü', 'ue', $str);
-        $str = str_replace ('Ö', 'Oe', $str);
-        $str = str_replace ('ö', 'oe', $str);
-        $str = str_replace ('ß', 'ss', $str);
+        $str = preg_replace ("/Ã„([A-Z])/s", "AE\\1", $str);
+        $str = preg_replace ("/([A-Z])Ã„/s", "\\1AE", $str);
+        $str = preg_replace ("/Ãœ([A-Z])/s", "UE\\1", $str);
+        $str = preg_replace ("/([A-Z])Ãœ/s", "\\1UE", $str);
+        $str = preg_replace ("/Ã–([A-Z])/s", "OE\\1", $str);
+        $str = preg_replace ("/([A-Z])Ã–/s", "\\1OE", $str);
+        $str = str_replace ('Ã„', 'Ae', $str);
+        $str = str_replace ('Ã¤', 'ae', $str);
+        $str = str_replace ('Ãœ', 'Ue', $str);
+        $str = str_replace ('Ã¼', 'ue', $str);
+        $str = str_replace ('Ã–', 'Oe', $str);
+        $str = str_replace ('Ã¶', 'oe', $str);
+        $str = str_replace ('ÃŸ', 'ss', $str);
         return $str ;
     }
     // PUtil::remove_uml
 
 
     /**
-    * Diese Methode erstellt eine Verbindung zu einer gewünschten Datenbank und  
-    * führt dabei eine Benutzerauthentifizierung durch.
-    * Geprüft wird dabei, ob der Benutzer auf der Datenbank Zugriffsrechte hat
+    * Diese Methode erstellt eine Verbindung zu einer gewÃ¼nschten Datenbank und  
+    * fÃ¼hrt dabei eine Benutzerauthentifizierung durch.
+    * GeprÃ¼ft wird dabei, ob der Benutzer auf der Datenbank Zugriffsrechte hat
     * <b>Parameter:</b>
     * $dbname - Name der Datenbank zu der eine Verbindung aufgebaut werden soll
     * $host - Server auf dem die Datenbank liegt (default: localhost)
-    * $realm - Name des Sicherheitsbereichs(default: Passwortgeschützter Bereich)
-    * <b>Rückgabe:</b>
+    * $realm - Name des Sicherheitsbereichs(default: PasswortgeschÃ¼tzter Bereich)
+    * <b>RÃ¼ckgabe:</b>
     * $dbID - ID des Datenbankhandlers
     **/
-    function authentify( $dbname, $host='localhost', $realm='Passwortgeschützter Bereich') {
+    function authentify( $dbname, $host='localhost', $realm='PasswortgeschÃ¼tzter Bereich') {
         if ( isset($_SERVER) ) {
             if ( isset($_SERVER['PHP_AUTH_USER']) ) $IFAB_AUTH_USER = $_SERVER['PHP_AUTH_USER']; else $IFAB_AUTH_USER = '';
             if ( isset($_SERVER['PHP_AUTH_PW']) )   $IFAB_AUTH_PW   = $_SERVER['PHP_AUTH_PW'];   else $IFAB_AUTH_PW   = '';
@@ -226,22 +226,22 @@ class PUtil {
 
 
     /**
-    * Diese Methode stellt eine Datenbankverbindung her, wählt die gewünschte Datenbank und
-    * führt eine Benutzerauthentifizierung durch.
-    * Geprüft wird, ob Benutzer in einer speziellen Passworttabelle in der aktuellen Datenbank vorhanden ist.
+    * Diese Methode stellt eine Datenbankverbindung her, wÃ¤hlt die gewÃ¼nschte Datenbank und
+    * fÃ¼hrt eine Benutzerauthentifizierung durch.
+    * GeprÃ¼ft wird, ob Benutzer in einer speziellen Passworttabelle in der aktuellen Datenbank vorhanden ist.
     * <b>Parameter:</b>
     * $dbname - Name der Datenbank zu dr eine Verbindung aufgebaut werden soll
-    * $dblogin - Login für die Datenbank
-    * $Passwort für die Datenbank
+    * $dblogin - Login fÃ¼r die Datenbank
+    * $Passwort fÃ¼r die Datenbank
     * $host - Server auf dem die Datenbank liegt (default: localhost)
-    * $realm - Name des Sicherheitsbereichs (default: Passwortgeschützter Bereich)
+    * $realm - Name des Sicherheitsbereichs (default: PasswortgeschÃ¼tzter Bereich)
     * $table - Tabelle mit erlaubten Benutzern (default: auth)
     * $userCol - Name der Spalte mit Benutzernamen in $table (default: user)
-    * $passCol - Name der Spalte mit Benutzerpasswörtern in $table (default: passwd)
-    * <b>Rückgabe:</b>
+    * $passCol - Name der Spalte mit BenutzerpasswÃ¶rtern in $table (default: passwd)
+    * <b>RÃ¼ckgabe:</b>
     * $dbID - ID des Datenbankhandlers
     **/
-    function authentify2($dbname, $dblogin, $dbpass, $realm='Passwortgeschützter Bereich', $host='localhost', $table='auth', $userCol='user', $passCol='passwd') {
+    function authentify2($dbname, $dblogin, $dbpass, $realm='PasswortgeschÃ¼tzter Bereich', $host='localhost', $table='auth', $userCol='user', $passCol='passwd') {
 
         if ( isset($_SERVER) ) {
             if ( isset($_SERVER['PHP_AUTH_USER']) ) $IFAB_AUTH_USER = $_SERVER['PHP_AUTH_USER']; else $IFAB_AUTH_USER = '';
@@ -269,16 +269,16 @@ class PUtil {
 
 
     /**
-    * Diese Methode führt eine Benutzerauthentifizierung bei bestehender Datenbankverbindung durch,
-    * geprüft wird, ob Benutzer in einer eigenen Passworttabelle in der aktuellen Datenbank vorhanden ist.
+    * Diese Methode fÃ¼hrt eine Benutzerauthentifizierung bei bestehender Datenbankverbindung durch,
+    * geprÃ¼ft wird, ob Benutzer in einer eigenen Passworttabelle in der aktuellen Datenbank vorhanden ist.
     * <b>Parameter:</b>
     * $dbID - ID der aktuellen Datenbankverbindung
-    * $realm - Name des Sicherheitsbereichs (default: Passwortgeschützter Bereich)
+    * $realm - Name des Sicherheitsbereichs (default: PasswortgeschÃ¼tzter Bereich)
     * $table - Tabelle mit erlaubten Benutzern (default: auth)
     * $userCol - Name der Spalte mit Benutzernamen in $table (default: user)
-    * $passCol - Name der Spalte mit Benutzerpasswörtern (PASSWORD od. SHA1 kodiert) in $table (default: passwd)
+    * $passCol - Name der Spalte mit BenutzerpasswÃ¶rtern (PASSWORD od. SHA1 kodiert) in $table (default: passwd)
     **/
-    function authentify3($dbID, $realm = 'Passwortgeschützter Bereich', $table='auth', $userCol='user', $passCol='passwd', $returnCol='*', $imgpath='') {
+    function authentify3($dbID, $realm = 'PasswortgeschÃ¼tzter Bereich', $table='auth', $userCol='user', $passCol='passwd', $returnCol='*', $imgpath='') {
 
         if ( isset($_SERVER) ) {
             if ( isset($_SERVER['PHP_AUTH_USER']) ) $IFAB_AUTH_USER = $_SERVER['PHP_AUTH_USER']; else $IFAB_AUTH_USER = '';
@@ -313,7 +313,7 @@ class PUtil {
     *	Diese Methode wandelt einen String in einen Quoted_printable-String (email-Kodierung im Header)
     *	<b>Parameter:</b>
     *		$str - String, der konvertiert werden soll
-    *	<b>Rückgabe:</b>
+    *	<b>RÃ¼ckgabe:</b>
     *		$str - konvertierter String
     **/
     function quoted_printable($str) {
@@ -330,9 +330,9 @@ class PUtil {
     *	Funktion zum Anzeigen von Fehler 401 im Design der jeweiligen Webseite
     *	<b>Parameter:</b>
     *		keine
-    *	<b>Rückgabe:</b>
+    *	<b>RÃ¼ckgabe:</b>
     *		keine
-    *	<b>zugehörige Dateien:</b>
+    *	<b>zugehÃ¶rige Dateien:</b>
     *		error.dwt - in Verzeichnis /templates aller Homedirectories auf dem Server
     *
     *	in error.dwt sollte folgendes vorhanden sein:
@@ -403,7 +403,7 @@ class PUtil {
     // arguments:   string $string
     //	return:     string - converted string
     function sort_string($string) {
-        $from = 'äáàåâæöóòôüúùûéèêıñíìîçßÄÁÀÅÂÆÖÓÒÔÜÚÙÛÉÈÊİÑÍÌÎÇ';
+        $from = 'Ã¤Ã¡Ã Ã¥Ã¢Ã¦Ã¶Ã³Ã²Ã´Ã¼ÃºÃ¹Ã»Ã©Ã¨ÃªÃ½Ã±Ã­Ã¬Ã®Ã§ÃŸÃ„ÃÃ€Ã…Ã‚Ã†Ã–Ã“Ã’Ã”ÃœÃšÃ™Ã›Ã‰ÃˆÃŠÃÃ‘ÃÃŒÃÃ‡';
         $to   = 'aaaaaaoooouuuueeeyniiicsAAAAAAOOOOUUUUEEEYNIIIC';
         return strtr($string, $from, $to);
     }
@@ -423,7 +423,7 @@ class PUtil {
     *	<b>Parameter:</b>
     *		String  - email
     *       array   - forbidden_domains ( default: array() )
-    *	<b>Rückgabe:</b>
+    *	<b>RÃ¼ckgabe:</b>
     *		boolean - TRUE / FALSE)
     **/
     function check_email($email, $forbidden_domains = array()) {
@@ -443,7 +443,7 @@ class PUtil {
             if ( FALSE !== strpos($email, ':') )         return FALSE;  // ':' in allen Adressen verboten 
 
             // Syntaxcheck der Mail-Adresse 
-            $reg_denyChars = "<>@\s:?\"';()\[\]{}\$§´`\\\\";            // verbotene Buchstaben in mail-Adressen
+            $reg_denyChars = "<>@\s:?\"';()\[\]{}\$Â§Â´`\\\\";            // verbotene Buchstaben in mail-Adressen
             $reg_mailAddr  = "([^$reg_denyChars]+@[^$reg_denyChars]+)"; // gueltiges Muster von mail-Adressen
             $reg_exp       = "/^(?(?=[^<:]*<)(?:[^<]+<$reg_mailAddr>)|$reg_mailAddr)$/i";
             if ( !preg_match($reg_exp, $email, $match) ) return FALSE;
@@ -473,7 +473,7 @@ class PUtil {
     /**
     *	alternative in_array() - Funktion: 
     *      falls Parameter strict == FALSE, werden Variablen immer als Strings verglichen 
-    *      (Achtung:keine verschachtelten Arrays möglich)
+    *      (Achtung:keine verschachtelten Arrays mÃ¶glich)
     *	<b>Syntax:</b>
     *	   bool in_array ( mixed needle, array haystack [, bool strict] )
     **/

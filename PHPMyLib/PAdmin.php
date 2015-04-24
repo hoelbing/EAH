@@ -17,7 +17,7 @@ if ( !defined('PML_INCLUDED') ) {
 }
 
 /**
-*	Basisklasse für ein Administrations-Tool mit bereits integrierter Nutzer-&#47;Rechteverwaltung
+*	Basisklasse fÃ¼r ein Administrations-Tool mit bereits integrierter Nutzer-&#47;Rechteverwaltung
 *
 *
 *	<b>Konfigurationsparameter:<&#47;b>
@@ -26,19 +26,19 @@ if ( !defined('PML_INCLUDED') ) {
 *	$var['adm_level']=array(
 *	'1'	=>	array('Nutzerverwaltung', "user_admin"),			&#47;&#47;required entry (leave unchanged)
 *	'2'	=>	array('Neueintrag', "new_entry"),
-*	'Bit'	=>	array('Name im Menü&#47;Rechteverwaltung', "aufzurufende Funktion bei Auswahl")	);
+*	'Bit'	=>	array('Name im MenÃ¼&#47;Rechteverwaltung', "aufzurufende Funktion bei Auswahl")	);
 *
 *	array with admin levels(bits) that don't represent links in main menu:
 *	$var['adm_no_menu']=array(2, 4);
 *	
-*	Template für das Admin-Tool
+*	Template fÃ¼r das Admin-Tool
 *	$var['adm_dwt']=".&#47;templates&#47;adm.dwt";
 *
 *	ID einer bestehenden Datenbankverbindung
 *	$var['dbID']
 *
 *
-*	<b>Benötigte Datenbank-Tabelle:<&#47;b> access
+*	<b>BenÃ¶tigte Datenbank-Tabelle:<&#47;b> access
 *
 *	CREATE TABLE access (
 *		id int(11) NOT NULL auto_increment,
@@ -50,7 +50,7 @@ if ( !defined('PML_INCLUDED') ) {
 *		UNIQUE KEY user (user)
 *	) TYPE=MyISAM;
 *
-*	Warnung: Nutzer mit der id=1 ist ein Administrator mit sämtlichen Rechten!!
+*	Warnung: Nutzer mit der id=1 ist ein Administrator mit sÃ¤mtlichen Rechten!!
 **/
 class icAdmin extends PUtil
 {
@@ -63,7 +63,7 @@ class icAdmin extends PUtil
 	var $template;					// admin template
 
 	/**
-	*	Objekt vom Typ PText, welches den Titel des aktuellen Menüpunktes enthält (für Platzhalter {title} im Template)
+	*	Objekt vom Typ PText, welches den Titel des aktuellen MenÃ¼punktes enthÃ¤lt (fÃ¼r Platzhalter {title} im Template)
 	**/
 	var $title="Administration";	// title of the shown page
 
@@ -80,9 +80,9 @@ class icAdmin extends PUtil
 	var $content;					// main content (object of type PContainer)
 
 	/**
-	*	Konstruktor: startet die Programmausführung
+	*	Konstruktor: startet die ProgrammausfÃ¼hrung
 	*	<b>Parameter:</b>
-	*		$var - Array mit den Konfigurationsparametern und den übergebenen Variablen (alle Post/Get-Variablen sollten als $var['Bezeichner'] übergeben werden
+	*		$var - Array mit den Konfigurationsparametern und den Ã¼bergebenen Variablen (alle Post/Get-Variablen sollten als $var['Bezeichner'] Ã¼bergeben werden
 	**/
 	function icAdmin($var)
 	{
@@ -99,7 +99,7 @@ class icAdmin extends PUtil
 		if ( isset($var['exec']) && $var['exec']==-1 )
 		{
 			// wrong admin rights, print error message
-			$this->msg="Fehler: Ihnen fehlen die nötigen Rechte!!";
+			$this->msg="Fehler: Ihnen fehlen die nÃ¶tigen Rechte!!";
 			unset($var['exec']);
 		}elseif ( isset($var['adm_level'][$var['exec']]) && !in_array($var['exec'], $var['adm_no_menu']) )
 		{
@@ -108,7 +108,7 @@ class icAdmin extends PUtil
 		}else
 		{
 			// undefined or no menu point choosen
-			if ( !empty($var['exec']) ) $this->msg="Fehler: Undefinierter Menüpunkt. Sollte der Fehler wiederholt auftreten, wenden Sie sich bitte an <a href=\"mailto:info@i-fabrik.de\">info@i-fabrik.de</a>.";
+			if ( !empty($var['exec']) ) $this->msg="Fehler: Undefinierter MenÃ¼punkt. Sollte der Fehler wiederholt auftreten, wenden Sie sich bitte an <a href=\"mailto:info@i-fabrik.de\">info@i-fabrik.de</a>.";
 			unset($var['exec']);
 		}
 
@@ -156,13 +156,13 @@ class icAdmin extends PUtil
 		}
 		if ($count>1)
 		{
-			$content->add("<b>Menü</b>");
+			$content->add("<b>MenÃ¼</b>");
 			$content->add($list);
 		}elseif ($count==1)
 		{
 			header("Location: $_SERVER[PHP_SELF]?var[exec]=$level");
 			exit();
-		}else $this->msg="Fehler: Ihnen fehlen die Rechte für dieses Tool. Bitte wenden Sie sich an den Administrator.";
+		}else $this->msg="Fehler: Ihnen fehlen die Rechte fÃ¼r dieses Tool. Bitte wenden Sie sich an den Administrator.";
 		return $content;
 	} //startpage
 
@@ -187,24 +187,24 @@ class icAdmin extends PUtil
 		// Form for editing an existing admin
 		case "edit":
 			$edit="Account von $var[user] editieren:";
-			$button="Ändern";
+			$button="Ã„ndern";
 			$output->add( new PInput("hidden", "var[ID]", $var['ID']) );
 			break;
-		case "Ändern":
-			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geändert werden
+		case "Ã„ndern":
+			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geÃ¤ndert werden
 			for($i=0;$i<count($var['adm_level']);$i++) $level+=$var["level_$i"];
 			$sql="UPDATE access SET user='$var[user]', passwd=PASSWORD('$var[pass]'), level='$level' WHERE id='$var[ID]'";
 			@mysql_query($sql);
-			if ( mysql_error()!="" ) $this->errorMsg="Änderungen konnten nicht übernommen werden!!";
-				else $this->errorMsg="Änderungen wurden übernommen!!";
+			if ( mysql_error()!="" ) $this->errorMsg="Ã„nderungen konnten nicht Ã¼bernommen werden!!";
+				else $this->errorMsg="Ã„nderungen wurden Ã¼bernommen!!";
 			break;
 		// delete an admin
 		case "delete":
-			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geändert werden
+			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geÃ¤ndert werden
 			$sql="DELETE FROM access WHERE id='$var[ID]'";
 			@mysql_query($sql);
-			if ( mysql_error()!="" ) $this->errorMsg="User konnte nicht gelöscht werden!!";
-				else $this->errorMsg="User wurde gelöscht!!";
+			if ( mysql_error()!="" ) $this->errorMsg="User konnte nicht gelÃ¶scht werden!!";
+				else $this->errorMsg="User wurde gelÃ¶scht!!";
 			break;
 		// change admin rights
 		case "Rechte setzen":
@@ -287,7 +287,7 @@ class icAdmin extends PUtil
 		$table->addRow($row);
 		$output->add($table);
 
-		// Level-Erklärung
+		// Level-ErklÃ¤rung
 		$table=new PTable();
 		if ($this->admin[0]>1) $table->addRow( array("<b>Level</b>", "&nbsp;", "<b>Funktion</b>") );
 			else $table->addRow( array("<b>Admin-Level</b>", "&nbsp;", "<b>Funktion</b>", "&nbsp;", "<b>Bit</b>") );

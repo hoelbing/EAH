@@ -12,7 +12,7 @@
 //    else require_once('PHPMyLib/PObject.php');
 
 /**
-* Konstanten für die Übergabe von Parametern an Funktionen
+* Konstanten fÃ¼r die Ãœbergabe von Parametern an Funktionen
 */
 if ( !defined('PTEXT_NOCHANGE') )              define('PTEXT_NOCHANGE',               'nochange');
 if ( !defined('PTEXT_NL2BR') )                 define('PTEXT_NL2BR',                     'nl2br');
@@ -55,8 +55,8 @@ class PComponent extends PObject {
     /**
     * setText setzt den Titel der Komponente
     * <b>Parameter:</b>
-    * $text - Der neue Text für den Titel
-    * <b>Rückgabe:</b>
+    * $text - Der neue Text fÃ¼r den Titel
+    * <b>RÃ¼ckgabe:</b>
     * keine
     **/
     function setText($text = '') {
@@ -67,7 +67,7 @@ class PComponent extends PObject {
     * Liefert den aktuellen Titel der Komponente.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Titel der Komponente.
     **/
     function getText() {
@@ -76,12 +76,12 @@ class PComponent extends PObject {
 
 
     /**
-    * Gibt den Inhalt der Komponente als HTML zurück
+    * Gibt den Inhalt der Komponente als HTML zurÃ¼ck
     *
     * <b>Parameter:</b>
     * keine
     *
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der Inhalt der Komponente als string.
     **/
     function outputStr() {
@@ -92,9 +92,9 @@ class PComponent extends PObject {
 
 /**
 * Die Klasse PContainer ist in der Lage weiter Komponenten in sich aufzunehmen.
-* Dadurch ist es möglich komplizierte HTML-Inhalte als eine Komponente darzustellen.
-* Zu beachten ist, dass bei PTag-Objekte, die eingefügt werden jeweils das schließende Tag
-* an das Ende aller anderen Objekte angehängt werden.
+* Dadurch ist es mÃ¶glich komplizierte HTML-Inhalte als eine Komponente darzustellen.
+* Zu beachten ist, dass bei PTag-Objekte, die eingefÃ¼gt werden jeweils das schlieÃŸende Tag
+* an das Ende aller anderen Objekte angehÃ¤ngt werden.
 **/
 class PContainer extends PComponent {
     /**
@@ -109,7 +109,7 @@ class PContainer extends PComponent {
     /**
     * Konstruktor der PContainer-Klasse
     * <b>Parameter:</b>
-    * optionale Komponente, welche dem Objekt mit der Funktion add() hinzugefügt wird
+    * optionale Komponente, welche dem Objekt mit der Funktion add() hinzugefÃ¼gt wird
     **/
     function PContainer( $component=FALSE ) {
        $this->PComponent();
@@ -119,12 +119,12 @@ class PContainer extends PComponent {
     }
 
     /**
-    * Diese Methode fügt eine Komponente hinzu.
+    * Diese Methode fÃ¼gt eine Komponente hinzu.
     * <b>Parameter</b>
-    * $component - Die Komponente die hinzugefügt werden soll
-    *				( oder Array mit den Komponenten, die hinzugefügt werden sollen )
-    * <b>Rückgabe</b>
-    * Der Index der letzten neu eingefügten Komponente. Im Fehlerfall -1
+    * $component - Die Komponente die hinzugefÃ¼gt werden soll
+    *				( oder Array mit den Komponenten, die hinzugefÃ¼gt werden sollen )
+    * <b>RÃ¼ckgabe</b>
+    * Der Index der letzten neu eingefÃ¼gten Komponente. Im Fehlerfall -1
     **/
     function add($component) {
         if ( $this->isPComponent($component) ) {
@@ -137,11 +137,11 @@ class PContainer extends PComponent {
     }
 
     /**
-    * Diese Methode löscht eine Komponente. Die Indizes aller anderen dahinterliegenden Komponenten verschieben sich.
+    * Diese Methode lÃ¶scht eine Komponente. Die Indizes aller anderen dahinterliegenden Komponenten verschieben sich.
     * <b>Parameter</b>
-    * $index - Index der zu löschenden Komponente.
-    * <b>Rückgabe</b>
-    * Der Index der neu eingefügten Komponente. Im Fehlerfall -1
+    * $index - Index der zu lÃ¶schenden Komponente.
+    * <b>RÃ¼ckgabe</b>
+    * Der Index der neu eingefÃ¼gten Komponente. Im Fehlerfall -1
     **/
     function remove($index) {
         if ($this->m_nChildCount > $index && $index >= 0) {
@@ -152,14 +152,14 @@ class PContainer extends PComponent {
     // remove
 
     /**
-    * Die Methode prüft, ob es sich bei $obj um eine von PContainer abgeleitete Klasse handelt,
+    * Die Methode prÃ¼ft, ob es sich bei $obj um eine von PContainer abgeleitete Klasse handelt,
     * oder um eine Klasse des Typs PContainer selbst
     *
     * <b>Parameter:</b>
-    * $obj - Die Instanz einer Klasse, die überprüft werden soll
+    * $obj - Die Instanz einer Klasse, die Ã¼berprÃ¼ft werden soll
     *
-    * <b>Rückgabe:</b>
-    * true oder false, je nach Ergebnis der Überprüfung.
+    * <b>RÃ¼ckgabe:</b>
+    * true oder false, je nach Ergebnis der ÃœberprÃ¼fung.
     **/
     function isPContainer($obj) {
         if ( $this->isPObject($obj) && isset($obj->m_aChildren) ) return TRUE;
@@ -168,14 +168,14 @@ class PContainer extends PComponent {
     // isPContainer
 
     /**
-    * Die Methode prüft, ob es sich bei $obj um eine von PTag abgeleitete Klasse handelt,
+    * Die Methode prÃ¼ft, ob es sich bei $obj um eine von PTag abgeleitete Klasse handelt,
     * oder um eine Klasse des Typs PTag selbst
     *
     * <b>Parameter:</b>
-    * $obj - Die Instanz einer Klasse, die überprüft werden soll
+    * $obj - Die Instanz einer Klasse, die Ã¼berprÃ¼ft werden soll
     *
-    * <b>Rückgabe:</b>
-    * true oder false, je nach Ergebnis der Überprüfung.
+    * <b>RÃ¼ckgabe:</b>
+    * true oder false, je nach Ergebnis der ÃœberprÃ¼fung.
     **/
     function isPTag($obj) {
        if ( $this->isPObject($obj) && isset($obj->m_aParams) ) return TRUE;
@@ -183,12 +183,12 @@ class PContainer extends PComponent {
     }
 
     /**
-    * Gibt den Inhalt des Containers als HTML zurück. Es werden alle enthaltenen Komponenten ausgegeben.
+    * Gibt den Inhalt des Containers als HTML zurÃ¼ck. Es werden alle enthaltenen Komponenten ausgegeben.
     *
     * <b>Parameter:</b>
     * keine
     *
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der Inhalt des Containers als string.
     **/
     function outputStr() {
@@ -201,8 +201,8 @@ class PContainer extends PComponent {
 } //class PContainer
 
 /**
-* Die Klasse PTag ist die Wrapper-Klasse für beliebige HTML-Tags. Sie ist in der Lage öffnende
-* und schließende Tags, sowie Parameter zu verwalten.
+* Die Klasse PTag ist die Wrapper-Klasse fÃ¼r beliebige HTML-Tags. Sie ist in der Lage Ã¶ffnende
+* und schlieÃŸende Tags, sowie Parameter zu verwalten.
 **/
 class PTag extends PComponent {
 
@@ -211,7 +211,7 @@ class PTag extends PComponent {
     **/
     var $m_aParams;
     /**
-    * Liste der Tags, die keine schließenden Tag benötigen
+    * Liste der Tags, die keine schlieÃŸenden Tag benÃ¶tigen
     **/
     var $m_aSingle;
 
@@ -230,9 +230,9 @@ class PTag extends PComponent {
     }
 
     /**
-    * Die Methode fügt weiter Parameter den bereits bestehenden hinzu.
+    * Die Methode fÃ¼gt weiter Parameter den bereits bestehenden hinzu.
     * <b>Parameter:</b>
-    * $params - Array der hinzuzufügenden Parameter (key=>value - Struktur)
+    * $params - Array der hinzuzufÃ¼genden Parameter (key=>value - Struktur)
     **/
     function addParam($params) {
         if ( is_array($params) ) $this->m_aParams = array_merge($this->m_aParams, $params);
@@ -240,7 +240,7 @@ class PTag extends PComponent {
 
     /**
     * Die Methode setzt einen Parameter im Tag. Wenn dieser bereits vorhanden ist
-    * wird er überschrieben.
+    * wird er Ã¼berschrieben.
     * <b>Parameter:</b>
     * $name - Name des Parameters
     * $value - Wert des Parameters
@@ -253,11 +253,11 @@ class PTag extends PComponent {
     }
 
     /**
-    * Überladene Methode von PComponent. Gibt das öffnende Tag als String aus.
+    * Ãœberladene Methode von PComponent. Gibt das Ã¶ffnende Tag als String aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
-    * Das öffnende Tag
+    * <b>RÃ¼ckgabe:</b>
+    * Das Ã¶ffnende Tag
     **/
     function outputStr() {
         $text = '';
@@ -273,11 +273,11 @@ class PTag extends PComponent {
     }
 
     /**
-    * Diese Methode gibt, sofern das Tag dies erlaubt das schließende Tag als String aus.
+    * Diese Methode gibt, sofern das Tag dies erlaubt das schlieÃŸende Tag als String aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
-    * Das schließende Tag
+    * <b>RÃ¼ckgabe:</b>
+    * Das schlieÃŸende Tag
     **/
     function outputEndStr() {
         if ( !in_array($this->m_strText, $this->m_aSingle) ) return ('</'.$this->m_strText.'>');
@@ -294,15 +294,15 @@ class PText extends PComponent {
 
     /**
     * Ausgabeformatierung:
-    * 0 - HTML-Tags bleiben unverändert
+    * 0 - HTML-Tags bleiben unverÃ¤ndert
     * 1 - alle HTML-Tags entfernen
     **/
     var $removeHTML;
 
     /**
     * Ausgabeformatierung, erlaubte Konstanten:
-    * PTEXT_NOCHANGE - keine Veränderung am Text
-    * PTEXT_NL2BR - wandelt ASCII-Zeilenumbrüche in BR-Tags (empfohlen wenn HTML-Tags entfernt werden)
+    * PTEXT_NOCHANGE - keine VerÃ¤nderung am Text
+    * PTEXT_NL2BR - wandelt ASCII-ZeilenumbrÃ¼che in BR-Tags (empfohlen wenn HTML-Tags entfernt werden)
     * PTEXT_HPEDITOR - wandelt Formatierung des js-Editors der ifabrik in HTML
     * PTEXT_REMOVE_HPEDITOR - entfernt Formatierung des js-Editors der ifabrik
     **/
@@ -313,14 +313,14 @@ class PText extends PComponent {
     * <b>Parameter:</b>
     * $text - Der Text der ausgegeben werden soll
     * $stripHTML - bestimmt, wie HTML-Tags behandelt werden
-    * FALSE - HTML-Tags bleiben unverändert (default)
+    * FALSE - HTML-Tags bleiben unverÃ¤ndert (default)
     * TRUE - alle HTML-Tags werden entfernt
     * $format - bestimmt wie der gespeicherte Text formatiert werden soll, folgende Konstanten sind erlaubt
-    * PTEXT_NOCHANGE - Text unverändert ausgeben
-    * PTEXT_NL2BR - wandelt ASCII-Zeilenumbrüche in BR-Tags (empfohlen wenn HTML-Tags entfernt werden)
+    * PTEXT_NOCHANGE - Text unverÃ¤ndert ausgeben
+    * PTEXT_NL2BR - wandelt ASCII-ZeilenumbrÃ¼che in BR-Tags (empfohlen wenn HTML-Tags entfernt werden)
     * PTEXT_HPEDITOR - wandelt Formatierung des js-Editors der ifabrik in HTML
     * PTEXT_REMOVE_HPEDITOR - entfernt Formatierung des js-Editors der ifabrik
-    * $maxLineLength - maximale Länge einer Zeile (danach wird Zeilenumbruch eingefügt, 0=unbegrenzt)
+    * $maxLineLength - maximale LÃ¤nge einer Zeile (danach wird Zeilenumbruch eingefÃ¼gt, 0=unbegrenzt)
     **/
     function PText($text, $html=0, $format=PTEXT_NOCHANGE, $maxLineLength=0) {
         $this->PComponent();
@@ -332,10 +332,10 @@ class PText extends PComponent {
     // PText
 
     /**
-    * Überladene Methode von PComponent. Gibt den Text aus.
+    * Ãœberladene Methode von PComponent. Gibt den Text aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Der Text als String
     **/
     function outputStr() {
@@ -367,12 +367,12 @@ class PText extends PComponent {
             $text = @preg_replace("/\[BOLD\](.*)\[\/BOLD\]/siU","<b>\\1</b>",$text);												// fetter Text
             $text = @preg_replace("/\[ITALIC\](.*)\[\/ITALIC\]/siU","<i>\\1</i>",$text);											// kursiver Text
             $text = @preg_replace("/\[UNDERLINE\](.*)\[\/UNDERLINE\]/siU","<u>\\1</u>",$text);									// unterstrichener text
-            $text = @preg_replace("/\[HEADING=(.*)\](.*)\[\/HEADING\]/siU","<h\\1>\\2</h\\1>",$text);							// Überschrift
+            $text = @preg_replace("/\[HEADING=(.*)\](.*)\[\/HEADING\]/siU","<h\\1>\\2</h\\1>",$text);							// Ãœberschrift
             $text = @preg_replace("/\[STYLE=(.*)\](.*)\[\/STYLE\]/siU","<span class=\"\\1\">\\2</span>",$text);			// CSS Style
             $text = @preg_replace("/\[URL\=(.*)\](.*)\[\/URL\]/siU","<a href=\"\\1\" target=\"_new\">\\2</a>",$text);	// URL Link
             $text = @preg_replace("/\[EMAIL=(.*)\](.*)\[\/EMAIL\]/siU","<a href=\"mailto:\\1\">\\2</a>",$text);			// E-Mail Link
             $text = @preg_replace("/\[FONTNAME=(.*)\](.*)\[\/FONTNAME\]/siU","<font face=\"\\1\">\\2</font>",$text);		// Schriftart
-            $text = @preg_replace("/\[FONTSIZE=(.*)\](.*)\[\/FONTSIZE\]/siU","<font size=\"\\1\">\\2</font>",$text);		// Schriftgrösse
+            $text = @preg_replace("/\[FONTSIZE=(.*)\](.*)\[\/FONTSIZE\]/siU","<font size=\"\\1\">\\2</font>",$text);		// SchriftgrÃ¶sse
             while ( @preg_match("/\[LIST=(.*)\]/siU", $text, $matches) ) {																// Listen
                 if ( $matches[1] == 'u' ) $text = preg_replace("/\[LIST=u\](.*)\[\/LIST\]/siU","<ul>\\1</ul>",$text);
                     elseif ( $matches[1 ] == 'o') $text = preg_replace("/\[LIST=o\](.*)\[\/LIST\]/siU","<ol>\\1</ol>",$text);
@@ -415,7 +415,7 @@ class PText extends PComponent {
             $text = @preg_replace("/\[BOLD\](.*)\[\/BOLD\]/siU", "\\1", $text);								// fetter Text
             $text = @preg_replace("/\[ITALIC\](.*)\[\/ITALIC\]/siU", "\\1", $text);							// kursiver Text
             $text = @preg_replace("/\[UNDERLINE\](.*)\[\/UNDERLINE\]/siU", "\\1", $text);					// unterstrichener text
-            $text = @preg_replace("/\[HEADING=(.*)\](.*)\[\/HEADING\]/siU", "\\2", $text);				// Überschrift
+            $text = @preg_replace("/\[HEADING=(.*)\](.*)\[\/HEADING\]/siU", "\\2", $text);				// Ãœberschrift
             $text = @preg_replace("/\[STYLE=(.*)\](.*)\[\/STYLE\]/siU", "\\2", $text);						// CSS Style
             $text = @preg_replace("/\[URL\=(.*)\](.*)\[\/URL\]/siU", "\\2 (\\1)", $text);					// URL Link
             $text = @preg_replace("/\[EMAIL=(.*)\](.*)\[\/EMAIL\]/siU", "\\2 (mailto:\\1)", $text);	// E-Mail Link
@@ -465,9 +465,9 @@ class PText extends PComponent {
 
 
 /**
-* Die Klasse PList ist die Wrapper-Klasse für das HTML-Listen-Objekt (<ul>). Sämtliche
-* Einträge in der Liste werden von der Klasse verwaltet. Da PList von PConatiner abgeleitet
-* ist, wird die Methode add() zum Hinzufügen von Listen-Einträgen genutzt.
+* Die Klasse PList ist die Wrapper-Klasse fÃ¼r das HTML-Listen-Objekt (<ul>). SÃ¤mtliche
+* EintrÃ¤ge in der Liste werden von der Klasse verwaltet. Da PList von PConatiner abgeleitet
+* ist, wird die Methode add() zum HinzufÃ¼gen von Listen-EintrÃ¤gen genutzt.
 **/
 class PList extends PContainer
 {
@@ -484,10 +484,10 @@ class PList extends PContainer
    }
 
     /**
-    * Überladene Methode von PComponent. Gibt die Liste samt aller Einträge aus.
+    * Ãœberladene Methode von PComponent. Gibt die Liste samt aller EintrÃ¤ge aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Die Liste als String (HTML)
     **/
     function outputStr() {
@@ -521,8 +521,8 @@ class PList extends PContainer
 //class PList
 
 /**
-* PForm ist die Wrapper-Klasse für Formulare aller Art. Da PForm von PContainer abgeleitet ist,
-* werden alle Formular-Elemente, aber andere Komponenten über die Methode add() eingefügt.
+* PForm ist die Wrapper-Klasse fÃ¼r Formulare aller Art. Da PForm von PContainer abgeleitet ist,
+* werden alle Formular-Elemente, aber andere Komponenten Ã¼ber die Methode add() eingefÃ¼gt.
 **/
 class PForm extends PContainer {
     /**
@@ -534,7 +534,7 @@ class PForm extends PContainer {
     **/
     var $m_strMethod='';
     /**
-    * Typ des Formulars. Wird i.d.R. nur bei File-Uploads benötigt.
+    * Typ des Formulars. Wird i.d.R. nur bei File-Uploads benÃ¶tigt.
     **/
     var $m_strEnctype='';
 
@@ -543,8 +543,8 @@ class PForm extends PContainer {
     * <b>Parameter:</b>
     * $dest - Zieladresse des Formulars
     * $methode - post oder get
-    * $enctype - leer oder "multipart/form-data" für File-Upload-Formulare
-    * $params - Array mit weiteren Parametern fürs Form-Tag
+    * $enctype - leer oder "multipart/form-data" fÃ¼r File-Upload-Formulare
+    * $params - Array mit weiteren Parametern fÃ¼rs Form-Tag
     **/
     function PForm($dest=null, $method='post', $enctype='', $params=array()) {
         $this->PContainer();
@@ -555,18 +555,18 @@ class PForm extends PContainer {
     }
 
     /**
-    * Überladene Methode von PComponent. Gibt das Formular samt aller enthaltenen Formularfelder
+    * Ãœberladene Methode von PComponent. Gibt das Formular samt aller enthaltenen Formularfelder
     * und anderer Komponenten aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Das Formular als String (HTML)
     **/
     function outputStr() {
         $str="\n<form action=\"".$this->m_strDest."\"";
         if ($this->m_strMethod!="") $str.=" method=\"".$this->m_strMethod."\"";
         if ($this->m_strEnctype!="") $str.=" enctype=\"".$this->m_strEnctype."\"";
-        //geändert am 5.11.2001 (R.Kropp): zusätzliche Param. für Form-Tag
+        //geÃ¤ndert am 5.11.2001 (R.Kropp): zusÃ¤tzliche Param. fÃ¼r Form-Tag
         foreach ($this->m_strParams as $key => $value)
             if ($value!="") $str.=" $key=\"$value\""; else $str.=$key;
         $str.=">";
@@ -583,8 +583,8 @@ class PForm extends PContainer {
 } //class PForm
 
 /**
-* PLink ist die Wrapper-Klasse für Hyperlinks. Da PLink von PContainer abgeleitet ist,
-* können alle klickbaren Komponenten über die Methode add() eingefügt werden.
+* PLink ist die Wrapper-Klasse fÃ¼r Hyperlinks. Da PLink von PContainer abgeleitet ist,
+* kÃ¶nnen alle klickbaren Komponenten Ã¼ber die Methode add() eingefÃ¼gt werden.
 **/
 class PLink extends PContainer
 {
@@ -644,7 +644,7 @@ class PLink extends PContainer
 
 
     /**
-    * Diese Methode setzt die target- und class-Parameter des zugehörigen A-Tags
+    * Diese Methode setzt die target- und class-Parameter des zugehÃ¶rigen A-Tags
     * <b>Parameter:</b>
     * $target - target-Parameter des <a>-Tags
     * $class - class-Parameter des <a>-Tags
@@ -665,8 +665,8 @@ class PLink extends PContainer
 } //class PLink
 
 /**
-* PInput ist die Wrapper-Klasse für alle <input>-Tags. Da PInput von PComponent abgeleitet ist,
-* kann es in jede beliebige von PContainer abgeleitete Klasse eingefügt werden.
+* PInput ist die Wrapper-Klasse fÃ¼r alle <input>-Tags. Da PInput von PComponent abgeleitet ist,
+* kann es in jede beliebige von PContainer abgeleitete Klasse eingefÃ¼gt werden.
 **/
 class PInput extends PComponent
 {
@@ -696,10 +696,10 @@ class PInput extends PComponent
     }
 
     /**
-    * Überladene Methode von PComponent. Gibt das Eigabefeld aus.
+    * Ãœberladene Methode von PComponent. Gibt das Eigabefeld aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Das Eingabefeld als String (HTML)
     **/
     function outputStr()
@@ -709,18 +709,18 @@ class PInput extends PComponent
 } //class PInput
 
 /**
-* Die Klasse PSelect ist die Wrapper-Klasse für <select>-Tags (Auswahlfelder). Sie verwaltet alle
+* Die Klasse PSelect ist die Wrapper-Klasse fÃ¼r <select>-Tags (Auswahlfelder). Sie verwaltet alle
 * Optionen und die Vorauswahl von Optionen. Es werden implizit auch Auswahlfelder mit mehr als
-* einer Auswahl unterstützt.
+* einer Auswahl unterstÃ¼tzt.
 **/
 class PSelect extends PComponent {
 
     /**
-    * assoziatives Array der Einträge
+    * assoziatives Array der EintrÃ¤ge
     **/
     var $m_aEntries;
     /**
-    * Die ausgewählte Option bzw. auch Optionen (Array).
+    * Die ausgewÃ¤hlte Option bzw. auch Optionen (Array).
     **/
     var $m_oSelVal;
 
@@ -731,12 +731,12 @@ class PSelect extends PComponent {
     * Konstruktor der PSelect-Klasse
     * <b>Parameter</b>
     * $name - Name des Auswahlfeldes
-    * $params - weitere Parameter des <select>-Tags. Z.B. multiple für Mehrfachauswahlen
-    * $selval - Vorauswahl des Auswahlfeldes, auch Arrays für Mehrfachauswahlen
-    * Konstante -	PSELECT_DUPLICATE_VALUES	- Standard, Werte dürfen doppelt vorkommen, angezeigter Text nicht (bisheriges Verhalten)
-    *					PSELECT_DUPLICATE_NAMES	- Beschreibungstexte dürfen doppelt vorkommen, Werte jedoch nicht
-    *					PSELECT_DUPLICATE_BOTH		- Werte und Bezeichner dürfen beliebig oft auftreten
-    *					PSELECT_NO_DUPLICATES		- weder Werte noch angezeigter Text dürfen mehrfach auftreten (zu letzt hinzugefügte Option überschreibt vorhergehende)
+    * $params - weitere Parameter des <select>-Tags. Z.B. multiple fÃ¼r Mehrfachauswahlen
+    * $selval - Vorauswahl des Auswahlfeldes, auch Arrays fÃ¼r Mehrfachauswahlen
+    * Konstante -	PSELECT_DUPLICATE_VALUES	- Standard, Werte dÃ¼rfen doppelt vorkommen, angezeigter Text nicht (bisheriges Verhalten)
+    *					PSELECT_DUPLICATE_NAMES	- Beschreibungstexte dÃ¼rfen doppelt vorkommen, Werte jedoch nicht
+    *					PSELECT_DUPLICATE_BOTH		- Werte und Bezeichner dÃ¼rfen beliebig oft auftreten
+    *					PSELECT_NO_DUPLICATES		- weder Werte noch angezeigter Text dÃ¼rfen mehrfach auftreten (zu letzt hinzugefÃ¼gte Option Ã¼berschreibt vorhergehende)
     **/
     function PSelect($name, $params = null, $selval = null, $behavior = PSELECT_DUPLICATE_VALUES) {
         $this->PComponent();
@@ -752,10 +752,10 @@ class PSelect extends PComponent {
 
 
     /**
-    * Diese Methode dient zum Überschreiben des Namens bzw. des vorgewählten Eintrags des Auswahlfeldes
+    * Diese Methode dient zum Ãœberschreiben des Namens bzw. des vorgewÃ¤hlten Eintrags des Auswahlfeldes
     * <b>Parameter</b>
     * $name - Name des Auswahlfeldes
-    * $selval - Vorauswahl des Auswahlfeldes, auch Arrays für Mehrfachauswahlen
+    * $selval - Vorauswahl des Auswahlfeldes, auch Arrays fÃ¼r Mehrfachauswahlen
     **/
     function reset($name='', $selval = NULL) {
         if ( !empty($name) && is_string($name) ) $this->m_oTag->setParam('name', $name);                 // reset name of this select field
@@ -766,7 +766,7 @@ class PSelect extends PComponent {
     // reset
 
     /**
-    * Diese Methode fügt dem Auswahlfeld einen Option-Eintrag hinzu.
+    * Diese Methode fÃ¼gt dem Auswahlfeld einen Option-Eintrag hinzu.
     * <b>Parameter</b>
     * $name - Titel des Option-Eintrags
     * $value - Wert des Option-Eintrags
@@ -797,10 +797,10 @@ class PSelect extends PComponent {
     }
 
     /**
-    * Überladene Methode von PComponent. Gibt das Auswahlfeld samt aller Option-Einträge aus.
+    * Ãœberladene Methode von PComponent. Gibt das Auswahlfeld samt aller Option-EintrÃ¤ge aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Das Auswahlfeld als String (HTML)
     **/
     function outputStr() {
@@ -844,7 +844,7 @@ class PSelect extends PComponent {
 
 
 /**
-* Die Klasse PTextArea ist die Wrapper-Klasse für Text-Area (mehrzeilige) Textfelder.
+* Die Klasse PTextArea ist die Wrapper-Klasse fÃ¼r Text-Area (mehrzeilige) Textfelder.
 **/
 class PTextArea extends PComponent
 {
@@ -871,10 +871,10 @@ class PTextArea extends PComponent
     }
 
     /**
-    * Überladene Methode von PComponent. Gibt das Textfeld samt Inhalt aus.
+    * Ãœberladene Methode von PComponent. Gibt das Textfeld samt Inhalt aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Das Textfeld als String (HTML)
     **/
     function outputStr()
@@ -886,7 +886,7 @@ class PTextArea extends PComponent
 } //class PTextArea
 
 /**
-* PTableLayout kapselt das Design von PTable-Objekten. Damit ist es möglich ein vorhandenes
+* PTableLayout kapselt das Design von PTable-Objekten. Damit ist es mÃ¶glich ein vorhandenes
 * Design in mehreren Tabellen zu benutzen.
 **/
 class PTableLayout extends PObject
@@ -905,20 +905,20 @@ class PTableLayout extends PObject
     var $m_oTitleCell;
     /**
     * Das Array der Zeilen (<tr>-Tags) als PTag. Wenn weniger Zeilen vorhanden sind,
-    * als später in der Tabelle so wird periodisch ergänzt (wieder bei 0 angefangen).
+    * als spÃ¤ter in der Tabelle so wird periodisch ergÃ¤nzt (wieder bei 0 angefangen).
     **/
     var $m_aRows;
     /**
     * Das Array der Spalten (<td>-Tags) als PTag. Wenn weniger Spalten vorhanden sind,
-    * als später in der Tabelle so wird periodisch ergänzt (wieder bei 0 angefangen).
+    * als spÃ¤ter in der Tabelle so wird periodisch ergÃ¤nzt (wieder bei 0 angefangen).
     **/
     var $m_aCells;
     /**
-    * Das <tr>-Tag der Fußzeile als PTag
+    * Das <tr>-Tag der FuÃŸzeile als PTag
     **/
     var $m_oFooter;
     /**
-    * Die Zellen der Fußzeile als PTag
+    * Die Zellen der FuÃŸzeile als PTag
     **/
     var $m_oFooterCell;
     /**
@@ -926,20 +926,20 @@ class PTableLayout extends PObject
     **/
     var $m_oTitleCellContent;
     /**
-    * Standard-Inhalte der Zellen außerhalb der Titelzellen und Fußzellen
+    * Standard-Inhalte der Zellen auÃŸerhalb der Titelzellen und FuÃŸzellen
     **/
     var $m_oCellContent;
     /**
-    * Standard-Inhalte der Zellen der Fußzellen
+    * Standard-Inhalte der Zellen der FuÃŸzellen
     **/
     var $m_oFooterCellContent;
     /**
-    * Spezielle Parameter der <td>-Tags außerhalb der Titelzeile und Fußzeile. Index im
+    * Spezielle Parameter der <td>-Tags auÃŸerhalb der Titelzeile und FuÃŸzeile. Index im
     * Array gibt die Spalte an.
     **/
     var $m_aSpecial;
     /**
-    * Spezieller Inhalt der <td>-Tags außerhalb der Titelzeile und Fußzeile. Index im
+    * Spezieller Inhalt der <td>-Tags auÃŸerhalb der Titelzeile und FuÃŸzeile. Index im
     * Array gibt die Spalte an.
     **/
     var $m_aSpecialContent;
@@ -954,12 +954,12 @@ class PTableLayout extends PObject
     **/
     var $m_aTitleSpecialContent;
     /**
-    * Spezielle Parameter der <td>-Tags in der Fußzeile. Index im
+    * Spezielle Parameter der <td>-Tags in der FuÃŸzeile. Index im
     * Array gibt die Spalte an.
     **/
     var $m_aFooterSpecial;
     /**
-    * Spezieller Inhalt <td>-Tags in der Fußzeile. Index im
+    * Spezieller Inhalt <td>-Tags in der FuÃŸzeile. Index im
     * Array gibt die Spalte an.
     **/
     var $m_aFooterSpecialContent;
@@ -1006,8 +1006,8 @@ class PTableLayout extends PObject
 
 
     /**
-    * Mit dieser Methode kann eine Standardschrift für die Titelzeile gesetzt werden.
-    * Es können dabei die Parameter des <font>-Tags gesetzt werden.
+    * Mit dieser Methode kann eine Standardschrift fÃ¼r die Titelzeile gesetzt werden.
+    * Es kÃ¶nnen dabei die Parameter des <font>-Tags gesetzt werden.
     * <b>Parameter:</b>
     * $params - Array der Parameter des <font>-Tags ( z.B. array("size"=>"3", "color"=>"#FFFFFF") )
     **/
@@ -1017,8 +1017,8 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode kann eine Standardschrift für die Tabellenzellen gesetzt werden.
-    * Es können dabei die Parameter des <font>-Tags gesetzt werden.
+    * Mit dieser Methode kann eine Standardschrift fÃ¼r die Tabellenzellen gesetzt werden.
+    * Es kÃ¶nnen dabei die Parameter des <font>-Tags gesetzt werden.
     * <b>Parameter:</b>
     * $params - Array der Parameter des <font>-Tags ( z.B. array("size"=>"3", "color"=>"#FFFFFF") )
     **/
@@ -1028,12 +1028,12 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode können die Standardeigenschaften für bestimmte Spalten überschrieben werden.
-    * Es können dabei die Parameter des <td>-Tags der jeweiligen Spalte verändert werden.
+    * Mit dieser Methode kÃ¶nnen die Standardeigenschaften fÃ¼r bestimmte Spalten Ã¼berschrieben werden.
+    * Es kÃ¶nnen dabei die Parameter des <td>-Tags der jeweiligen Spalte verÃ¤ndert werden.
     * <b>Parameter:</b>
-    * $colindex - Index der zu veränderten Spalte
-    * $name - Name des Parameters der eingefügt werden soll, z.B. bgcolor
-    * $value - Wert des Parameters der eingefügt werden soll.
+    * $colindex - Index der zu verÃ¤nderten Spalte
+    * $name - Name des Parameters der eingefÃ¼gt werden soll, z.B. bgcolor
+    * $value - Wert des Parameters der eingefÃ¼gt werden soll.
     **/
     function setSpecial($colindex,$name,$value)
     {
@@ -1042,11 +1042,11 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode können die Standardeigenschaften für bestimmte Spalten überschrieben werden.
-    * Hierbei wird in die entsprechende Spalte besonderer Inhalt eingefügt.
+    * Mit dieser Methode kÃ¶nnen die Standardeigenschaften fÃ¼r bestimmte Spalten Ã¼berschrieben werden.
+    * Hierbei wird in die entsprechende Spalte besonderer Inhalt eingefÃ¼gt.
     * <b>Parameter:</b>
-    * $colindex - Index der zu veränderten Spalte
-    * $comp - Komponente die eingefügt werden soll.
+    * $colindex - Index der zu verÃ¤nderten Spalte
+    * $comp - Komponente die eingefÃ¼gt werden soll.
     **/
     function setSpecialContent($colindex, $comp)
     {
@@ -1058,13 +1058,13 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode könne die Standardeigenschaften für bestimmte Spalten in der Titelzeile
-    * überschrieben werden.
-    * Es können dabei die Parameter des <td>-Tags der jeweiligen Spalte verändert werden.
+    * Mit dieser Methode kÃ¶nne die Standardeigenschaften fÃ¼r bestimmte Spalten in der Titelzeile
+    * Ã¼berschrieben werden.
+    * Es kÃ¶nnen dabei die Parameter des <td>-Tags der jeweiligen Spalte verÃ¤ndert werden.
     * <b>Parameter:</b>
-    * $colindex - Index der zu veränderten Spalte
-    * $name - Name des Parameters der eingefügt werden soll, z.B. bgcolor
-    * $value - Wert des Parameters der eingefügt werden soll.
+    * $colindex - Index der zu verÃ¤nderten Spalte
+    * $name - Name des Parameters der eingefÃ¼gt werden soll, z.B. bgcolor
+    * $value - Wert des Parameters der eingefÃ¼gt werden soll.
     **/
     function setTitleSpecial($colindex,$name,$value)
     {
@@ -1073,12 +1073,12 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode könne die Standardeigenschaften für bestimmte Spalten der Titelzeile
-    * überschrieben werden.
-    * Hierbei wird in die entsprechende Spalte besonderer Inhalt eingefügt.
+    * Mit dieser Methode kÃ¶nne die Standardeigenschaften fÃ¼r bestimmte Spalten der Titelzeile
+    * Ã¼berschrieben werden.
+    * Hierbei wird in die entsprechende Spalte besonderer Inhalt eingefÃ¼gt.
     * <b>Parameter:</b>
-    * $colindex - Index der zu veränderten Spalte
-    * $comp - Komponente die eingefügt werden soll.
+    * $colindex - Index der zu verÃ¤nderten Spalte
+    * $comp - Komponente die eingefÃ¼gt werden soll.
     **/
     function setTitleSpecialContent($colindex, $comp)
     {
@@ -1090,13 +1090,13 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode könne die Standardeigenschaften für bestimmte Spalten in der Fußzeile
-    * überschrieben werden.
-    * Es können dabei die Parameter des <td>-Tags der jeweiligen Spalte verändert werden.
+    * Mit dieser Methode kÃ¶nne die Standardeigenschaften fÃ¼r bestimmte Spalten in der FuÃŸzeile
+    * Ã¼berschrieben werden.
+    * Es kÃ¶nnen dabei die Parameter des <td>-Tags der jeweiligen Spalte verÃ¤ndert werden.
     * <b>Parameter:</b>
-    * $colindex - Index der zu veränderten Spalte
-    * $name - Name des Parameters der eingefügt werden soll, z.B. bgcolor
-    * $value - Wert des Parameters der eingefügt werden soll.
+    * $colindex - Index der zu verÃ¤nderten Spalte
+    * $name - Name des Parameters der eingefÃ¼gt werden soll, z.B. bgcolor
+    * $value - Wert des Parameters der eingefÃ¼gt werden soll.
     **/
     function setFooterSpecial($colindex,$name,$value)
     {
@@ -1105,12 +1105,12 @@ class PTableLayout extends PObject
     }
 
     /**
-    * Mit dieser Methode könne die Standardeigenschaften für bestimmte Spalten der Fußzeile
-    * überschrieben werden.
-    * Hierbei wird in die entsprechende Spalte besonderer Inhalt eingefügt.
+    * Mit dieser Methode kÃ¶nne die Standardeigenschaften fÃ¼r bestimmte Spalten der FuÃŸzeile
+    * Ã¼berschrieben werden.
+    * Hierbei wird in die entsprechende Spalte besonderer Inhalt eingefÃ¼gt.
     * <b>Parameter:</b>
-    * $colindex - Index der zu veränderten Spalte
-    * $comp - Komponente die eingefügt werden soll.
+    * $colindex - Index der zu verÃ¤nderten Spalte
+    * $comp - Komponente die eingefÃ¼gt werden soll.
     **/
     function setFooterSpecialContent($colindex, $comp)
     {
@@ -1123,8 +1123,8 @@ class PTableLayout extends PObject
 } //class PTableLayout
 
 /**
-* Die Klasse PTable ist die Wrapper-Klasse für HTML-Tabellen. Die Klasse ist durch die Verwendung
-* von separaten PTableLayout-Objekten designunabhängig. Des weiteren wird der gesamte Inhalt der Tabelle
+* Die Klasse PTable ist die Wrapper-Klasse fÃ¼r HTML-Tabellen. Die Klasse ist durch die Verwendung
+* von separaten PTableLayout-Objekten designunabhÃ¤ngig. Des weiteren wird der gesamte Inhalt der Tabelle
 * von dieser Klasse verwaltet.
 **/
 class PTable extends PComponent
@@ -1151,8 +1151,8 @@ class PTable extends PComponent
     }
 
     /**
-    * addRow fügt eine Zeile der Tabelle hinzu. Sollten weniger Zellen in der Zeile sein,
-    * als in der bisher "größten" Zeile, dann wird die letzte Zeile automatisch vergrößert.
+    * addRow fÃ¼gt eine Zeile der Tabelle hinzu. Sollten weniger Zellen in der Zeile sein,
+    * als in der bisher "grÃ¶ÃŸten" Zeile, dann wird die letzte Zeile automatisch vergrÃ¶ÃŸert.
     * <b>Parameter:</b>
     * $row - Array der jeweiligen Zellen der Zeile, sollten von PComponent abgeleitet sein.
     **/
@@ -1170,11 +1170,11 @@ class PTable extends PComponent
     }
 
     /**
-    * Überprüft, ob es sich bei dem gegebenen Objekt um ein PTableLayout handelt.
+    * ÃœberprÃ¼ft, ob es sich bei dem gegebenen Objekt um ein PTableLayout handelt.
     * <b>Parameter:</b>
     * $obj - Das zu inspizierende Objekt
-    * <b>Rückgabe:</b>
-    * true oder false je nach Ergebnis der Überprüfung.
+    * <b>RÃ¼ckgabe:</b>
+    * true oder false je nach Ergebnis der ÃœberprÃ¼fung.
     **/
     function isPTableLayout($obj) {
         if ($this->isPObject($obj) && is_array($obj->m_aRows)) return (true);
@@ -1183,10 +1183,10 @@ class PTable extends PComponent
 
 
     /**
-    * Überladene Methode von PComponent. Gibt die Tabelle samt Inhalt aus.
+    * Ãœberladene Methode von PComponent. Gibt die Tabelle samt Inhalt aus.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Die Tabelle als String (HTML)
     **/
     function outputStr() {
@@ -1212,7 +1212,7 @@ class PTable extends PComponent
                     if ( isset($this->m_oLayout->m_aTitleSpecial[$j]) && is_array($this->m_oLayout->m_aTitleSpecial[$j]) )
                         $tag->addParam($this->m_oLayout->m_aTitleSpecial[$j]);
                     $cont->add($tag);
-                    // Standardschrift für Titelzeile setzen
+                    // Standardschrift fÃ¼r Titelzeile setzen
                     if ( count($this->m_oLayout->m_oStandardTitleFont)>0 ) $cont->add( new PTag('font', $this->m_oLayout->m_oStandardTitleFont) );
                 } else {
                     if ( $this->isPComponent($this->m_oLayout->m_aSpecialContent[$j]) ) $col = clone $this->m_oLayout->m_aSpecialContent[$j];
