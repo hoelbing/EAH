@@ -6,15 +6,15 @@
 * @copyright 2006 i-fabrik gmbh
 * @version $Id: main.js,v 1.29 2007/02/21 14:14:10 heiko Exp $
 *
-* Im Rahmen der Veranstaltung SofwareqaulitÃ¤t im SS 2015 des Studigang Wirstschaftsingenieurwesen
-* mit Fachrichtung Informationstechnik soll das Postuch ,das ursprÃ¼nglich von Erik Reuter von der 
-* UniversitÃ¤t Leipzig entwickelt wurde, auf die BedÃ¼rfnisse der EAH Jena angepasst werden.
+* Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+* mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der 
+* Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
 * 
-* Im Rahmen der Vorlesung wird sich Gedanken Ã¼ber einen Anforderungskatalog gemacht, der im Laufe der 
+* Im Rahmen der Vorlesung wird sich Gedanken über einen Anforderungskatalog gemacht, der im Laufe der 
 * Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
 * zusammengefasst und verwaltet. 
 * 
-* @author: Tobias MÃ¶ller, BjÃ¶rn Hoffmann, Maik Tanneberg
+* @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
 */
 
     /* fixMsIELeaks

@@ -7,19 +7,19 @@
  * @copyright 2007 i-fabrik GmbH
  * @version $Id: index.php,v 1.41 2007/02/12 13:14:16 heiko Exp $
  * 
- * Im Rahmen der Veranstaltung SoftwarequalitÃ¤t im SS 2015 des Studigang Wirstschaftsingenieurwesen
- * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprÃ¼nglich von Erik Reuter von der 
- * UniversitÃ¤t Leipzig entwickelt wurde, auf die BedÃ¼rfnisse der EAH Jena angepasst werden.
+ * Im Rahmen der Veranstaltung Softwarequalität im SS 2015 des Studigang Wirstschaftsingenieurwesen
+ * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der 
+ * Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
  * 
- * Im Rahmen der Vorlesung wird sich Gedanken Ã¼ber einen Anforderungskatalog gemacht, der im Laufe der 
+ * Im Rahmen der Vorlesung wird sich Gedanken über einen Anforderungskatalog gemacht, der im Laufe der 
  * Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
  * zusammengefasst und verwaltet. 
  * 
- * @author: Tobias MÃ¶ller, BjÃ¶rn Hoffmann, Maik Tanneberg
+ * @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
  */
 
 /**
- * include_once bindet eine angegebene Datei ein und fÃ¼hrt sie als PHP-Skript aus. Dieses Verhalten 
+ * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten 
  * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
  * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden. 
  * 
@@ -30,18 +30,18 @@
 
 /**
  * session_start() erzeugt eine Session oder nimmt die aktuelle wieder auf, die auf der Session-Kennung
- * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie Ã¼bermittelt wurde.
+ * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie übermittelt wurde.
  */
 	session_start();
 	
 /** session_id() wird verwendet, um die Session-ID der aktuellen Session zu erhalten oder zu setzen.
-* Hier wird der Variable: $sessionid der RÃ¼ckgabewert der Funktion session_id(); zugewiesen
+* Hier wird der Variable: $sessionid der Rückgabewert der Funktion session_id(); zugewiesen
 */	
 	$sessionid=session_id();
 
 /**
  * 
- * Ein assoziatives Array, das die Sessionvariablen enthÃ¤lt und dem aktuellen Skript zur VerfÃ¼gung stellt. 
+ * Ein assoziatives Array, das die Sessionvariablen enthält und dem aktuellen Skript zur Verfügung stellt. 
  * @param: $_SESSION 
  * 
  * Anlegen der Variablen $_SESSION["nutzer_id"], $_SESSION["postbuch_modus"], $_SESSION["filterdaten"]; werden 
@@ -50,9 +50,9 @@
 	$_SESSION["postbuch_modus"];
 	$_SESSION["filterdaten"];
 	
-/* session_register() akzeptiert eine variable Anzahl von Argumenten, die jeweils entweder eine Zeichenkette sein kÃ¶nnen, 
- * die den Namen einer Variablen trÃ¤gt, oder ein Array, das aus solchen Variablennamen oder anderen Arrays besteht. 
- * FÃ¼r jeden Namen registriert session_register() die globale Variable mit diesem Namen in der aktuellen Session. 
+/* session_register() akzeptiert eine variable Anzahl von Argumenten, die jeweils entweder eine Zeichenkette sein können, 
+ * die den Namen einer Variablen trägt, oder ein Array, das aus solchen Variablennamen oder anderen Arrays besteht. 
+ * Für jeden Namen registriert session_register() die globale Variable mit diesem Namen in der aktuellen Session. 
  * ->> PHP 5.4 nicht mehr unterstuetzt
  * 
  * session_register('nutzer_id');
@@ -61,8 +61,8 @@
  */
 	
 /**
- * array_merge - FÃ¼gt die Elemente von zwei oder mehr Arrays zusammen, indem die Werte des einenan das Ende 
- * des vorherigen angehÃ¤ngt werden. Das daraus resultierende Array wird zurÃ¼ckgegeben. 
+ * array_merge - Fügt die Elemente von zwei oder mehr Arrays zusammen, indem die Werte des einenan das Ende 
+ * des vorherigen angehängt werden. Das daraus resultierende Array wird zurückgegeben. 
  * 
  * @param: $_FORMVARS 
  * 
