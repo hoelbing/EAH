@@ -68,7 +68,7 @@
  * 
  * @param: $_FORMVARS 
  * 
- * In der Variable $_FORMVARS werden die Variablen $_SERVER,$_COOKIE,$_GET,$_FILES,$_POST und $_SESSION zusammengef�hrt
+ * In der Variable $_FORMVARS werden die Variablen $_SERVER,$_COOKIE,$_GET,$_FILES,$_POST und $_SESSION zusammengefï¿½hrt
  */		
 	$_FORMVARS=array_merge($_SERVER,$_COOKIE,$_GET,$_FILES,$_POST,$_SESSION);
 	$_FORMVARS=trim_array($_FORMVARS);

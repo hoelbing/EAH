@@ -38,7 +38,7 @@
   include_once('inc/projekt.inc.php');
 
 /**
- * sql_connect(): Öffnet eine Verbindung zu einem MySQL-Server
+ * sql_connect(): Ã–ffnet eine Verbindung zu einem MySQL-Server
  * Hierbei gilt es zu beachten, das in den Dateien common.mysql.php und common.mysqli.php Funktionen 
  * geschrieben wurden, die es ermöglichen die mysql/ mysqli Befehle wie nachfolgend aufzurufen. 
  * @param: Serveradresse

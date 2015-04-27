@@ -1,8 +1,8 @@
 
 /* The main calendar widget.  DIV containing a table. ---------------------------------------------- */
-div.calendar ¦<¦ position: relative; ¦>¦
+div.calendar Â¦<Â¦ position: relative; Â¦>Â¦
 
-.calendar table ¦<¦
+.calendar table Â¦<Â¦
     width       : 227px;
     border      : 1px solid #fff;
     /*font-family : verdana;*/
@@ -10,166 +10,166 @@ div.calendar ¦<¦ position: relative; ¦>¦
     color       : #666;
     cursor      : default;
     background  : #fcfcfc;
-¦>¦
+Â¦>Â¦
 
-.calendar table td ¦<¦
+.calendar table td Â¦<Â¦
     border-top: 1px solid #fff;
     border-left: 1px solid #fff;
-¦>¦
+Â¦>Â¦
 
 /* Header part -- contains navigation buttons and day names. --------------------------------------- */
-.calendar .button ¦<¦ /* "¦<¦", "<", ">", "¦>¦" buttons have this class */
+.calendar .button Â¦<Â¦ /* "Â¦<Â¦", "<", ">", "Â¦>Â¦" buttons have this class */
     text-align  : center;   /* They are the navigation buttons */
     padding     : 1px;      /* Make the buttons seem like they're pressing */
     font-size   : 10px;
     font-weight : normal !important;
     color       : #5d5d5d;
     background  : #f0f0f0;
-¦>¦
+Â¦>Â¦
 
-.calendar .nav ¦<¦
+.calendar .nav Â¦<Â¦
     font-size   : 10px;
     font-weight : normal !important;
     background  : #f0f0f0 url(menuarrow.gif) no-repeat 100% 100%;
-¦>¦
+Â¦>Â¦
 
-.calendar thead .title ¦<¦    /* This holds the current "month, year" */
+.calendar thead .title Â¦<Â¦    /* This holds the current "month, year" */
     text-align  : center;
     padding     : 1px;
     font-size   : 10px;
     font-weight : normal !important;   /* Pressing it will take you to the current date */
     color       : #5d5d5d;
     background  : #f0f0f0;
-¦>¦
-.calendar thead .headrow ¦<¦ /* Row <TR> containing navigation buttons */
+Â¦>Â¦
+.calendar thead .headrow Â¦<Â¦ /* Row <TR> containing navigation buttons */
     background  : #f0f0f0;
     color       : #5d5d5d;
     font-size   : 10px;
     font-weight : normal !important;
-¦>¦
-.calendar thead .daynames ¦<¦ /* Row <TR> containing the day names */
+Â¦>Â¦
+.calendar thead .daynames Â¦<Â¦ /* Row <TR> containing the day names */
     font-size   : 10px;
     font-weight : normal !important;
     background  : #fcfcfc;
-¦>¦
-.calendar thead .name ¦<¦ /* Cells <TD> containing the day names */
+Â¦>Â¦
+.calendar thead .name Â¦<Â¦ /* Cells <TD> containing the day names */
     padding     : 1px;
     text-align  : center;
     color       : #666;
     font-size   : 10px;
     font-weight : normal !important;
     background-color: #f0f0f0;
-¦>¦
-.calendar thead .weekend ¦<¦ /* How a weekend day name shows in header */
+Â¦>Â¦
+.calendar thead .weekend Â¦<Â¦ /* How a weekend day name shows in header */
     color           : #5d5d5d;
     font-size       : 10px;
     font-weight     : normal !important;
     background-color: #f0f0f0;
-¦>¦
-.calendar thead .hilite ¦<¦ /* How do the buttons in header appear when hover */
+Â¦>Â¦
+.calendar thead .hilite Â¦<Â¦ /* How do the buttons in header appear when hover */
     /*border          : 1px solid #fff;*/
     padding         : 1px;
     color           : #fff;
     font-size       : 10px;
     font-weight     : normal !important;
     background-color: #{farbe};
-¦>¦
-.calendar thead .active ¦<¦ /* Active (pressed) buttons in header */
+Â¦>Â¦
+.calendar thead .active Â¦<Â¦ /* Active (pressed) buttons in header */
     padding         : 1px 0px 0px 1px;
     color           : #{farbe};
     /*background-color: #{farbe};*/
-¦>¦
+Â¦>Â¦
 
 /* The body part -- contains all the days in month. ------------------------------------------------ */
-.calendar tbody .day ¦<¦ /* Cells <TD> containing month days dates */
+.calendar tbody .day Â¦<Â¦ /* Cells <TD> containing month days dates */
     width           : 2em;
     color           : #666;
     text-align      : right;
     padding         : 1px 2px 1px 1px;
     background-color: #fcfcfc;
-¦>¦
-.calendar tbody .day.othermonth ¦<¦
+Â¦>Â¦
+.calendar tbody .day.othermonth Â¦<Â¦
     font-size       : 80%;
     color           : #666;
     background-color: #fcfcfc;
-¦>¦
-.calendar tbody .day.othermonth.oweekend ¦<¦ color: #fff; ¦>¦
+Â¦>Â¦
+.calendar tbody .day.othermonth.oweekend Â¦<Â¦ color: #fff; Â¦>Â¦
 
-.calendar table .wn ¦<¦
+.calendar table .wn Â¦<Â¦
     /*padding         : 2px 3px 2px 2px;*/
     /*border-right    : 1px solid #666;*/
     background-color: #f7f7f7;
     font-weight: normal;
-¦>¦
-.calendar tbody .rowhilite td ¦<¦
+Â¦>Â¦
+.calendar tbody .rowhilite td Â¦<Â¦
     background: #f7f7f7;
-¦>¦
-.calendar tbody .rowhilite td.wn ¦<¦ background: #fcfcfc; ¦>¦
-.calendar tbody td.hilite ¦<¦ /* Hovered cells <TD> */
+Â¦>Â¦
+.calendar tbody .rowhilite td.wn Â¦<Â¦ background: #fcfcfc; Â¦>Â¦
+.calendar tbody td.hilite Â¦<Â¦ /* Hovered cells <TD> */
     background-color: #{farbe} !important;
     color           : #fff;
-¦>¦
-.calendar tbody td.active ¦<¦ /* Active (pressed) cells <TD> */
+Â¦>Â¦
+.calendar tbody td.active Â¦<Â¦ /* Active (pressed) cells <TD> */
     background-color: #{farbe} !important;
     color           : #fff;
-¦>¦
-.calendar tbody td.selected ¦<¦ /* Cell showing today date */
+Â¦>Â¦
+.calendar tbody td.selected Â¦<Â¦ /* Cell showing today date */
     color           : #fff;
     font-size       : 10px;
     font-weight     : normal !important;
     background-color: #{farbe} !important;
-¦>¦
-.calendar tbody td.weekend ¦<¦ /* Cells showing weekend days */
+Â¦>Â¦
+.calendar tbody td.weekend Â¦<Â¦ /* Cells showing weekend days */
     background-color: #fcfcfc;
-¦>¦
-.calendar tbody td.today ¦<¦ /* Cell showing selected date */
+Â¦>Â¦
+.calendar tbody td.today Â¦<Â¦ /* Cell showing selected date */
     font-weight : normal !important;
     background  : #f0f0f0;
     color       : #5d5d5d;
-¦>¦
-.calendar tbody .disabled ¦<¦
+Â¦>Â¦
+.calendar tbody .disabled Â¦<Â¦
     background-color: #{farbe};
     color           : #999;
-¦>¦
-.calendar tbody .emptycell ¦<¦ /* Empty cells (the best is to hide them) */
+Â¦>Â¦
+.calendar tbody .emptycell Â¦<Â¦ /* Empty cells (the best is to hide them) */
     background-color: #f7f7f7;
     color           : #999;
     /*visibility: hidden;*/
-¦>¦
-.calendar tbody .emptyrow ¦<¦ /* Empty row (some months need less than 6 rows) */
+Â¦>Â¦
+.calendar tbody .emptyrow Â¦<Â¦ /* Empty row (some months need less than 6 rows) */
     display: none;
-¦>¦
+Â¦>Â¦
 
 
 /* The footer part -- status bar and "Close" button ------------------------------------------------ */
-.calendar tfoot .footrow ¦<¦ /* The <TR> in footer (only one right now) */
+.calendar tfoot .footrow Â¦<Â¦ /* The <TR> in footer (only one right now) */
     text-align  : center;
     font-weight : normal !important;
     background  : #666;
     color       : #fff;
-¦>¦
-.calendar tfoot .ttip ¦<¦ /* Tooltip (status bar) cell <TD> */
+Â¦>Â¦
+.calendar tfoot .ttip Â¦<Â¦ /* Tooltip (status bar) cell <TD> */
     background-color: #f0f0f0;
     font-weight     : normal !important;
     color           : #5d5d5d;
     /*border-top      : 1px solid #666;*/
     padding         : 1px;
-¦>¦
-.calendar tfoot .hilite ¦<¦ /* Hover style for buttons in footer */
+Â¦>Â¦
+.calendar tfoot .hilite Â¦<Â¦ /* Hover style for buttons in footer */
     background-color: #{farbe};
     /*border          : 1px solid #04f;*/
     color           : #fff;
     padding         : 1px;
-¦>¦
-.calendar tfoot .active ¦<¦ /* Active (pressed) style for buttons in footer */
+Â¦>Â¦
+.calendar tfoot .active Â¦<Â¦ /* Active (pressed) style for buttons in footer */
     background-color: #{farbe};
     color           : #fff;
     padding         : 1px 0px 0px 1px;
-¦>¦
+Â¦>Â¦
 
 
 /* Combo boxes (menus that display months/years for direct selection) ------------------------------ */
-.calendar .combo ¦<¦
+.calendar .combo Â¦<Â¦
     position    : absolute;
     display     : none;
     top         : 0px;
@@ -182,45 +182,45 @@ div.calendar ¦<¦ position: relative; ¦>¦
     color       : #666;
     font-size   : 10px;
     z-index     : 100;
-¦>¦
-.calendar .combo .label, .calendar .combo .label-IEfix ¦<¦
+Â¦>Â¦
+.calendar .combo .label, .calendar .combo .label-IEfix Â¦<Â¦
     text-align  : center;
     padding     : 1px;
-¦>¦
-.calendar .combo .label-IEfix ¦<¦ width: 4em; ¦>¦
-.calendar .combo .hilite ¦<¦ background: #fff; ¦>¦
-.calendar .combo .active ¦<¦
+Â¦>Â¦
+.calendar .combo .label-IEfix Â¦<Â¦ width: 4em; Â¦>Â¦
+.calendar .combo .hilite Â¦<Â¦ background: #fff; Â¦>Â¦
+.calendar .combo .active Â¦<Â¦
     border-top      : 1px solid #46a;
     border-bottom   : 1px solid #46a;
     background      : #{farbe};
     font-weight     : normal;
-¦>¦
+Â¦>Â¦
 
-.calendar td.time ¦<¦
+.calendar td.time Â¦<Â¦
     border-top      : 1px solid #000;
     padding         : 1px 0px;
     text-align      : center;
     background-color: #f4f0e8;
-¦>¦
-.calendar td.time .hour, .calendar td.time .minute, .calendar td.time .ampm ¦<¦
+Â¦>Â¦
+.calendar td.time .hour, .calendar td.time .minute, .calendar td.time .ampm Â¦<Â¦
     padding         : 0px 3px 0px 4px;
     border          : 1px solid #889;
     font-weight     : normal;
     background-color: #fff;
-¦>¦
-.calendar td.time .ampm ¦<¦ text-align: center; ¦>¦
-.calendar td.time .colon ¦<¦
+Â¦>Â¦
+.calendar td.time .ampm Â¦<Â¦ text-align: center; Â¦>Â¦
+.calendar td.time .colon Â¦<Â¦
     padding     : 0px 2px 0px 3px;
     font-weight : normal;
-¦>¦
-.calendar td.time span.hilite ¦<¦
+Â¦>Â¦
+.calendar td.time span.hilite Â¦<Â¦
     border-color    : #000;
     background-color: #667;
     color           : #fff;
-¦>¦
-.calendar td.time span.active ¦<¦
+Â¦>Â¦
+.calendar td.time span.active Â¦<Â¦
     border-color    : #f00;
     background-color: #000;
     color           : #0f0;
-¦>¦
+Â¦>Â¦
 

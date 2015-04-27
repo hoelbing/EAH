@@ -47,7 +47,7 @@
 	if (!defined('TITEL_NEUEINTRAG_REFERENZ_ANTWORT')) define('TITEL_NEUEINTRAG_REFERENZ_ANTWORT','Neueintrag Antwort');
 	if (!defined('TITEL_BEARBEITEN')) define('TITEL_BEARBEITEN','Daten bearbeiten');
 
-	// Men�daten
+	// Menï¿½daten
 	$menuedaten[0]['bezeichnung']  = 'Eingang';
 	$menuedaten[0]['modus']        = 'eingang';
 	$menuedaten[0]['berechtigung'] = 'leser';

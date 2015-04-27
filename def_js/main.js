@@ -128,7 +128,7 @@
                         $(id_name).value = this.getProperty('rel')
 
                     this.setProperty('href','#');
-                    var prompt_delete = new MooPrompt("", "Wollen Sie diesen Eintrag wirklich endg�ltig l�schen? Eine Wiederherstellung ist nicht m�glich.", {
+                    var prompt_delete = new MooPrompt("", "Wollen Sie diesen Eintrag wirklich endgï¿½ltig lï¿½schen? Eine Wiederherstellung ist nicht mï¿½glich.", {
                         width       : 260,
                         height      : 85,
                         buttons     : 2,
@@ -179,7 +179,7 @@
         },
         /* Property: toggle
          *
-         * Generieren und Zuweisen der Accordion-Funktionalit�t
+         * Generieren und Zuweisen der Accordion-Funktionalitï¿½t
          */
         toggle: function(){
             var t = this;
@@ -209,7 +209,7 @@
         },
         /* Property: open
          *
-         * Inaktives komplett ge�ffnetes 'Accordion'. Mousout- und Mouseoverstatus setzen.
+         * Inaktives komplett geï¿½ffnetes 'Accordion'. Mousout- und Mouseoverstatus setzen.
          */
         open: function(){
             var t = this;
@@ -224,8 +224,8 @@
         },
         /* Property: checkHash
          *
-         * Aufruf von 'SITE_ACCORDION.activ'. Pr�ft URL des Fensters und �ffnet automatisch bei
-         * Vorhandensein eines �bergebenen Ankernamens den dazugeh�rigen Accorion-Inhaltblock.
+         * Aufruf von 'SITE_ACCORDION.activ'. Prï¿½ft URL des Fensters und ï¿½ffnet automatisch bei
+         * Vorhandensein eines ï¿½bergebenen Ankernamens den dazugehï¿½rigen Accorion-Inhaltblock.
          *
          * @param   array  o  Array aller 'togglers_a'-Objekte -> siehe 'SITE_ACCORDION.activ'
          * @return  boolean

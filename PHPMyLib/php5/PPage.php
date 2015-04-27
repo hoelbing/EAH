@@ -21,12 +21,12 @@ if ( !function_exists('file_get_contents') ) {
 /**
 * Die Klasse PTemplate verwaltet Dreamweaver-Templates und ist in der Lage Ersetzungen von
 * Platzhaltern der Form {name} und editierbaren Bereichen der Form
-* <!-- BeginEditable "name"> ... <!-- EndEditable> durchzuführen
+* <!-- BeginEditable "name"> ... <!-- EndEditable> durchzufÃ¼hren
 **/
 class PTemplate extends PComponent {
     /**
     * Array der Platzhalter im Dokument. Jedes Array Element ist ein PContainer und somit
-    * in der Lage Inhalte für einen Platzhalter aufzunehmen.
+    * in der Lage Inhalte fÃ¼r einen Platzhalter aufzunehmen.
     **/
     var $m_aVars;
     /**
@@ -48,7 +48,7 @@ class PTemplate extends PComponent {
     *		( nur durch<blockquote><blockquote><!-- BEGIN_PRINTER_FRIENDLY_COPY -->
     *      .
     *      .
-    * <!-- END_PRINTER_FRIENDLY_COPY --></blockquote></blockquote> gekennzeichnete Blöcke werden ausgegeben )
+    * <!-- END_PRINTER_FRIENDLY_COPY --></blockquote></blockquote> gekennzeichnete BlÃ¶cke werden ausgegeben )
     **/
     function PTemplate( $code = '', $file = '', $print = 0, $oldinclude = FALSE ) {
         $this->PComponent();
@@ -82,7 +82,7 @@ class PTemplate extends PComponent {
 
 
     /**
-    * Diese Methode entfernt aus dem Template sämtliche "../" aus Pfadangaben. Dreamweaver erzeugt
+    * Diese Methode entfernt aus dem Template sÃ¤mtliche "../" aus Pfadangaben. Dreamweaver erzeugt
     * diese bei Erstellung eines Templates in Unterverzeichnissen.<b></b>
     **/
     function removeDir($pattern="",$replace="") {
@@ -131,7 +131,7 @@ class PTemplate extends PComponent {
     * Dies ist notwendig, wenn die erzeugte HTML-Seite von einem anderen Skript als 'virtual include' eingelesen wird
     * (Wird eventuell Standardverhalten in zukuenftigen Releases)
     * <b>Parameter:</b>
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * 	boolean:TRUE / boolean:FALSE
     **/
     function deactivateBlockComments() {
@@ -146,7 +146,7 @@ class PTemplate extends PComponent {
     /**
     * Diese Methode entfernt die Kommentare zur Kennzeichnung von editierbaren Bereichen im Quelltext.
     * <b>Parameter:</b>
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * 	boolean:TRUE / boolean:FALSE
     **/
     function removeBlockComments() {
@@ -259,10 +259,10 @@ class PTemplate extends PComponent {
 
    /**
    * Diese Methode durchsucht den Quelltext nach dem benannten editierbaren Bereich
-   * und gibt TRUE oder FALSE zurück, je nach Ergebnis der Suche
+   * und gibt TRUE oder FALSE zurÃ¼ck, je nach Ergebnis der Suche
    * <b>Parameter:</b>
    * $name - Name des editierbaren Bereiches
-   * <b>Rückgabe:</b>
+   * <b>RÃ¼ckgabe:</b>
    * boolean TRUE/FALSE (editierbarer Bereich existiert bzw. existiert nicht
    **/
    function block_exists($name) {
@@ -281,8 +281,8 @@ class PTemplate extends PComponent {
    * und ersetzt ihn durch einen Platzhalter gleichen Namens.
    * <b>Parameter:</b>
    * $name - Name des editierbaren Bereiches
-   * <b>Rückgabe:</b>
-   * Template, das den editierbaren Bereich als Quelltext enthält
+   * <b>RÃ¼ckgabe:</b>
+   * Template, das den editierbaren Bereich als Quelltext enthÃ¤lt
    **/
    function extractBlock($name) {
         if ( ($pos=strpos($this->m_strText,"<!-- #BeginEditable \"$name\" -->"))!==FALSE ) {
@@ -331,11 +331,11 @@ class PTemplate extends PComponent {
 
 
     /**
-    * Diese Methode fügt eine Komponente an die Stelle eines Platzhalters ein. Es können auch
+    * Diese Methode fÃ¼gt eine Komponente an die Stelle eines Platzhalters ein. Es kÃ¶nnen auch
     * mehrere Komponenten pro Platzhalter sein.
     * <b>Parameter:</b>
     * $var - Name des Platzhalters
-    * $comp - Die einzufügende Komponente
+    * $comp - Die einzufÃ¼gende Komponente
     **/
     function addComponent($var, $comp) {
         if ( @is_object($this->m_aVars[$var]) ) {
@@ -346,11 +346,11 @@ class PTemplate extends PComponent {
     //addComponent
 
     /**
-    * Überladene Methode von PComponent. Gibt das Template samt aller ersetzten Platzhalter aus.
+    * Ãœberladene Methode von PComponent. Gibt das Template samt aller ersetzten Platzhalter aus.
     * <b>Parameter:</b>
     * $tpl_print - 0 -> normale Ausgabe
     *              1 -> nur Bereich fuer Druckausgabe (BEGIN_PRINTER_FRIENDLY_COPY)
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Das Template als String (HTML)
     **/
     function outputStr($tpl_print=0) {
@@ -376,7 +376,7 @@ class PTemplate extends PComponent {
     * Gibt das Template samt aller ersetzten Platzhalter aus, dabei werden Platzhalterkommentare geloescht.
     * <b>Parameter:</b>
     * keine
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Das Template als String (HTML)
     **/
     function outputStrClean() {
@@ -392,9 +392,9 @@ class PTemplate extends PComponent {
 
 
 /**
-* Die Klasse PTemplate2 verwaltet Templates (ähnlich Dreamweaver) und ist in der Lage
+* Die Klasse PTemplate2 verwaltet Templates (Ã¤hnlich Dreamweaver) und ist in der Lage
 * Ersetzungen von Platzhaltern der Form {name} und editierbaren Bereichen der Form
-* <!-- BeginEditable2 "name"> ... <!-- EndEditable2 "name"> durchzuführen
+* <!-- BeginEditable2 "name"> ... <!-- EndEditable2 "name"> durchzufÃ¼hren
 * Damit sind auch verschachtelte editierbare Bereiche m&ouml;glich.
 **/
 class PTemplate2 extends PTemplate
@@ -415,8 +415,8 @@ class PTemplate2 extends PTemplate
     * und ersetzt ihn durch einen Platzhalter gleichen Namens.
     * <b>Parameter:</b>
     * $name - Name des editierbaren Bereiches
-    * <b>Rückgabe:</b>
-    * Template, das den editierbaren Bereich als Quelltext enthält
+    * <b>RÃ¼ckgabe:</b>
+    * Template, das den editierbaren Bereich als Quelltext enthÃ¤lt
     **/
     function extractBlock($name) {
         $pos=strpos($this->m_strText,"<!-- #BeginEditable2 \"$name\" -->");
@@ -446,9 +446,9 @@ class PTemplate2 extends PTemplate
 
 
 /**
-* Die Klasse PTemplate3 verwaltet Templates (ähnlich Dreamweaver) und ist in der Lage
+* Die Klasse PTemplate3 verwaltet Templates (Ã¤hnlich Dreamweaver) und ist in der Lage
 * Ersetzungen von Platzhaltern der Form {name} und editierbaren Bereichen der Form
-* <!-- BeginEditable "name"> ... <!-- EndEditable "name"> durchzuführen
+* <!-- BeginEditable "name"> ... <!-- EndEditable "name"> durchzufÃ¼hren
 * Weiterhin ist das Einlesen von externen Dateien moeglich.
 **/
 class PTemplate3 extends PTemplate {

@@ -10,7 +10,7 @@
 
 /**
 * Diese Funktion liefert die aktuelle Version von PHPMyLib
-* 	Warnung: nur für Kompatibilität mit älteren Projekten vorhanden
+* 	Warnung: nur fÃ¼r KompatibilitÃ¤t mit Ã¤lteren Projekten vorhanden
 **/
 function getPVersion(&$lo, &$hi) {
     $hi = 1;
@@ -19,19 +19,19 @@ function getPVersion(&$lo, &$hi) {
 
 
 /**
-* Diese Klasse ist die Basisklasse für alle weiteren Klassen von PHPMyLib.
+* Diese Klasse ist die Basisklasse fÃ¼r alle weiteren Klassen von PHPMyLib.
 **/
 class PObject {
 
     /**
-    * Die Methode prüft, ob es sich bei $obj um eine von PObject abgeleitete Klasse handelt,
+    * Die Methode prÃ¼ft, ob es sich bei $obj um eine von PObject abgeleitete Klasse handelt,
     * oder um eine Klasse des Typs PObject selbst
     *
     * <b>Parameter:</b>
-    * $obj - Die Instanz einer Klasse, die überprüft werden soll
+    * $obj - Die Instanz einer Klasse, die Ã¼berprÃ¼ft werden soll
     *
-    * <b>Rückgabe:</b>
-    * TRUE oder FALSE, je nach Ergebnis der Überprüfung.
+    * <b>RÃ¼ckgabe:</b>
+    * TRUE oder FALSE, je nach Ergebnis der ÃœberprÃ¼fung.
     **/
     function isPObject(&$obj) {
         if ( 
@@ -44,17 +44,17 @@ class PObject {
 
 
     /**
-    * Die Methode prüft, ob es sich bei $obj um eine von PComponent abgeleitete Klasse handelt,
+    * Die Methode prÃ¼ft, ob es sich bei $obj um eine von PComponent abgeleitete Klasse handelt,
     * oder um eine Klasse des Typs PComponent selbst
     *
     * <b>Parameter:</b>
-    * $obj - Die Instanz einer Klasse, die überprüft werden soll
+    * $obj - Die Instanz einer Klasse, die Ã¼berprÃ¼ft werden soll
     *
-    * <b>Rückgabe:</b>
-    * true oder false, je nach Ergebnis der Überprüfung.
+    * <b>RÃ¼ckgabe:</b>
+    * true oder false, je nach Ergebnis der ÃœberprÃ¼fung.
     **/
     function isPComponent(&$obj) {
-        // test, ob Objekt vom Typ PContainer od. PComponent übergeben wurde
+        // test, ob Objekt vom Typ PContainer od. PComponent Ã¼bergeben wurde
         if ( 
             isset($obj) &&
             is_object($obj) &&
@@ -62,7 +62,7 @@ class PObject {
         ) return TRUE;
 
 
-        // falls kein Objekt übergeben wurde, versuche PText-Objekt zuerzeugen
+        // falls kein Objekt Ã¼bergeben wurde, versuche PText-Objekt zuerzeugen
         if ( ! is_null($obj) && (FALSE !== $obj) && ((is_string($obj) && trim($obj) != '') || is_int($obj)) ) {
             $obj = new PText($obj);
             return TRUE;
@@ -73,14 +73,14 @@ class PObject {
 
 
     /**
-    * Die Methode prüft, ob es sich bei $obj um eine von PTemplate abgeleitete Klasse handelt,
+    * Die Methode prÃ¼ft, ob es sich bei $obj um eine von PTemplate abgeleitete Klasse handelt,
     * oder um eine Klasse des Typs PTemplate selbst
     *
     * <b>Parameter:</b>
-    * $obj - Die Instanz einer Klasse, die überprüft werden soll
+    * $obj - Die Instanz einer Klasse, die Ã¼berprÃ¼ft werden soll
     *
-    * <b>Rückgabe:</b>
-    * TRUE oder FALSE, je nach Ergebnis der Überprüfung.
+    * <b>RÃ¼ckgabe:</b>
+    * TRUE oder FALSE, je nach Ergebnis der ÃœberprÃ¼fung.
     **/
     function isPTemplate(&$obj) {
         // test, ob Objekt vom Typ PTemplate
@@ -96,11 +96,11 @@ class PObject {
 
 
     /**
-    * Diese Methode liefert den Klassennamen der aktuellen Instanz zurück
+    * Diese Methode liefert den Klassennamen der aktuellen Instanz zurÃ¼ck
     * <b>Parameter:</b>
     * keine
     *
-    * <b>Rückgabe:</b>
+    * <b>RÃ¼ckgabe:</b>
     * Klassenname der aktuellen Instanz
     **/
     function getClassName() {

@@ -25,7 +25,7 @@
  */
 
 /**
- * mysql_connect - Öffnet eine neue Verbindung (oder nutzt eine bestehende Verbindung) zu einem mySQL
+ * mysql_connect - öffnet eine neue Verbindung (oder nutzt eine bestehende Verbindung) zu einem mySQL
  * Server.
  * 
  * Warnung: Diese Erweiterung ist seit PHP 5.5.0 als veraltet markiert und wird in der Zukunft entfernt

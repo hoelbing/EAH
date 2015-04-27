@@ -9,7 +9,7 @@
 */
 require_once('PHPMyLib/PHPMyLib.php');
 
-// wie trim, nur wird string direkt verändert (ohne Rückgabewert)
+// wie trim, nur wird string direkt verÃ¤ndert (ohne RÃ¼ckgabewert)
 function ifab_trim(&$string) {
 	$string=trim($string);
 }
@@ -17,7 +17,7 @@ function ifab_trim(&$string) {
 
 
 /*********************************************************/
-/**	Klasse für die Administration des MailUpdate-Tools	**/
+/**	Klasse fÃ¼r die Administration des MailUpdate-Tools	**/
 /*********************************************************/ 
 class PAdmin extends PUtil {
 	var $errorMsg;
@@ -27,14 +27,14 @@ class PAdmin extends PUtil {
 
 	/**
 	* Constructor
-	* <b>Parameter:</b> $exec - gibt an, welche Funktion ausgeführt werden soll
+	* <b>Parameter:</b> $exec - gibt an, welche Funktion ausgefÃ¼hrt werden soll
 	*			values:	0 - Start (Login)
 	*					1 - ...
 	**/
 	function PAdmin( $exec, $ku_id='', $ti_id='', $in_id='' ) {
 		$dbID=$this->PA_login();                       				 // Benutzerauthentifizierung
 
-		// weitere Sicherheitskriterien überprüfen
+		// weitere Sicherheitskriterien Ã¼berprÃ¼fen
 		if ($exec=='PA_newUser' || $exec=='PA_adm' || $exec=='PA_src') {
 			// nur als Admin erlaubt!!
 			if ($this->kunde[0]!=2) $exec='PA_overview';
@@ -49,7 +49,7 @@ class PAdmin extends PUtil {
 			$ku_id=$this->kunde[0];
 		}
 
-		$this->news=$this->$exec($dbID,$ku_id, $ti_id, $in_id);	// gewählte Funktion ausführen
+		$this->news=$this->$exec($dbID,$ku_id, $ti_id, $in_id);	// gewÃ¤hlte Funktion ausfÃ¼hren
 		$this->PA_procTemplate();											// Template initialisieren und ausgeben
 	}
 	//Constructor: PAdmin
@@ -98,7 +98,7 @@ class PAdmin extends PUtil {
 		$template=@gen_template(IFAB_DWT_ADMIN, FALSE, 'Mail-Update');
 		$template->addComponent( 'inhalt', preg_replace("/(<t[dh].*?>)/is", "\\1", $this->news) );
 		$template->addComponent( 'errorMsg', preg_replace("/(<t[dh].*?>)/is", "\\1", $this->errorMsg) );
-		$template->addComponent( 'logout', new PLink(IFAB_HTTP.'?'.IFABSID, 'Zurück zur Hauptadministration') );
+		$template->addComponent( 'logout', new PLink(IFAB_HTTP.'?'.IFABSID, 'ZurÃ¼ck zur Hauptadministration') );
 		if ( $this->kunde[0]==2 ) {
 			foreach ( $server as $ip=>$data) {
 				$template->addComponent( 'logout', '&nbsp;&nbsp;&nbsp;' );
@@ -156,7 +156,7 @@ class PAdmin extends PUtil {
 		if ( $this->kunde[0]==2 ) {
 			$content="	<tr><td colspan=3><b><font size=3>Benutzer-Administration Programm E-Mail-Update</font></b></td></tr>
 						<tr><td colspan=3><b><a href=\"$_SERVER[PHP_SELF]?exec=PA_newUser\">Abonnent neu anlegen</b></a></td></tr>
-						<tr><td colspan=3><b>Folgende Abonnenten können bearbeitet werden : </b></td></tr>";
+						<tr><td colspan=3><b>Folgende Abonnenten kÃ¶nnen bearbeitet werden : </b></td></tr>";
 
 			$sql="SELECT ku_id, ku_name FROM kunde WHERE ku_id<>2 ORDER by ku_name";
 			$sql=@mysql_query($sql, $dbID);
@@ -169,7 +169,7 @@ class PAdmin extends PUtil {
 			}
 		} else {
 			$content="	<tr><td colspan=3><font size=3><b>Benutzer-Administration Programm E-Mail-Update</b></font></td></tr>
-						<tr><td colspan=3><b>Folgende Abonnenten können bearbeitet werden : </b></td></tr>";
+						<tr><td colspan=3><b>Folgende Abonnenten kÃ¶nnen bearbeitet werden : </b></td></tr>";
 
 			$sql="SELECT ku_id, ku_name FROM kunde WHERE ku_id IN (".join(",", $this->kunde).")";
 			$sql=@mysql_query($sql, $dbID);
@@ -221,7 +221,7 @@ class PAdmin extends PUtil {
 				if (@mysql_num_rows($sql)==0)
 				{
 					$sql="SELECT MAX(ti_id) AS max FROM titel WHERE ku_id='$ku_id'";
-					$sql=@mysql_query($sql, $dbID); // höchste zur Zeit vergebene ti_id des Kunden
+					$sql=@mysql_query($sql, $dbID); // hÃ¶chste zur Zeit vergebene ti_id des Kunden
 					$max=1+@mysql_result($sql,0,0);
 					
 					$sql="INSERT INTO titel SET ku_id='$ku_id', ti_id='0', ti_beze='Startseiten-Funktion'";
@@ -236,7 +236,7 @@ class PAdmin extends PUtil {
 			@mysql_query($sql, $dbID);
 			break;
 
-		// Nachfrage ob Kunde wirklich gelöscht werden soll
+		// Nachfrage ob Kunde wirklich gelÃ¶scht werden soll
 		case "Delete Abonnement":
 			$content.="	<br><br><br><b>Sie sind in Begriff, den Kunden $_POST[ku_name] zu l&ouml;schen !<br>
 						<br>Sind Sie wirklich sicher ?? <br><br>
@@ -247,12 +247,12 @@ class PAdmin extends PUtil {
 			return $content;
 			break;
 
-		// Newslist-Administration für übergebenen Kunden
+		// Newslist-Administration fÃ¼r Ã¼bergebenen Kunden
 		case "Themen bearbeiten":
 			switch ($newslist):
 			case "new":		// Neue Newsliste anlegen
 				$sql="SELECT MAX(ti_id) AS max FROM titel WHERE ku_id='$ku_id'";
-				$sql=@mysql_query($sql, $dbID); // höchste zur Zeit vergebene ti_id des Kunden
+				$sql=@mysql_query($sql, $dbID); // hÃ¶chste zur Zeit vergebene ti_id des Kunden
 				$max=1+@mysql_result($sql,0,0);
 
 				$sql="INSERT INTO titel SET ku_id='$ku_id', ti_id='$max', ti_beze='$_POST[ti_beze]',
@@ -260,7 +260,7 @@ class PAdmin extends PUtil {
 				@mysql_query($sql, $dbID);
 				break;
 
-			case "update":	// Ändern einer vorhandenen Newsliste
+			case "update":	// Ã„ndern einer vorhandenen Newsliste
 				if ( is_array($_POST['showDate']) )		// summarize the bits from date options
 					foreach($_POST['showDate'] as $key=>$value) {
 						$key=explode("_", $key);
@@ -290,7 +290,7 @@ class PAdmin extends PUtil {
 				@mysql_query($sql, $dbID);
 				break;
 
-			case "delete":	// Nachfrage, ob Newsliste wirklich gelöschen werden soll
+			case "delete":	// Nachfrage, ob Newsliste wirklich gelÃ¶schen werden soll
 				$sql="SELECT ti_beze, ku_name FROM titel T, kunde K WHERE K.ku_id=T.ku_id AND K.ku_id=$ku_id AND ti_id=$ti_id";
 				$sql=@mysql_query($sql, $dbID);
 				$res=@mysql_fetch_row($sql);
@@ -306,7 +306,7 @@ class PAdmin extends PUtil {
 				return $content;
 				break;
 
-			case "delete2":	// Löschen der Newsliste
+			case "delete2":	// LÃ¶schen der Newsliste
 				mysql_query("DELETE FROM titel WHERE ku_id=$ku_id AND ti_id=$ti_id", $dbID);
 				mysql_query("DELETE FROM inhalt WHERE ku_id=$ku_id AND ti_id=$ti_id", $dbID);
 				mysql_query("DELETE FROM bild WHERE ku_id=$ku_id AND ti_id=$ti_id", $dbID);
@@ -314,7 +314,7 @@ class PAdmin extends PUtil {
 
 			endswitch;
 
-			// mögliche Arten von Listen ermitteln
+			// mÃ¶gliche Arten von Listen ermitteln
 			//$file=file("/usr/local/etc/httpd/php-bin/include/PHPMyLib/PMail.php");
 			//$file="/usr/local/etc/httpd/php-bin/include/PHPMyLib/PMail.php";
       	    $included = get_included_files();
@@ -398,7 +398,7 @@ class PAdmin extends PUtil {
 								</table></td></tr>";
 
 
-				// Art der Newslisten wählen:
+				// Art der Newslisten wÃ¤hlen:
 				$content.="<tr><td><b>Typ:</b></td>
 						<td><select name='listType[]'>";
 				for($j=0;$j<count($listArray);$j++)
@@ -489,9 +489,9 @@ class PAdmin extends PUtil {
 						<td><input type=\"text\" size=\"40\" name=\"linkProperties\" value='$thema[linkProperties]'></td></tr>
 
 					<tr><td><b>E-Mail-Absender: </b></td><td>";
-				$content.=join("<br>", $this->PA_getmail($dbID, 'S', $ku_id, $thema[ti_id]));	// Mail-Empfänger aus .procmailrc auslesen
+				$content.=join("<br>", $this->PA_getmail($dbID, 'S', $ku_id, $thema[ti_id]));	// Mail-EmpfÃ¤nger aus .procmailrc auslesen
 				$content.="</td><td><b>E-Mail-Empf&auml;nger: <b></td><td>";
-				$content.=join("<br>", $this->PA_getmail($dbID, 'G', $ku_id, $thema[ti_id]));	// Mail-Empfänger aus .procmailrc auslesen
+				$content.=join("<br>", $this->PA_getmail($dbID, 'G', $ku_id, $thema[ti_id]));	// Mail-EmpfÃ¤nger aus .procmailrc auslesen
 				$content.="</td></tr>";
 
 				// max image size // BR-tags between the titles of following messages
@@ -508,7 +508,7 @@ class PAdmin extends PUtil {
 									<td>&nbsp;</td>
 									<td>&nbsp;</td></tr>";
 
-				// Art der Newslisten wählen:
+				// Art der Newslisten wÃ¤hlen:
 				$content.="<tr><td colspan='4'>
 							<table cellpadding='0' cellspacing='0' width='100%'>
 								<tr><td colspan='2'></td>
@@ -576,7 +576,7 @@ class PAdmin extends PUtil {
 			return $content;
 			break;
 
-		// Kunden löschen
+		// Kunden lÃ¶schen
 		default:
 			global $really;
 
@@ -617,11 +617,11 @@ class PAdmin extends PUtil {
 						<td><input type=\"text\" size=\"50\" name=\"ku_user\" value='$res[ku_user]'></td></tr>                 
 					<tr><td><b>Web-Adresse: </b></td>
 						<td><input type=\"text\" size=\"50\" name=\"ku_www\" value='$res[ku_www]'></td></tr>                 
-					<tr><td><b>Sollen Dokumentenzeilen-Umbrüche<br>gegen HTML-Umbrüche ersetzt werden?: </b></td>
+					<tr><td><b>Sollen Dokumentenzeilen-UmbrÃ¼che<br>gegen HTML-UmbrÃ¼che ersetzt werden?: </b></td>
 						<td><input type=\"checkbox\" name=\"ku_varLineBreak\" value='X' $check></td></tr>
-					<tr><td><b>Schriftart für den Text: </b></td>
+					<tr><td><b>Schriftart fÃ¼r den Text: </b></td>
 						<td><input type=\"text\" size=\"50\" name=\"ku_varfont\" value='$res[ku_varfont]'></td></tr>                 
-					<tr><td><b>Schriftart für &Uuml;berschriften : </b></td>
+					<tr><td><b>Schriftart fÃ¼r &Uuml;berschriften : </b></td>
 						<td><input type=\"text\" size=\"50\" name=\"ku_fonttitle\" value='$res[ku_fonttitle]'></td></tr>                 
 					<tr><td><b>Schriftstyle bei Link :</b></td>
 						<td><select name=ku_linkStyle>
@@ -655,7 +655,7 @@ class PAdmin extends PUtil {
 		if ( $back!="PA_usr" ) $HTTP_REFERER=$_SERVER['PHP_SELF'];
 			else $HTTP_REFERER="$_SERVER[PHP_SELF]?exec=PA_usr&ku_id=$ku_id";
 
-		// Bei Update Änderungen/Löschungen ausführen
+		// Bei Update Ã„nderungen/LÃ¶schungen ausfÃ¼hren
 		if ($_POST['action']=="Update")
 		{
 			if (!$_POST['syn_old']) $_POST['syn_old']=array();
@@ -679,7 +679,7 @@ class PAdmin extends PUtil {
 			}
 		}
 
-		// Übersicht der Synonyme generieren
+		// Ãœbersicht der Synonyme generieren
 		$sql="SELECT syn_kurz, syn_lang FROM synonym WHERE ku_id=$ku_id";
 		$sql=@mysql_query($sql, $dbID);
 
@@ -702,7 +702,7 @@ class PAdmin extends PUtil {
 						<br><br>
 						<a href=\"$HTTP_REFERER\">Zur&uuml;ck zum Hauptmen&uuml;</a>
 						</b><p></td></tr></form>";
-		// Ende: Übersicht
+		// Ende: Ãœbersicht
 
 		return $content;
 	} //PA_syn
@@ -710,7 +710,7 @@ class PAdmin extends PUtil {
 	// Bearbeitung der Newslisten eines Kunden
 	function PA_usr( $dbID, $ku_id ) {
 		if ($_POST['action']=='update') {
-			$sql="UPDATE kunde SET ku_anztage='$_POST[ku_anztage]' WHERE ku_id=$ku_id";	// Anzahl der Tage, die ein Artikel standardmäßig angezeigt wird, ändern
+			$sql="UPDATE kunde SET ku_anztage='$_POST[ku_anztage]' WHERE ku_id=$ku_id";	// Anzahl der Tage, die ein Artikel standardmÃ¤ÃŸig angezeigt wird, Ã¤ndern
 			@mysql_query($sql, $dbID);
 		}
 
@@ -757,7 +757,7 @@ class PAdmin extends PUtil {
 		return $content;
 	} //PA_usr
 
-	// Login und Passwort ändern:
+	// Login und Passwort Ã¤ndern:
 	function PA_pass( $dbID, $ku_id ) {
 		$sql="SELECT ku_name, ku_user, ku_pass FROM kunde WHERE ku_id=$ku_id";
 		$sql=@mysql_query($sql, $dbID);
@@ -793,39 +793,39 @@ class PAdmin extends PUtil {
   		return $content;
 	} //PA_pass
 
-	// Artikel einer gewählten Newsliste verwalten
+	// Artikel einer gewÃ¤hlten Newsliste verwalten
 	function PA_news( $dbID, $ku_id, $ti_id )
 	{
-		// Webadresse und Vorhandensein der Startfunktion überprüfen
+		// Webadresse und Vorhandensein der Startfunktion Ã¼berprÃ¼fen
 		$sql="SELECT ku_www, ku_start, ku_name FROM kunde WHERE ku_id=$ku_id";
 		$sql=@mysql_query($sql, $dbID);
 		$ku_info=@mysql_fetch_row($sql);
 
 		// bei Update der Artikel: //////////////////////////////////////////////
-		if ($_POST['action']=="Änderung übernehmen")
+		if ($_POST['action']=="Ã„nderung Ã¼bernehmen")
 		{
 			if ( !is_array($_POST['in_id']) ) $_POST['in_id']=array();
 			foreach ( $_POST['in_id'] as $key => $in_id )
 			{
-				// Artikel löschen
+				// Artikel lÃ¶schen
 				if ( $_POST['del'][$in_id] == 'X')
 				{
 					$sql="DELETE FROM inhalt WHERE ku_id=$ku_id AND ti_id=$ti_id AND in_id=$in_id";
 					@mysql_query($sql, $dbID);
 					continue;
-				} //Ende: Artikel löschen
+				} //Ende: Artikel lÃ¶schen
 	
-				// Eingangsdatum ändern
+				// Eingangsdatum Ã¤ndern
 				$set=array();
 				$in_date=explode(".", trim($_POST['in_date'][$in_id]));
 				if (checkdate($in_date[1], $in_date[0], $in_date[2])) $set[]="in_date='$in_date[2]/$in_date[1]/$in_date[0]'";
-				// noch anzuzeigende Dauer ändern
+				// noch anzuzeigende Dauer Ã¤ndern
 				$set[]="in_tage='".(int)trim($_POST['in_tage'][$in_id])."'";
 				// Flag setzen, ob Artikel angezeigt werden soll
 				$set[]="in_zeig='".trim($_POST['in_zeig'][$in_id])."'";
-				// Position bei Sortierung ändern
+				// Position bei Sortierung Ã¤ndern
 				$set[]="in_sort='".trim($_POST['in_sort'][$in_id])."'";
-				// falls 'Anzeige auf Startseite' geändert
+				// falls 'Anzeige auf Startseite' geÃ¤ndert
 				if ( $ku_info[1] ) $set[]="in_teaser='".trim($_POST['in_teaser'][$in_id])."'";
 	
 				$set=join(", ", $set);
@@ -894,7 +894,7 @@ class PAdmin extends PUtil {
 		$sql=@mysql_query($sql, $dbID);
 		if ( @mysql_num_rows($sql) > 0 )
 		{       
-			$content.="<tr><th>ID</th><th>Titel</th><th>Datum</th><th colspan=2>Anzeige</th><th>Artikel noch ? Tage anz.</th><th colspan=2><span class=\"tred\">Löschen</span></th><th colspan=2>Sortierung</th></tr>";
+			$content.="<tr><th>ID</th><th>Titel</th><th>Datum</th><th colspan=2>Anzeige</th><th>Artikel noch ? Tage anz.</th><th colspan=2><span class=\"tred\">LÃ¶schen</span></th><th colspan=2>Sortierung</th></tr>";
 
 			while ($thema=@mysql_fetch_array($sql))
 			{ 
@@ -913,7 +913,7 @@ class PAdmin extends PUtil {
 					<td width=5><input type=\"checkbox\" name=\"del[".$thema[in_id]."]\" value=\"X\"></td>  
 					<td width=30>Sortierung</td>
 					<td width=10><input type=\"text\" size=\"3\" maxlength=3 name=\"in_sort[".$thema[in_id]."]\" value=\"$thema[in_sort]\"></td>";
-				// wenn Startseitenfunktion vorhanden, dann Auswahlfeld für diesen Artikel anzeigen
+				// wenn Startseitenfunktion vorhanden, dann Auswahlfeld fÃ¼r diesen Artikel anzeigen
 				if ( $ku_info[1] ) $content.="
 					<td width=5><nobr>auf Startseite: <input type=\"checkbox\" name=\"in_teaser[".$thema[in_id]."]\" value=\"1\" $in_teaser></nobr></td>";
 				// wenn Admin, dann Link zum Quelltxt anzeigen
@@ -931,11 +931,11 @@ class PAdmin extends PUtil {
 		$$order="checked";
 		
 		$content.="</table><br><table align=\"left\">
-			<tr><td><b>Datensätze sortieren nach </b></td><td><input type=radio name=\"ti_ord\" $dat value=\"dat\"></td><td> Datum </td></tr>
+			<tr><td><b>DatensÃ¤tze sortieren nach </b></td><td><input type=radio name=\"ti_ord\" $dat value=\"dat\"></td><td> Datum </td></tr>
 			<tr><td> </td><td> <input type=radio name=\"ti_ord\" $in_titel value=\"in_titel\"></td><td> Titel(alphabetisch) </td></tr>                         
 			<tr><td> </td><td> <input type=radio name=\"ti_ord\" $in_id value=\"in_id DESC\"></td><td> ID (Reihenfolge, in der Mails geschickt wurden)  </td></tr>                      
 			<tr><td> </td><td> <input type=radio name=\"ti_ord\" $in_sort value=\"in_sort\"></td><td> Sortierung, wie oben angegeben (1 steht an oberster Stelle (dann 2,3,4,5 ...))
-					<br>Sie können auch nur bestimmte Artikel numerieren, der Rest wird nach Aktualität geordnet.  </td></tr>
+					<br>Sie kÃ¶nnen auch nur bestimmte Artikel numerieren, der Rest wird nach AktualitÃ¤t geordnet.  </td></tr>
 			<tr><td><input type=\"submit\" name=\"action\" value=\"&Auml;nderung &uuml;bernehmen\"></td><td colspan=2><b><font color=\"red\">
 					&nbsp;&nbsp;Achtung!! H&auml;ckchen bei L&ouml;schen &uuml;berschreibt H&auml;ckchen bei Anzeigen!!</font></b></td></tr>
 			<tr><td align=center><br><br><b><a href=\"$_SERVER[PHP_SELF]?exec=PA_usr&ku_id=$ku_id\">Zur&uuml;ck zur Newslisten-&Uuml;bersicht</a></b></td>
@@ -984,15 +984,15 @@ class PAdmin extends PUtil {
 // end:class:PAdmin
 
 /*********************************************************/
-/**	Klasse für die Anzeige von News ( MailUpdate-Tool )	**/
+/**	Klasse fÃ¼r die Anzeige von News ( MailUpdate-Tool )	**/
 /*********************************************************/ 
 class PMail extends PUtil {
 
 	var $errorMsg='';
 	var $news=array();	// 1. Artikel der generierten Newsliste
 	var $news2=array();	// restliche generierte Newsliste
-	var $back='';			// zurück-button
-	var $image;				// einzelnes Bild für extra Platzhalter
+	var $back='';			// zurÃ¼ck-button
+	var $image;				// einzelnes Bild fÃ¼r extra Platzhalter
 	var $ident;				// Websiteinfos (array)
 	var $nextLevel;
 	var $backLink;
@@ -1022,20 +1022,20 @@ class PMail extends PUtil {
 		if ( empty($_GET['virtual']) && (empty($this->ident['ku_start']) || $this->ident['ti_beze']!='Startseiten-Funktion') )
 			$this->loadTemplate($this->level);
 
-		$listTypes=explode('|', $this->ident['listType']);							// NewsListTypen für verschiedene Verschachtelungstiefen ermitteln
-		$this->ident['listType']=$listTypes[$this->level];							// aufzufufende Funktion für aktuelle Verschachtelungsebene (Art der NewsListe)
+		$listTypes=explode('|', $this->ident['listType']);							// NewsListTypen fÃ¼r verschiedene Verschachtelungstiefen ermitteln
+		$this->ident['listType']=$listTypes[$this->level];							// aufzufufende Funktion fÃ¼r aktuelle Verschachtelungsebene (Art der NewsListe)
 
 		$this->ident['showDate']=explode('|', $this->ident['showDate']);		// Anzeige des Eingangsdatums der Mails: 0 - nein, 1 - ja
-		$this->ident['showDate']=$this->ident['showDate'][$this->level];		// für diese Ebene ermitteln, ob Datum angezeigt werden soll
+		$this->ident['showDate']=$this->ident['showDate'][$this->level];		// fÃ¼r diese Ebene ermitteln, ob Datum angezeigt werden soll
 
-		$this->ident['titleStyle']=explode('|', $this->ident['titleStyle']);	// Format der Überschriften ( mail-subjects ): 0 - normal, 1 - fett, 2 - kursiv
-		$this->ident['titleStyle']=$this->ident['titleStyle'][$this->level];	// Format der Überschrift für diese Ebene ermitteln
+		$this->ident['titleStyle']=explode('|', $this->ident['titleStyle']);	// Format der Ãœberschriften ( mail-subjects ): 0 - normal, 1 - fett, 2 - kursiv
+		$this->ident['titleStyle']=$this->ident['titleStyle'][$this->level];	// Format der Ãœberschrift fÃ¼r diese Ebene ermitteln
 		if ( $this->ident['ku_start'] && $this->ident['ti_beze']=='Startseiten-Funktion' ) {
 			// falls Startseite
 			foreach($this->getStartList($dbID) as $art) $newsList[]=$art;		// Artikelliste aus Datenbank extrahieren
 		} else {
 			// falls nicht Startseite
-			if ( isset($_REQUEST['in_id']) ) $newsList=$this->getNewsList($dbID,$_REQUEST['in_id'],1); // speziell ausgewählten Artikel aus Datenbank extrahieren
+			if ( isset($_REQUEST['in_id']) ) $newsList=$this->getNewsList($dbID,$_REQUEST['in_id'],1); // speziell ausgewÃ¤hlten Artikel aus Datenbank extrahieren
 			foreach ($this->getNewsList($dbID, $_REQUEST['in_id']) as $art)	// Artikelliste aus Datenbank extrahieren
 				$newsList[]=$art;
 		}
@@ -1045,7 +1045,7 @@ class PMail extends PUtil {
 				else $this->genOutput($newsList);
 		}
 
-		// falls tiefste Ebene, ZURÜCK-Button generieren:
+		// falls tiefste Ebene, ZURÃœCK-Button generieren:
 		if ( ($this->level+1) == count($listTypes) && $this->level>0 ) {
 			$this->back='<br><a href="'.$this->backLink.'" '.$this->ident['linkProperties'].'>zur&uuml;ck</a>';
 			if ( strpos($this->ident['ku_varfont'], 'font') ) $this->back=$this->ident['ku_varfont'].$this->back.'</font>';
@@ -1100,7 +1100,7 @@ class PMail extends PUtil {
 			if( !$_SERVER['PHP_AUTH_USER'] ) {
 				Header('status: 401 Unauthorized');		// For Roxen cgi-wrapper
 				Header('HTTP/1.0 401 Unauthorized');
-				Header('WWW-authenticate: basic realm="Geschützter Bereich"');
+				Header('WWW-authenticate: basic realm="GeschÃ¼tzter Bereich"');
 				Header("KiSS: $_SERVER[PHP_AUTH_USER], $_SERVER[PHP_AUTH_PW]");
 				PUtil::showError();
 				exit();
@@ -1108,7 +1108,7 @@ class PMail extends PUtil {
 			if ( $_SERVER['PHP_AUTH_USER']!=$res[0] || $res[1]!=$res[2] ) {
 				Header('status: 401 Unauthorized'); // For Roxen cgi-wrapper
 				Header('HTTP/1.0 401 Unauthorized');
-				Header('WWW-authenticate: basic realm="Geschützter Bereich"');
+				Header('WWW-authenticate: basic realm="GeschÃ¼tzter Bereich"');
 				Header("KiSS2: $_SERVER[PHP_AUTH_USER], $_SERVER[PHP_AUTH_PW]");
 				PUtil::showError();
 				exit();
@@ -1182,7 +1182,7 @@ class PMail extends PUtil {
 			$mail_update=$this->template->extractBlock('mail_update');
 		}
 
-		// falls vorhanden: $this->image bei Platzhalter 'Bild' einfügen (0 - kein Bild, 1 - Bild)
+		// falls vorhanden: $this->image bei Platzhalter 'Bild' einfÃ¼gen (0 - kein Bild, 1 - Bild)
 		if ( !empty($this->image) ) {
 			$this->template->extractBlock("Bild0");
 			$this->template->addComponent("bild", $this->image);
@@ -1287,7 +1287,7 @@ class PMail extends PUtil {
 
 		$sql = @mysql_query ($sql);
 		while ($res=@mysql_fetch_array($sql)) {
-			$res['in_code']=str_replace('§', '$', $res['in_code']);
+			$res['in_code']=str_replace('Â§', '$', $res['in_code']);
 
 			// convert unicode to ascii
 			$res['in_code']=@mb_convert_encoding($res['in_code'], 'ISO-8859-1', 'utf-8, ISO-8859-1');
@@ -1303,14 +1303,14 @@ class PMail extends PUtil {
 	}
 	// getNewsList
 	
-	// Selectieren der aktuellen Artikel für Startseite
+	// Selectieren der aktuellen Artikel fÃ¼r Startseite
 	function getStartList($dbID, $in_id = '') {
 		$array=array();
 
 		if ($this->ident['ti_ord'] == '') $this->ident['ti_ord'] = 'dat' ;	//falls keine Reihenfolge
 
 		// falls Artikel nur aus bestimmten Mailinglisten auf der Startseite angezeigt werden sollen
-		// Funktion überprüfen (R.Kropp)
+		// Funktion Ã¼berprÃ¼fen (R.Kropp)
 		if ( trim($this->ident['ku_varNews'])>0 && !strstr($this->ident['ku_varNews'], '|') ) {
 			$sql="SELECT ti_id, ti_beze FROM titel WHERE ku_id='".$this->ident['ku_id']."'";
 			$sql=@mysql_query($sql);
@@ -1328,7 +1328,7 @@ class PMail extends PUtil {
 						$res2['in_titel']="<b><a href=\"/mail_update/news.php?id=$res[0]\">$res[1]</a></b><br><br>$res2[in_titel]";
 						$i++;
 					}
-					$res2['in_code']=str_replace("§", "$", $res2['in_code']);
+					$res2['in_code']=str_replace("Â§", "$", $res2['in_code']);
 
 					// convert unicode to ascii
 					$res2['in_code']=@mb_convert_encoding($res2['in_code'], 'ISO-8859-1', 'utf-8, ISO-8859-1');
@@ -1354,7 +1354,7 @@ class PMail extends PUtil {
 					ORDER BY ".$this->ident['ti_ord'].", dat"; // Themen zur angeforderten Seite holen
 			$sql = @mysql_query($sql);
 			while ($res=@mysql_fetch_array($sql)) {
-				$res['in_code']=str_replace('§', '$', $res['in_code']);
+				$res['in_code']=str_replace('Â§', '$', $res['in_code']);
 
 				// convert unicode to ascii
 				$res['in_code']=@mb_convert_encoding($res['in_code'], 'ISO-8859-1', 'utf-8, ISO-8859-1');
@@ -1392,7 +1392,7 @@ class PMail extends PUtil {
 		$link[0]=trim($link[0]);
 
 		if ( $link[0] != '' ) {
-			//Parameter für ein Script an link anhängen
+			//Parameter fÃ¼r ein Script an link anhÃ¤ngen
 			if (trim($link[2]) != '') {
 				$link[2] = explode(',', trim($link[2]));
 				array_walk($link[2], 'ifab_trim');
@@ -1400,12 +1400,12 @@ class PMail extends PUtil {
 				$link[2] =str_replace ('-', '=', $link[2]);
 			}
 
-			// Text/Bild für Link
+			// Text/Bild fÃ¼r Link
 			$link[3]=preg_replace("/(<img.*?)>/is", "\\1 border=\"0\">", $link[3]);
 
 			// Link zusammen bauen
 			$addr = "$link[0]$link[1]$link[2]";
-			$addr = str_replace(' ', '', $addr);			//überflüssige Leerzeichen entfernen
+			$addr = str_replace(' ', '', $addr);			//Ã¼berflÃ¼ssige Leerzeichen entfernen
 			$link = "<a href=\"$addr\" ".$this->ident['linkProperties'].">$link[3]</a>" ;
 
 			switch ($this->ident['ku_linkStyle']):
@@ -1423,7 +1423,7 @@ class PMail extends PUtil {
 	}
 	// loadLink
 
-	// Preis eines Artikels aus Datenbank extrahieren und in Artikel einfügen
+	// Preis eines Artikels aus Datenbank extrahieren und in Artikel einfÃ¼gen
 	function loadPrice( $ArtNr ) {
 		//@mysql_close();
 		$dbID=@mysql_connect('localhost', $_SERVER['PSUser'], $_SERVER['PSPass'], TRUE);
@@ -1479,13 +1479,13 @@ class PMail extends PUtil {
 	//////////////////////////////////
 	// zeigt einen Artikel komplett	//
 	function complete($art, $countNews=1) {
-		// Tags löschen um Quelltext zu vereinfachen
+		// Tags lÃ¶schen um Quelltext zu vereinfachen
 		$art['in_code'] = preg_replace("/<span.*?>|<\/span>|<o:p>|<\/o:p>|<\?.*?>/is", '', $art['in_code']);
 		$art['in_code'] = preg_replace("/<p class=[^> ]*/is", '<p ', $art['in_code']);
 		$art['in_code'] = preg_replace("/<!\[.*?\]>/is", '', $art['in_code']);
 		$art['in_code'] = PUtil::preg_replace_div($art['in_code']);
 
-		// Ersetzungen für alte Mails:
+		// Ersetzungen fÃ¼r alte Mails:
 		$art['in_code'] = preg_replace("/<img src=\"..\/image.php|<img src=\"image.php/is", "<img src=\"/mail_update/image.php", $art['in_code']);
 		$art['in_code'] = preg_replace("/<font.*?>|<\/font>|<html>|<\/html>|<body.*?>|<\/body>/is", '', $art['in_code']);
 
@@ -1503,7 +1503,7 @@ class PMail extends PUtil {
 		// get title
 		$compl=$this->titel($art, 0);
 
-		// bei Startseiten-Funktion Link zur gewählten news-liste bauen
+		// bei Startseiten-Funktion Link zur gewÃ¤hlten news-liste bauen
 		if ( $this->ident['ku_start'] && $this->ident['ti_beze']=="Startseiten-Funktion" && $countNews > 1 ) {
 			global $id2;
 			if (!$id2) $ti_id=$art['ti_id'];else $ti_id=$id2;
@@ -1528,12 +1528,12 @@ class PMail extends PUtil {
 		// falls kein $-Zeichen vorhanden, nur Titel anzeigen
 		if ( strpos($art['in_code'], '$')===FALSE ) return $this->titel($art);
 
-		// Tags löschen um Quelltext zu vereinfachen
+		// Tags lÃ¶schen um Quelltext zu vereinfachen
 		$art['in_code'] = preg_replace("/<span.*?>|<\/span>|<o:p>|<\/o:p>|<\?.*?>/is", "", $art['in_code']);
 		$art['in_code'] = preg_replace("/<p class.*?>/is", "<p>", $art['in_code']);
 		$art['in_code'] = PUtil::preg_replace_div($art['in_code']);
 
-		// Ersetzungen für alte Mails:
+		// Ersetzungen fÃ¼r alte Mails:
 		$art['in_code'] = preg_replace("/<img src=\"..\/image.php|<img src=\"image.php/si", "<img src=\"/mail_update/image.php", $art['in_code']);
 		$art['in_code'] = preg_replace("/<font.*?>|<\/font>|<html>|<\/html>|<body.*?>|<\/body>|<div.*?>|<\/div>/is", "", $art['in_code']);
 		// Ersetzungen, da Teaser
@@ -1547,7 +1547,7 @@ class PMail extends PUtil {
 		// nur Text bis $
 		$art['in_code'] = substr($art['in_code'], 0,strpos($art['in_code'],'$'));
 
-		// Link zu vollständigem Artikel (oder zur level0-Newsliste, falls Startseite)
+		// Link zu vollstÃ¤ndigem Artikel (oder zur level0-Newsliste, falls Startseite)
 		if ( $this->ident['ku_start'] && $this->ident['ti_beze']=="Startseiten-Funktion" )
 					$art['in_code'] .= " <nobr><a href=\"$_SERVER[PHP_SELF]?id=$art[ti_id]&in_id=$art[in_id]\" ".$this->ident['linkProperties'].">... (mehr)</a></nobr>";
 			else $art['in_code'] .= " <nobr><a href=\"$_SERVER[PHP_SELF]?id=$art[ti_id]&in_id=$art[in_id]&level=".($this->nextLevel)."\" ".$this->ident['linkProperties'].">... (mehr)</a></nobr>" ;
@@ -1573,22 +1573,22 @@ class PMail extends PUtil {
 		$title=$art['in_titel'];
 
 		// modify font style of the title
-		if ( $this->ident['titleStyle'] & 1 ) $title="<b>$title</b>";							//falls gewünscht, Titel der Mail fett anzeigen
-		if ( $this->ident['titleStyle'] & 2 ) $title="<i>$title</i>";							//falls gewünscht, Titel der Mail kursiv anzeigen
-		if ( $this->ident['titleStyle'] & 4 ) $title="<u>$title</u>";							//falls gewünscht, Titel der Mail unterstrichen anzeigen
+		if ( $this->ident['titleStyle'] & 1 ) $title="<b>$title</b>";							//falls gewÃ¼nscht, Titel der Mail fett anzeigen
+		if ( $this->ident['titleStyle'] & 2 ) $title="<i>$title</i>";							//falls gewÃ¼nscht, Titel der Mail kursiv anzeigen
+		if ( $this->ident['titleStyle'] & 4 ) $title="<u>$title</u>";							//falls gewÃ¼nscht, Titel der Mail unterstrichen anzeigen
 
 		// show date in title, if $this->ident['showDate'] is positive 
 		if ($this->ident['showDate']>=0) {
 			$tmpdate=" (vom $art[date])";
-			if ($this->ident['showDate'] & 8) $tmpdate=' <nobr>'.trim($tmpdate).'</nobr>';//falls gewünscht, kein Zeilenumbruch im Eingangsdatum der Mail
-			if ($this->ident['showDate'] & 1) $tmpdate="<b>$tmpdate</b>";						//falls gewünscht, Eingangsdatum der Mail fett anzeigen
-			if ($this->ident['showDate'] & 2) $tmpdate="<i>$tmpdate</i>";						//falls gewünscht, Eingangsdatum der Mail kursiv anzeigen
-			if ($this->ident['showDate'] & 4) $tmpdate="<u>$tmpdate</u>";						//falls gewünscht, Eingangsdatum der Mail unterstrichen anzeigen
+			if ($this->ident['showDate'] & 8) $tmpdate=' <nobr>'.trim($tmpdate).'</nobr>';//falls gewÃ¼nscht, kein Zeilenumbruch im Eingangsdatum der Mail
+			if ($this->ident['showDate'] & 1) $tmpdate="<b>$tmpdate</b>";						//falls gewÃ¼nscht, Eingangsdatum der Mail fett anzeigen
+			if ($this->ident['showDate'] & 2) $tmpdate="<i>$tmpdate</i>";						//falls gewÃ¼nscht, Eingangsdatum der Mail kursiv anzeigen
+			if ($this->ident['showDate'] & 4) $tmpdate="<u>$tmpdate</u>";						//falls gewÃ¼nscht, Eingangsdatum der Mail unterstrichen anzeigen
 			$title.=$tmpdate;
 		}
 
 
-		// Link zu vollständigem Artikel (oder zur level0-Newsliste, falls Startseite; kein Link falls Titel eines kompletten Artikels)
+		// Link zu vollstÃ¤ndigem Artikel (oder zur level0-Newsliste, falls Startseite; kein Link falls Titel eines kompletten Artikels)
 		if ($link) {
 			if ( $this->ident['ku_start'] && $this->ident['ti_beze']=="Startseiten-Funktion" ) {
 				$title="<!-- #BeginTitle --><a href=\"$_SERVER[PHP_SELF]?id=$art[ti_id]&in_id=$art[in_id]\" ".$this->ident['linkProperties'].">$title</a><!-- #EndTitle -->";
@@ -1599,8 +1599,8 @@ class PMail extends PUtil {
 		if ( (!$this->ident['ku_start'] || $this->ident['ti_beze']!='Startseiten-Funktion') && empty($_GET['virtual']) && !empty($this->ident['ku_fonttitle']) )
 			$title=$this->ident['ku_fonttitle'].$title.'</font>';
 
-		if ( !($this->ident['titleStyle'] & 8) )	$title.='<br>';								//falls gewünscht, Zeilenumbruch nach Titel der Mail (standard ist Zeilenumbruch an)
-		if ( $this->ident['titleStyle'] & 16 )		$title="<nobr>$title</nobr>";				//falls gewünscht, kein Zeilenumbruch im kompletten Titel der Mail
+		if ( !($this->ident['titleStyle'] & 8) )	$title.='<br>';								//falls gewÃ¼nscht, Zeilenumbruch nach Titel der Mail (standard ist Zeilenumbruch an)
+		if ( $this->ident['titleStyle'] & 16 )		$title="<nobr>$title</nobr>";				//falls gewÃ¼nscht, kein Zeilenumbruch im kompletten Titel der Mail
 
 		return($title);
 	}
@@ -1621,12 +1621,12 @@ class PMail extends PUtil {
 		} else $art['in_code'] = substr($art['in_code'], $pos+1);		//sonst Text ab $
 
 		
-		// Tags löschen um Quelltext zu vereinfachen
+		// Tags lÃ¶schen um Quelltext zu vereinfachen
 		$art['in_code'] = preg_replace("/<span.*?>|<\/span>|<o:p>|<\/o:p>|<\?.*?>/is", '', $art['in_code']);
 		$art['in_code'] = preg_replace("/<p class.*?>/is", '<p>', $art['in_code']);
 		$art['in_code'] = PUtil::preg_replace_div($art['in_code']);	// div-tags vereinfachen
 
-		// Ersetzungen für alte Mails:
+		// Ersetzungen fÃ¼r alte Mails:
 		$art['in_code'] = preg_replace("/<img src=\"..\/image.php|<img src=\"image.php/is", "<img src=\"/mail_update/image.php", $art['in_code']);
 		$art['in_code'] = preg_replace("/<font.*?>|<\/font>|<html>|<\/html>|<body.*?>|<\/body>|<div.*?>|<\/div>/is", "", $art['in_code']);
 
@@ -1646,7 +1646,7 @@ class PMail extends PUtil {
 
 
 	//////////////////////////////////////////////////////////
-	// html-code zur Anzeige des ersten angehängten Bildes	//
+	// html-code zur Anzeige des ersten angehÃ¤ngten Bildes	//
 	function getAttachment( $art, $thumb=0 ) {
 		$art=preg_replace( "/^<!--X-Derived:\s*?(\/mail_update\/res\/)?([^\/]*?)-->.*/si", "\\2", trim($art['derived']) );
 		$art='/mail_update/res/'.trim($art);
@@ -1666,12 +1666,12 @@ class PMail extends PUtil {
 	//////////////////////////////////////////////////////////
 	// zeigt einen Artikel komplett, ohne Attachments		//
 	function compl_oAttach($art) {
-		// Tags löschen um Quelltext zu vereinfachen
+		// Tags lÃ¶schen um Quelltext zu vereinfachen
 		$art['in_code'] = preg_replace("/<span.*?>|<\/span>|<o:p>|<\/o:p>|<\?.*?>/is", "", $art['in_code']);
 		$art['in_code'] = preg_replace("/<p class.*?>/is", "<p>", $art['in_code']);
 		$art['in_code'] = PUtil::preg_replace_div($art['in_code']);	// div-tags vereinfachen
 
-		// Ersetzungen für alte Mails:
+		// Ersetzungen fÃ¼r alte Mails:
 		$art['in_code'] = preg_replace("/<img src=\"..\/image.php|<img src=\"image.php/is", "<img src=\"/mail_update/image.php", $art['in_code']);
 		$art['in_code'] = preg_replace("/<font.*?>|<\/font>|<html>|<\/html>|<body.*?>|<\/body>/is", "", $art['in_code']);
 
@@ -1690,7 +1690,7 @@ class PMail extends PUtil {
 
 		$compl=$this->titel($art, 0);
 
-		// bei Startseiten-Funktion Link zur gewählten news-liste bauen
+		// bei Startseiten-Funktion Link zur gewÃ¤hlten news-liste bauen
 		if ( $this->ident['ku_start'] && $this->ident['ti_beze']=='Startseiten-Funktion' ) {
 			global $id2;
 			if (!$id2) $id2=$art['ti_id'];
@@ -1712,7 +1712,7 @@ class PMail extends PUtil {
 	//////////////////////////////////////
 	//	NewsList - Funktion					//
 	////////////////////////////////////////////////////////////////////////////////
-	//	erzeugt aus der Datenbank-Liste die richtige Darstellung für die Website	//
+	//	erzeugt aus der Datenbank-Liste die richtige Darstellung fÃ¼r die Website	//
 	////////////////////////////////////////////////////////////////////////////////
 	function genOutput($newsList) {
 
@@ -1839,7 +1839,7 @@ class PMail extends PUtil {
 	/////////////////////////////////////////////////////////////////
 	//	Neue NewsList - Funktion (Typ durch Template bestimmt)		//
 	////////////////////////////////////////////////////////////////////////////////
-	//	erzeugt aus der Datenbank-Liste die richtige Darstellung für die Website	//
+	//	erzeugt aus der Datenbank-Liste die richtige Darstellung fÃ¼r die Website	//
 	////////////////////////////////////////////////////////////////////////////////
 	function genOutput_2($newsList) {
 		$this->news=array();
@@ -1900,7 +1900,7 @@ class PMail extends PUtil {
 	// genOutput_2
 
 	function parse_article($article) {
-		// Tags löschen um Quelltext zu vereinfachen
+		// Tags lÃ¶schen um Quelltext zu vereinfachen
 		$article['in_code'] = preg_replace("/<span.*?>|<\/span>|<o:p>|<\/o:p>|<\?.*?>/is", '', $article['in_code']);
 		$article['in_code'] = preg_replace("/<p class=[^> ]*/is", '<p ', $article['in_code']);
 		$article['in_code'] = preg_replace("/<!\[.*?\]>/is", '', $article['in_code']);
@@ -1940,7 +1940,7 @@ class PMail extends PUtil {
 		// titel
 		$output['titel'] = strip_tags($article['in_titel']);
 		// begrenzte Titellaenge (Laenge aus DB::teaserLength)
-		if ( $this->ident['teaserLength']>0 ) $output['titel_kurz']=strtok( wordwrap($output['titel'], $this->ident['teaserLength'], 'µ'), 'µ');
+		if ( $this->ident['teaserLength']>0 ) $output['titel_kurz']=strtok( wordwrap($output['titel'], $this->ident['teaserLength'], 'Âµ'), 'Âµ');
 
 		// datum
 		$output['datum']=$article['date'];
