@@ -45,14 +45,14 @@
  * @param: Nutzer
  * @param: Passwort
  */
-  $dbverbindung=sql_connect('localhost','EAHUsersql1','apDJdehv');
+  $dbverbindung=sql_connect($dblogin['server'],$dblogin['nutzer'],$dblogin['passwort']);
   
 /**
  * sql_select_db: Auswahl einer MySQL Datenbank
  * Hierbei gilt es zu beachten, das in den Datein common.mysql.php und common.mysqli.php Funktionen 
  * geschrieben wurden, die es ermöglichen die mysql/ mysqli Befehle wie nachfolgend aufzurufen.
  */
-  sql_select_db('EAHUsersql1');
+  sql_select_db($dblogin['database']);
 
 /**
  * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten

@@ -38,8 +38,8 @@
  * 
  */
   $dblogin['server']    = 'localhost';
-  $dblogin['nutzer']    = $_SERVER['DBUser'];
-  $dblogin['passwort']  = $_SERVER['DBPass'];
-  $dblogin['database']  = 'postbuch_demo';
+  $dblogin['nutzer']    = 'root';
+  $dblogin['passwort']  = 'qjwX37b9*';
+  $dblogin['database']  = 'postbuch';
 
 ?>

@@ -37,17 +37,18 @@ function sessionClose()
 function sessionRead($id)
 {
     if (!defined(MAXSESSIONTIME))
-      define('MAXSESSIONTIME',1440);
+    	define('MAXSESSIONTIME',1440);
+    
     sql_query("DELETE FROM ".DBPREFIX."session WHERE dt<DATE_SUB(now(),INTERVAL ".MAXSESSIONTIME." SECOND)");
 
     $ergebnis=sql_query("SELECT value FROM ".DBPREFIX."session where id='$id'");
     if (list($sess_data) = sql_fetch_row($ergebnis)) {
   	return $sess_data;
 	//return stripslashes($sess_data);
-}
-  else
-	return '';
-}
+	}
+	  else
+		return '';
+	}
 
 function sessionWrite($id,$sess_data)
 {

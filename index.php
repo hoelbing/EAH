@@ -46,6 +46,8 @@
  * 
  * Anlegen der Variablen $_SESSION["nutzer_id"], $_SESSION["postbuch_modus"], $_SESSION["filterdaten"]; werden 
  */	
+ 
+ 
 	$_SESSION["nutzer_id"];
 	$_SESSION["postbuch_modus"];
 	$_SESSION["filterdaten"];
