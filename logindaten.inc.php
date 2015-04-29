@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Unterbindet Error-Meldungen, bei der Programmierung muss die Zeile auskommentiert werden
+ */
+ 
+ error_reporting(0);	
+	
 /**
  * Postbuch - Universitaet Leipzig
  * Hauptkonfiguration
