@@ -17,7 +17,7 @@ if ( !defined('PML_INCLUDED') ) {
 }
 
 /**
-*	Basisklasse für ein Administrations-Tool mit bereits integrierter Nutzer-&#47;Rechteverwaltung
+*	Basisklasse fuer ein Administrations-Tool mit bereits integrierter Nutzer-&#47;Rechteverwaltung
 *
 *
 *	<b>Konfigurationsparameter:<&#47;b>
@@ -26,19 +26,19 @@ if ( !defined('PML_INCLUDED') ) {
 *	$var['adm_level']=array(
 *	'1'	=>	array('Nutzerverwaltung', "user_admin"),			&#47;&#47;required entry (leave unchanged)
 *	'2'	=>	array('Neueintrag', "new_entry"),
-*	'Bit'	=>	array('Name im Menü&#47;Rechteverwaltung', "aufzurufende Funktion bei Auswahl")	);
+*	'Bit'	=>	array('Name im Menue&#47;Rechteverwaltung', "aufzurufende Funktion bei Auswahl")	);
 *
 *	array with admin levels(bits) that don't represent links in main menu:
 *	$var['adm_no_menu']=array(2, 4);
 *	
-*	Template für das Admin-Tool
+*	Template fuer das Admin-Tool
 *	$var['adm_dwt']=".&#47;templates&#47;adm.dwt";
 *
 *	ID einer bestehenden Datenbankverbindung
 *	$var['dbID']
 *
 *
-*	<b>Benötigte Datenbank-Tabelle:<&#47;b> access
+*	<b>Benoetigte Datenbank-Tabelle:<&#47;b> access
 *
 *	CREATE TABLE access (
 *		id int(11) NOT NULL auto_increment,
@@ -50,7 +50,7 @@ if ( !defined('PML_INCLUDED') ) {
 *		UNIQUE KEY user (user)
 *	) TYPE=MyISAM;
 *
-*	Warnung: Nutzer mit der id=1 ist ein Administrator mit sämtlichen Rechten!!
+*	Warnung: Nutzer mit der id=1 ist ein Administrator mit saemtlichen Rechten!!
 **/
 class icAdmin extends PUtil
 {
@@ -63,7 +63,7 @@ class icAdmin extends PUtil
 	var $template;					// admin template
 
 	/**
-	*	Objekt vom Typ PText, welches den Titel des aktuellen Menüpunktes enthält (für Platzhalter {title} im Template)
+	*	Objekt vom Typ PText, welches den Titel des aktuellen Menuepunktes enthaelt (fuer Platzhalter {title} im Template)
 	**/
 	var $title="Administration";	// title of the shown page
 
@@ -80,9 +80,9 @@ class icAdmin extends PUtil
 	var $content;					// main content (object of type PContainer)
 
 	/**
-	*	Konstruktor: startet die Programmausführung
+	*	Konstruktor: startet die Programmausfuehrung
 	*	<b>Parameter:</b>
-	*		$var - Array mit den Konfigurationsparametern und den übergebenen Variablen (alle Post/Get-Variablen sollten als $var['Bezeichner'] übergeben werden
+	*		$var - Array mit den Konfigurationsparametern und den uebergebenen Variablen (alle Post/Get-Variablen sollten als $var['Bezeichner'] uebergeben werden
 	**/
 	function icAdmin($var)
 	{
@@ -191,7 +191,7 @@ class icAdmin extends PUtil
 			$output->add( new PInput("hidden", "var[ID]", $var['ID']) );
 			break;
 		case "Ändern":
-			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geändert werden
+			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geaendert werden
 			for($i=0;$i<count($var['adm_level']);$i++) $level+=$var["level_$i"];
 			$sql="UPDATE access SET user='$var[user]', passwd=PASSWORD('$var[pass]'), level='$level' WHERE id='$var[ID]'";
 			@mysql_query($sql);
@@ -200,7 +200,7 @@ class icAdmin extends PUtil
 			break;
 		// delete an admin
 		case "delete":
-			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geändert werden
+			if ($this->admin[0]==$var['ID']) break;		// eigener account darf nicht geaendert werden
 			$sql="DELETE FROM access WHERE id='$var[ID]'";
 			@mysql_query($sql);
 			if ( mysql_error()!="" ) $this->errorMsg="User konnte nicht gelöscht werden!!";
@@ -287,7 +287,7 @@ class icAdmin extends PUtil
 		$table->addRow($row);
 		$output->add($table);
 
-		// Level-Erklärung
+		// Level-Erklaerung
 		$table=new PTable();
 		if ($this->admin[0]>1) $table->addRow( array("<b>Level</b>", "&nbsp;", "<b>Funktion</b>") );
 			else $table->addRow( array("<b>Admin-Level</b>", "&nbsp;", "<b>Funktion</b>", "&nbsp;", "<b>Bit</b>") );

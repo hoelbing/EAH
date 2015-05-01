@@ -48,7 +48,7 @@ if ( !defined('PML_INCLUDED') && !defined('PHPMyLib_INCLUDED') ) {
 
 
 /**
-* Diese Funktion liefert die aktuelle Version von PHPMyLib als String zurück
+* Diese Funktion liefert die aktuelle Version von PHPMyLib als String zurueck
 **/
 function PVersion() {
 

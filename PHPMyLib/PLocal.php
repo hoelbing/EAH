@@ -11,9 +11,9 @@
 
 /**
 *	Klasse:				icText
-*	Zweck:				Textformatierung, Textersetzung für Lokalisierungen
-*	Funktionsweise:		in den Files definierte Texte werden in globalen (sprachunabhängigen) Textkeys(Konstanten) gespeichert
-*						(aus Kompatibilitätsgründen, werden die textkeys auch noch in einem assoziativen Array gespeichert)
+*	Zweck:				Textformatierung, Textersetzung fuer Lokalisierungen
+*	Funktionsweise:		in den Files definierte Texte werden in globalen (sprachunabhaengigen) Textkeys(Konstanten) gespeichert
+*						(aus Kompatibilitaetsgruenden, werden die textkeys auch noch in einem assoziativen Array gespeichert)
 **/
 class icText {
 	var $language;	// Sprache
@@ -59,7 +59,7 @@ class icText {
 	// icText::icText
 
 	/**
-	*	Zusätzliche Textfiles einlesen
+	*	Zusaetzliche Textfiles einlesen
 	*	<b>Format:</b>
 	*		 	-text_key,"lokalisierter Text"
 	*			-Platzhalter sind erlaubt ( %s, %d, ... )

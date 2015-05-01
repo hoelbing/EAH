@@ -1,18 +1,18 @@
 <?php
 /**
- * Im Rahmen der Veranstaltung Sofwareqaulität im SS 2015 des Studigang Wirstschaftsingenieurwesen
- * mit Fachrichtung Informationstechnik soll das Postuch ,das ursprünglich von Erik Reuter von der
- * Universität Leipzig entwickelt wurde, auf die Bedürfnisse der EAH Jena angepasst werden.
+ * Im Rahmen der Veranstaltung Sofwareqaulitaet im SS 2015 des Studigang Wirstschaftsingenieurwesen
+ * mit Fachrichtung Informationstechnik soll das Postuch ,das urspruenglich von Erik Reuter von der
+ * Universitaet Leipzig entwickelt wurde, auf die Beduerfnisse der EAH Jena angepasst werden.
  *
- * Im Rahmen der Vorlesung wird sich Gedanken über einen Anforderungskatalog gemacht, der im Laufe der
+ * Im Rahmen der Vorlesung wird sich Gedanken ueber einen Anforderungskatalog gemacht, der im Laufe der
  * Zeit eingearbeitet werden soll. Die Anforderungen werden mit Hilfe des Webportal www.agilespecs.com
  * zusammengefasst und verwaltet.
  *
- * @author: Tobias Möller, Björn Hoffmann, Maik Tanneberg
+ * @author: Tobias Moeller, Bjoern Hoffmann, Maik Tanneberg
  */
 
 /**
- * Jetzt unnötig 
+ * Jetzt unnoetig 
  */
   function replacechars($text) {
 
@@ -31,7 +31,7 @@
   ini_set("display_errors", 1);
   
 /**
-  * include_once bindet eine angegebene Datei ein und führt sie als PHP-Skript aus. Dieses Verhalten
+  * include_once bindet eine angegebene Datei ein und fuehrt sie als PHP-Skript aus. Dieses Verhalten
   * ist identisch zu include, mit dem einzigen Unterschied, dass die Datei, wenn sie bereits eingebunden
   * wurde, nicht erneut eingebunden wird. Wie der Name schon sagt, wird sie nur einmal eingebunden werden.
   *
@@ -45,12 +45,12 @@
   
  /**
   * session_start() erzeugt eine Session oder nimmt die aktuelle wieder auf, die auf der Session-Kennung
-  * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie übermittelt wurde.
+  * basiert, die mit einer GET- oder POST-Anfrage oder mit einem Cookie uebermittelt wurde.
   */
   session_start();
   
 /** session_id() wird verwendet, um die Session-ID der aktuellen Session zu erhalten oder zu setzen.
-  * Hier wird der Variable: $sessionid der Rückgabewert der Funktion session_id(); zugewiesen
+  * Hier wird der Variable: $sessionid der Rueckgabewert der Funktion session_id(); zugewiesen
   */
   $sessionid=session_id();
 
