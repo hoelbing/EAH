@@ -60,7 +60,37 @@ form[role=login] {
 	margin-top: 40px;
 }
 
-	
+/* 
+   ##################################
+   ######### Forms
+   ################################
+*/
+
+.standard-form {
+	background-color: #fff;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    border-width: 1px;
+    padding: 20px;
+}
+
+.fehler .checkbox, 
+.fehler .checkbox-inline, 
+.fehler .control-label, 
+.fehler .help-block, 
+.fehler .radio, 
+.fehler .radio-inline, 
+.fehler.checkbox label, 
+.fehler.checkbox-inline label, 
+.fehler.radio label, 
+.fehler.radio-inline label {
+    color: #a94442;
+}
+
+.fehler .form-control {
+    border-color: #a94442;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
 
 /* 
    ##################################

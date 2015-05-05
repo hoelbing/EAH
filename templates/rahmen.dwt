@@ -28,6 +28,8 @@
 		<script language="javascript" type="text/javascript" src="j-scib/mootools.v1.00.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		
+		
+		
 		<script language="javascript" type="text/javascript" src="j-scib/load.js?include=ext_string,pl_mooprompt,pl_calendar,wdg_datecheck,wdg_fixpng"></script>
 		<script language="javascript" type="text/javascript" src="def_js/main.js"></script>
 		
@@ -40,9 +42,16 @@
 -->
         
         <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="assets/css/postbuch.css" />
         
+        
+        <script language="javascript" type="text/javascript" src="assets/moment-develop/min/moment-with-locales.min.js"></script>
         <script language="javascript" type="text/javascript" src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="assets/bootstrap-datetimepicker-master/src/js/bootstrap-datetimepicker.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/postbuch.css" />
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" />
+        
+        
 	</head>
 
 	<body id="b_{body_id}">

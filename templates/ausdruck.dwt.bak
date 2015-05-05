@@ -1,0 +1,35 @@
+
+<!-- start: content_space -->
+<div class="content_space">
+
+	<h5 id="msg_titel">Ausdruck</h5>
+
+	<form name="frm_msg" id="frm_msg" action="{formaction}" method="post" target="pdf_anzeige">
+		{hidden}
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_typ" id="lbl_typ" for="typ_eingang">Typ</label>
+		<input type="radio" name="typ" id="typ_eingang" value="eingang" class="input_radio" checked /><label name="lbl_typ_eingang" id="lbl_typ_eingang" for="typ_eingang" class="small">Eingang</label>
+		<input type="radio" name="typ" id="typ_ausgang" value="ausgang" class="input_radio" /><label name="lbl_typ_ausgang" id="lbl_typ_ausgang" for="typ_ausgang" class="small">Ausgang</label></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_startdatum" id="lbl_startdatum" for="startdatum">Startdatum</label><input type="text" name="startdatum" id="startdatum" value="{startdatum}" class="input_text readonly" style="width:90px;" readonly /><input type="button" name="btn_startdatum" id="btn_startdatum" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "startdatum", ifFormat: "%d.%m.%Y", button: "btn_startdatum"});</script></div>
+		<div class="frm_col"><label name="lbl_enddatum" id="lbl_enddatum" for="enddatum">Enddatum</label><input type="text" name="enddatum" id="enddatum" value="{enddatum}" class="input_text readonly" style="width:90px;" readonly /><input type="button" name="btn_enddatum" id="btn_enddatum" value="&nbsp;" class="input_button calendar" />
+		<script>Calendar.setup({inputField: "enddatum", ifFormat: "%d.%m.%Y", button: "btn_enddatum"});</script></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col frm_col_submit"><input type="submit" name="btn_speichern" id="btn_speichern" value="Anzeigen" class="input_button" /></div>
+	</form>
+
+	{script}
+
+	<!-- InstanceEndEditable -->
+
+	<div class="clearfloat">&nbsp;</div>
+
+</div>
+<!-- end: content_space -->

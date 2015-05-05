@@ -1,35 +1,66 @@
 
 <!-- start: content_space -->
-<div class="content_space">
+<form name="frm_msg" id="frm_msg" action="{formaction}" method="post" class="form-horizontal standard-form" target="pdf_anzeige">
+	{hidden}
+	<legend>Ausdruck</legend>
+	
+	<div class="form-group {fehler_medium}">
+    	<label name="lbl_typ" id="lbl_typ" for="typ_eingang" class="col-sm-2 control-label">Typ:</label>
+		<div class="col-sm-10">
+			<label class="radio-inline" name="lbl_typ_eingang" id="lbl_typ_eingang" for="typ_eingang">
+				<input type="radio" name="typ" id="typ_eingang" value="eingang" checked /> Eingang
+			</label>
+			<label class="radio-inline" name="lbl_typ_ausgang" id="lbl_typ_ausgang" for="typ_ausgang">
+				<input type="radio" name="typ" id="typ_ausgang" value="ausgang" /> Ausgang
+			</label>
+    	</div>
+  	</div>
+  	
+  	<div class="form-group {fehler_startdatum}">
+  		<label name="lbl_startdatum" id="lbl_startdatum" for="startdatum" class="col-sm-2 control-label">Startdatum:</label>
+        <div class="col-sm-4">
+            <div class='input-group date' id='datetimepicker1'>
+                <input class="form-control" type='text' name="startdatum" id="startdatum" value="{startdatum}" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                locale: 'de'
+            });
+        });
+    </script>
+    
+    <div class="form-group {fehler_enddatum}">
+  		<label name="lbl_enddatum" id="lbl_enddatum" for="enddatum" class="col-sm-2 control-label" >Enddatum:</label>
+        <div class="col-sm-4">
+            <div class='input-group date' id='datetimepicker2'>
+                <input class="form-control" type='text' name="enddatum" id="enddatum" value="{enddatum}" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                locale: 'de'
+            });
+        });
+    </script>
+    
+    <div class="form-group">
+    	<div class="col-sm-offset-2 col-sm-6">
+			<button type="submit" name="btn_speichern" id="btn_speichern" value="Anzeigen" class="btn btn-info">Anzeigen</button>
+    	</div>
+	</div>
 
-	<h5 id="msg_titel">Ausdruck</h5>
-
-	<form name="frm_msg" id="frm_msg" action="{formaction}" method="post" target="pdf_anzeige">
-		{hidden}
-
-		<div class="clearfloat vspace_four">&nbsp;</div>
-
-		<div class="frm_col"><label name="lbl_typ" id="lbl_typ" for="typ_eingang">Typ</label>
-		<input type="radio" name="typ" id="typ_eingang" value="eingang" class="input_radio" checked /><label name="lbl_typ_eingang" id="lbl_typ_eingang" for="typ_eingang" class="small">Eingang</label>
-		<input type="radio" name="typ" id="typ_ausgang" value="ausgang" class="input_radio" /><label name="lbl_typ_ausgang" id="lbl_typ_ausgang" for="typ_ausgang" class="small">Ausgang</label></div>
-
-		<div class="clearfloat vspace_four">&nbsp;</div>
-
-		<div class="frm_col"><label name="lbl_startdatum" id="lbl_startdatum" for="startdatum">Startdatum</label><input type="text" name="startdatum" id="startdatum" value="{startdatum}" class="input_text readonly" style="width:90px;" readonly /><input type="button" name="btn_startdatum" id="btn_startdatum" value="&nbsp;" class="input_button calendar" />
-		<script>Calendar.setup({inputField: "startdatum", ifFormat: "%d.%m.%Y", button: "btn_startdatum"});</script></div>
-		<div class="frm_col"><label name="lbl_enddatum" id="lbl_enddatum" for="enddatum">Enddatum</label><input type="text" name="enddatum" id="enddatum" value="{enddatum}" class="input_text readonly" style="width:90px;" readonly /><input type="button" name="btn_enddatum" id="btn_enddatum" value="&nbsp;" class="input_button calendar" />
-		<script>Calendar.setup({inputField: "enddatum", ifFormat: "%d.%m.%Y", button: "btn_enddatum"});</script></div>
-
-		<div class="clearfloat vspace_four">&nbsp;</div>
-
-		<div class="frm_col frm_col_submit"><input type="submit" name="btn_speichern" id="btn_speichern" value="Anzeigen" class="input_button" /></div>
-	</form>
-
+</form>
 	{script}
-
 	<!-- InstanceEndEditable -->
-
-	<div class="clearfloat">&nbsp;</div>
-
-</div>
 <!-- end: content_space -->
