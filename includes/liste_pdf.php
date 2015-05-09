@@ -40,8 +40,8 @@
   * @param: include_main.inc.php
   * @param: inc/class.ezpdf.php 
   */
-  include_once('include_main.inc.php');
-  include_once('lib/Cpdf/class.ezpdf.php');
+  include_once('../include_main.inc.php');
+  include_once('../lib/Cpdf/class.ezpdf.php');
   
  /**
   * session_start() erzeugt eine Session oder nimmt die aktuelle wieder auf, die auf der Session-Kennung

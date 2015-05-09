@@ -605,7 +605,7 @@
 				$tpl_rahmen->addComponent('menue', menue_ausfuellen('ausdruck'));
 
 				$tpl_inhalt = new PTemplate(NULL, $templatefiles['ausdruck']);
-				$tpl_inhalt->addComponent('formaction', new PText('liste_pdf.php'));
+				$tpl_inhalt->addComponent('formaction', new PText('includes/liste_pdf.php'));
 				$tpl_inhalt->addComponent('hidden',     new PInput('hidden','einrichtung_id',$_FORMVARS['einrichtung_id']));
 
 		        $tpl_rahmen->addComponent('inhalt', $tpl_inhalt);
