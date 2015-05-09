@@ -28,14 +28,14 @@
  * @param: logindaten.inc.php
  * @param: config.inc.php 
  * @param: PHPMyLib/PHPMyLib.php
- * @param: inc/functions.inc.php
- * @param: inc/projekt.inc.php
+ * @param: includes/functions.inc.php
+ * @param: includes/projekt.inc.php
  */
   include_once('logindaten.inc.php');
   include_once('config.inc.php');
   include_once('PHPMyLib/PHPMyLib.php');
-  include_once('inc/functions.inc.php');
-  include_once('inc/projekt.inc.php');
+  include_once('includes/functions.inc.php');
+  include_once('includes/projekt.inc.php');
 
 /**
  * sql_connect(): Ã–ffnet eine Verbindung zu einem MySQL-Server
@@ -62,6 +62,6 @@
  * des Postbuchs eingebunden.
  * @param: inc/session.inc.php
  */   
-  include_once('inc/session.inc.php');
+  include_once('includes/session.inc.php');
 
 ?>
