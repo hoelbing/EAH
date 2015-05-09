@@ -26,7 +26,7 @@
  * Hier wird die Datei: include_main.inc.php aus dem Gesamtverzeichnis des Postbuchs eingebunden.
  * @param: common.mysql.php
  */
-  include_once('common.mysql.php');
+  include_once('includes/common.mysql.php');
 
 /**
  * define - Definiert waehrend der Laufzeit eine benannte Konstante. 
