@@ -1653,7 +1653,7 @@ class PMail extends PUtil {
 
 		if ( !($size=@getimagesize($_SERVER['DOCUMENT_ROOT'].$art)) ) {
 			if ( $size=@getimagesize($_SERVER['DOCUMENT_ROOT'].'/img/default.jpg') ) $art='/img/default.jpg';
-				elseif ( $size=@getimagesize($_SERVER['DOCUMENT_ROOT'].'/image/default.jpg') ) $art='/image/default.jpg';
+				elseif ( $size=@getimagesize($_SERVER['DOCUMENT_ROOT'].'/templates/image/default.jpg') ) $art='/templates/image/default.jpg';
 					else return FALSE;
 		}
 		if ( $thumb==1 && $this->ident['tmb_width']>0 && $this->ident['tmb_height']>0 ) $art='<img src="'.$_SERVER['PHP_SELF'].'?id='.$_REQUEST['id'].'&img='.urlencode($art).'">';

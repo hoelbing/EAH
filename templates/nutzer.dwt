@@ -24,8 +24,8 @@
 	<dl>
 		<dt><a href="{link_bearbeiten}" target="_top">{titel}</a></dt>
 		<dd>
-			<a href="{link_bearbeiten}" target="_top" class="btn_open_list_user show_tt" title="Nutzer bearbeiten"><img src="image/buttons/bearbeiten-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
-			<a href="#" class="btn_delete_list_user show_tt prompt" title="Nutzer l&ouml;schen" rel="{cnutzer_id}"><img src="image/buttons/loeschen-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
+			<a href="{link_bearbeiten}" target="_top" class="btn_open_list_user show_tt" title="Nutzer bearbeiten"><img src="templates/image/buttons/bearbeiten-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
+			<a href="#" class="btn_delete_list_user show_tt prompt" title="Nutzer l&ouml;schen" rel="{cnutzer_id}"><img src="templates/image/buttons/loeschen-small.gif" width="14" height="14" border="0" alt="" title="" /></a>
 		</dd>
 	</dl>
 </div>

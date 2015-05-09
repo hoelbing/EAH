@@ -45,7 +45,7 @@
 
 
 				<!-- start: header -->
-				<div id="header"><img src="image/logo.png" width="143" height="80" border="0" class="fix_png" alt="iPosBu - Das Postbuch f&uuml;r die Universit&auml;t Leipzig" title="" />{einrichtung}</div>
+				<div id="header"><img src="templates/image/logo.png" width="143" height="80" border="0" class="fix_png" alt="iPosBu - Das Postbuch f&uuml;r die Universit&auml;t Leipzig" title="" />{einrichtung}</div>
 				<!-- end: header -->
 
 				{menue}
