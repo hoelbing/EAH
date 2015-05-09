@@ -28,13 +28,13 @@
 		<script language="javascript" type="text/javascript" src="def_js/main.js"></script>
 		
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="assets/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
 		
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="assets/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap-theme.min.css">
 		
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap/js/bootstrap.min.js"></script>
 
 	</head>
 
