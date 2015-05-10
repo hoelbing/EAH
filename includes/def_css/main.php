@@ -29,6 +29,7 @@
     // zentrale include-datei inkl. db-anmeldung einbinden
     $verzeichnis = getcwd();
     chdir("../");
+    chdir("../");
 	include_once('include_main.inc.php');
     //chdir($verzeichnis);
 

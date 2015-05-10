@@ -27,13 +27,20 @@
 		<script language="javascript" type="text/javascript" src="js/j-scib/load.js?include=ext_string,pl_mooprompt,pl_calendar,wdg_datecheck,wdg_fixpng"></script>
 		<script language="javascript" type="text/javascript" src="js/main.js"></script>
 		
+		<link rel="stylesheet" type="text/css" href="includes/def_css/main.php?fsize={schriftgroesse}&color={farbe}" />
+        <link rel="stylesheet" type="text/css" href="includes/def_css/calendar.php?color={farbe}" />
+        <link rel="stylesheet" type="text/css" href="includes/def_css/rewrite.php?color={farbe}" />
+        
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="templates/default/bootstrap/css/bootstrap.min.css">
 		
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="js/bootstrap/css/bootstrap-theme.min.css">
-		
-		<!-- Latest compiled and minified JavaScript -->
+		<link rel="stylesheet" href="templates/default/css/bootstrap-theme.min.css">
+
+	    <!-- jQuery (wird für Bootstrap JavaScript-Plugins benötigt) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+		< !-- Latest compiled and minified JavaScript -->
 		<script src="js/bootstrap/js/bootstrap.min.js"></script>
 
 	</head>
