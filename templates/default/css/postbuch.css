@@ -1,0 +1,102 @@
+body {
+	background: #efefef;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+/* 
+   ##################################
+   ######### Login-Window
+   ################################
+*/
+
+.login-form {
+	margin-top: 60px;
+}
+
+form[role=login] {
+	color: #5d5d5d;
+	background: #b7b7b7;
+	padding: 26px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+	form[role=login] img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 35px;
+	}
+	form[role=login] input,
+	form[role=login] button {
+		font-size: 18px;
+		margin: 16px 0;
+	}
+	form[role=login] > div {
+		text-align: center;
+	}
+	
+.form-links {
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 50px;
+}
+	.form-links a {
+		color: #fff;
+	}
+
+
+/* 
+   ##################################
+   ######### Main Menue
+   ################################
+*/
+.navbar {
+	margin-top: 40px;
+}
+
+/* 
+   ##################################
+   ######### Forms
+   ################################
+*/
+
+.standard-form {
+	background-color: #fff;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    border-width: 1px;
+    padding: 20px;
+}
+
+.fehler .checkbox, 
+.fehler .checkbox-inline, 
+.fehler .control-label, 
+.fehler .help-block, 
+.fehler .radio, 
+.fehler .radio-inline, 
+.fehler.checkbox label, 
+.fehler.checkbox-inline label, 
+.fehler.radio label, 
+.fehler.radio-inline label {
+    color: #a94442;
+}
+
+.fehler .form-control {
+    border-color: #a94442;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+/* 
+   ##################################
+   ######### Footer
+   ################################
+*/
+#footer {
+	margin-top: 20px;
+}

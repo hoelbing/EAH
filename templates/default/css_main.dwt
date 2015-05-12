@@ -53,7 +53,7 @@
 		width	  : 620px;
 		height    : auto !important;
 		height    : 100%; /* stupid msie */
-		background: #{farbe} url({pfad}templates/image/bg_container-big.gif) repeat-y top left;
+		background: #{farbe} url({pfad}image/bg_container-big.gif) repeat-y top left;
 	¦>¦
 	#container_fixed_width ¦<¦
 		margin          : 0 auto;
@@ -244,7 +244,7 @@
 		font-size		: 1em;
 		font-weight     : normal;
 		line-height     : 18px;
-		background      : #f4f4f4 url({pfad}templates/image/filter-off.gif) no-repeat center left;
+		background      : #f4f4f4 url({pfad}image/filter-off.gif) no-repeat center left;
 		overflow        : hidden;
 	¦>¦
 	#contentfilter div.filter a ¦<¦
@@ -253,7 +253,7 @@
 		background-color: transparent;
 		color           : #4c4c4c;
 	¦>¦
-	#contentfilter div.filter.filter_ov ¦<¦ background: #f4f4f4 url({pfad}templates/image/filter-ov.gif) no-repeat center left; ¦>¦
+	#contentfilter div.filter.filter_ov ¦<¦ background: #f4f4f4 url({pfad}image/filter-ov.gif) no-repeat center left; ¦>¦
 	#contentfilter div.filter.filter_clean ¦<¦
 		background: none;
 		background-color: #f4f4f4;
@@ -370,15 +370,15 @@
 	div.frm_col_submit input ¦<¦ margin-top: 4px !important; ¦>¦
 	.input_button.calendar ¦<¦
 		width     : 19px;
-		background: #4c4c4c url({pfad}templates/image/buttons/kalender.gif) no-repeat center center;
+		background: #4c4c4c url({pfad}image/buttons/kalender.gif) no-repeat center center;
 	¦>¦
 	.input_button.color ¦<¦
 		width     : 19px;
-		background: #4c4c4c url({pfad}templates/image/buttons/farbwahl.gif) no-repeat center center;
+		background: #4c4c4c url({pfad}image/buttons/farbwahl.gif) no-repeat center center;
 	¦>¦
 	.input_button.plus ¦<¦
 		width     : 19px;
-		background: #4c4c4c url({pfad}templates/image/buttons/plus.gif) no-repeat center center;
+		background: #4c4c4c url({pfad}image/buttons/plus.gif) no-repeat center center;
 	¦>¦
 	.input_button.loeschen_links ¦<¦
 		margin-top : 2px !important;
@@ -386,7 +386,7 @@
 		margin-left : 5px !important;
 		width       : 14px;
 		height      : 14px;
-		background  : #4c4c4c url({pfad}templates/image/buttons/loeschen-small.gif) no-repeat center center;
+		background  : #4c4c4c url({pfad}image/buttons/loeschen-small.gif) no-repeat center center;
 	¦>¦
 	.input_button ¦<¦
 		padding  		: 2px 2px 1px;

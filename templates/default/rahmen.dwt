@@ -1,6 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>i-fabrik GmbH - Postbuch</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
 		<meta name="title"       content="i-fabrik GmbH Postbuch" />
 		<meta name="keywords"    content="" />
 		<meta name="description" content="" />
@@ -18,57 +23,60 @@
         <meta name="dc.contributor" content="Heiko Pfefferkorn [i-fabrik GmbH]" />
         <meta name="dc.contributor" content="Erik Reuter [i-fabrik GmbH]" />
 
-        <meta http-equiv="cache-control" content="no-cache" />
-        <meta http-equiv="pragma"        content="no-cache" />
-        <meta http-equiv="expires"       content="0" />
-        <meta http-equiv="content-type"  content="text/html; charset=iso-8859-1" />
-
 		<script language="javascript" type="text/javascript" src="js/j-scib/mootools.v1.00.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			
 		<script language="javascript" type="text/javascript" src="js/j-scib/load.js?include=ext_string,pl_mooprompt,pl_calendar,wdg_datecheck,wdg_fixpng"></script>
 		<script language="javascript" type="text/javascript" src="js/main.js"></script>
-		
-		<link rel="stylesheet" type="text/css" href="includes/def_css/main.php?fsize={schriftgroesse}&color={farbe}" />
-        <link rel="stylesheet" type="text/css" href="includes/def_css/calendar.php?color={farbe}" />
-        <link rel="stylesheet" type="text/css" href="includes/def_css/rewrite.php?color={farbe}" />
         
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="templates/default/bootstrap/css/bootstrap.min.css">
-		
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="templates/default/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.min.css" />
+        
+        <script language="javascript" type="text/javascript" src="js/moment-develop/min/moment-with-locales.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/bootstrap-datetimepicker-master/src/js/bootstrap-datetimepicker.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="js/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" />
+        
+        <!-- css-style -->
+        <link rel="stylesheet" type="text/css" href="templates/default/css/postbuch.css" />
 
-	    <!-- jQuery (wird für Bootstrap JavaScript-Plugins benötigt) -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    
-		< !-- Latest compiled and minified JavaScript -->
-		<script src="js/bootstrap/js/bootstrap.min.js"></script>
-
+        
 	</head>
 
 	<body id="b_{body_id}">
 
-		<div id="container">
-			<div id="container_fixed_width">
-
-
+		<div id="container" class="container">
+			<div class="row">
 				<!-- start: header -->
-				<div id="header"><img src="templates/image/logo.png" width="143" height="80" border="0" class="fix_png" alt="iPosBu - Das Postbuch f&uuml;r die Universit&auml;t Leipzig" title="" />{einrichtung}</div>
+				<div class="col-lg-12">
+					<div id="header">
+						<div class="text-center">
+							<img src="image/logo.png" width="143" height="80" border="0" alt="iPosBu - Das Postbuch f&uuml;r die Universit&auml;t Leipzig" />
+						</div>
+					</div>
+				</div>
 				<!-- end: header -->
-
-				{menue}
+				
+				<!-- start: menue -->
+				<div class="col-lg-12">
+					{menue}
+				</div>
+				<!-- end: menue -->
 
 				<!-- start: content -->
-				<div id="content">
-
+				<div id="content" class="col-lg-12">
 					{inhalt}
-
 				</div>
 				<!-- end: content -->
 
 				{blaettern}
 
 				<!-- start: footer -->
-				<div id="footer"><a href="http://www.ifabrik.de" target="_blank" class="link_footer">&copy; 2007 i-fabrik GmbH</a></div>
+				<div class="col-lg-12">
+					<div id="footer" class="text-center">
+						<a href="http://www.ifabrik.de" target="_blank" class="link_footer">&copy; 2015 i-fabrik GmbH &amp; EAH Jena</a>
+					</div>
+				</div>
 				<!-- end: footer -->
 
 			</div>

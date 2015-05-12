@@ -11,6 +11,6 @@
 	/* Container (Gerüst) ----------------------------------- */
 	body#b_login #container ¦<¦
 		width	  : 400px;
-		background: #{farbe} url({pfad}templates/image/bg_container-small.gif) repeat-y top left;
+		background: #{farbe} url({pfad}image/bg_container-small.gif) repeat-y top left;
 	¦>¦
 	body#b_login #container_fixed_width ¦<¦ width: 380px; ¦>¦
