@@ -42,7 +42,7 @@
 	if (!defined('TITEL_NEUEINTRAG_REFERENZ_ANTWORT')) define('TITEL_NEUEINTRAG_REFERENZ_ANTWORT','Neueintrag Antwort');
 	if (!defined('TITEL_BEARBEITEN')) define('TITEL_BEARBEITEN','Daten bearbeiten');
 
-	// Menï¿½daten
+	// Menuedaten
 	$menuedaten[0]['bezeichnung']  = 'Eingang';
 	$menuedaten[0]['modus']        = 'eingang';
 	$menuedaten[0]['berechtigung'] = 'leser';
@@ -58,8 +58,8 @@
 	$menuedaten[4]['bezeichnung']  = 'Einstellungen';
 	$menuedaten[4]['modus']        = 'einstellungen';
 	$menuedaten[4]['berechtigung'] = 'leser';
-	$menuedaten[5]['bezeichnung']  = 'Sicherung';
-	$menuedaten[5]['modus']        = 'sicherung';
+//	$menuedaten[5]['bezeichnung']  = 'Sicherung';
+//	$menuedaten[5]['modus']        = 'sicherung';
 	$menuedaten[5]['berechtigung'] = 'hauptnutzer';
 	$menuedaten[6]['bezeichnung']  = 'Nutzer';
 	$menuedaten[6]['modus']        = 'nutzer';
