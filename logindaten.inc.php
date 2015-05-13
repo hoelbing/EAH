@@ -37,9 +37,10 @@
 /**
  * 
  */
+  $dblogin = array();
   $dblogin['server']    = 'localhost';
-  $dblogin['nutzer']    = 'root';
-  $dblogin['passwort']  = 'qjwX37b9*';
+  $dblogin['nutzer']    = 'postbuch';
+  $dblogin['passwort']  = 'postbuch';
   $dblogin['database']  = 'postbuch';
 
 ?>
