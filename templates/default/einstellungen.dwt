@@ -1,37 +1,80 @@
-
 <!-- start: content_space -->
 <div class="content_space">
+<form name="frm_msg" id="frm_msg" action="{formaction}" method="post" class="form-horizontal standard-form" target="pdf_anzeige">
+<!--	<form name="frm_options" id="frm_options" action="{formaction}" method="post"> -->
+	{hidden}
+	<legend>Einstellungen</legend>
+	
 
-	<h5 id="msg_titel">Einstellungen</h5>
+		<div class="clearfloat vspace_four">
+			&nbsp;
+		</div>
 
-	<form name="frm_options" id="frm_options" action="{formaction}" method="post">
-		{hidden}
-		<div class="clearfloat vspace_four">&nbsp;</div>
+		<div class="form-group">
+			<label name="lbl_typ" id="lbl_typ" for="typ_eingang" class="col-sm-2 control-label">Anzeigetyp:</label>
+			<div class="col-sm-10">
+				{select_typ_select}
+			</div>
+		</div>
 
-		<div class="frm_col"><label name="lbl_typ_select" id="lbl_typ_select" for="typ_select">Anzeigetyp</label>{select_typ_select}</div>
-		<div class="frm_col" id="optionen_tage" style="display:none"><label name="lbl_blank_tage" id="lbl_blank_tage" style="visibility:hidden;">&nbsp;</label><input type="text" name="eintragtag" id="tage" value="{eintragtag}" class="input_text" style="width:25px;" /><label name="lbl_tage" id="lbl_tage" for="tage" class="small">(Tage pro Seite)</label></div>
-		<div class="frm_col" id="optionen_eintraege" style="display:none"><label name="lbl_blank_eintraege" id="lbl_blank_eintraege" style="visibility:hidden;">Eintr&auml;ge pro Seite</label><input type="text" name="eintragliste" id="eintragliste" value="{eintragliste}" class="input_text" style="width:25px;" /><label name="lbl_eintraege" id="lbl_eintraege" for="eintraege" class="small">(Eintr&auml;ge pro Seite)</div>
+		<div class="frm_col" id="optionen_tage" style="display:none">
+			<label name="lbl_blank_tage" id="lbl_blank_tage" style="visibility:hidden;"> &nbsp; </label>
 
-		<div class="clearfloat vspace_four">&nbsp;</div>
+			<input type="text" name="eintragtag" id="tage" value="{eintragtag}" class="input_text" style="width:25px;" />
+			<label name="lbl_tage" id="lbl_tage" for="tage" class="small"> (Tage pro Seite) </label>
+		</div>
 
-		<div class="frm_col"><label name="lbl_farbe" id="lbl_farbe" for="farbe_select">Farbumgebung</label>{select_farbe}<input type="text" name="farbe_vorschau" id="farbe_vorschau" value="" readonly class="input_text blank" style="width:15px;background-color:#{farbe};" /></div>
+		<div class="frm_col" id="optionen_eintraege" style="display:none">
+			<label name="lbl_blank_eintraege" id="lbl_blank_eintraege" style="visibility:hidden;">Eintr&auml;ge pro Seite</label>
+			<input type="text" name="eintragliste" id="eintragliste" value="{eintragliste}" class="input_text" style="width:25px;" />
+			<label name="lbl_eintraege" id="lbl_eintraege" for="eintraege" class="small">(Eintr&auml;ge pro Seite)
+		</div>
 
-		<div class="clearfloat vspace_four">&nbsp;</div>
+		<div class="clearfloat vspace_four">
+			&nbsp;
+		</div>
+<!--
+		<div class="form-group">
+			<label name="lbl_typ" id="lbl_typ" for="typ_eingang" class="col-sm-2 control-label">Farbumgebung:</label>
+			<div class="col-sm-10">
+				{select_farbe}
+				<input type="text" name="farbe_vorschau" id="farbe_vorschau" value="" readonly class="input_text blank" style="width:15px;background-color:#{farbe};" />
+			</div>
+		</div>
+-->
+		<div class="form-group">
+			<label name="lbl_typ" id="lbl_typ" for="typ_eingang" class="col-sm-2 control-label">Schriftgr&ouml;&szlig;e:</label>
+			<div class="col-sm-10">
+				{select_schriftgroesse}
+			</div>
+		</div>
 
-		<div class="frm_col"><label name="lbl_schriftgroesse" id="lbl_schriftgroesse" for="schriftgroesse">Schriftgr&ouml;&szlig;e</label>{select_schriftgroesse}</div>
+		<div class="form-group">
+			<label name="lbl_typ" id="lbl_typ" for="typ_eingang" class="col-sm-2 control-label">Passwort:</label>
+			<div class="col-sm-10">
+			<input type="password" name="passwort" id="passwort" value="{passwort}" class="input_text" style="width:200px;" />
+			<br/>
+			<input type="password" name="passwort2" id="passwort2" value="{passwort2}" class="input_text" style="width:200px;" />
+			(Wiederholung)
+			</div>
+		</div>
 
-		<div class="clearfloat vspace_four">&nbsp;</div>
 
-		<div class="frm_col"><label name="lbl_passwort" id="lbl_passwort" for="passwort">Passwort</label><input type="password" name="passwort" id="passwort" value="{passwort}" class="input_text" style="width:200px;" /></div>
-		<div class="frm_col"><label name="lbl_blank_passwort2" id="lbl_blank_passwort2" for="passwort2" style="visibility:hidden;">&nbsp;</label><input type="password" name="passwort2" id="passwort2" value="{passwort2}" class="input_text" style="width:200px;" /><label name="lbl_passwort" id="lbl_passwort" for="passwort2" class="small">(Wiederholung)</label></div>
+    <div class="form-group">
+    	<div class="col-sm-offset-2 col-sm-6">
+			<button type="submit" name="btn_save" id="btn_save" value="Speichern" class="btn btn-info input_button">Speichern</button>
+    	</div>
+	</div>
 
-		<div class="frm_col frm_col_submit"><input type="submit" name="btn_save" id="btn_save" value="Speichern" class="input_button" /></div>
-	</form>
-
-	<div class="clearfloat">&nbsp;</div>
+	<div class="clearfloat">
+		&nbsp;
+	</div>
 
 </div>
 <!-- end: content_space -->
-<!-- InstanceBeginEditable name="SelectOption_Typ" -->return array('id'=>'typ_select','size'=>'1','class'=>'input_select','style'=>'width:350px;');<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="SelectOption_Schriftgroesse" -->return array('id'=>'schriftgroesse_select','size'=>'1','class'=>'input_select','style'=>'width:100px;');<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="SelectOption_Farbe" -->return array('id'=>'farbe_select','size'=>'1','class'=>'input_select','style'=>'width:100px;');<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="SelectOption_Typ" -->
+return array('id'=>'typ_select','size'=>'1','class'=>'input_select','style'=>'width:350px;');<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="SelectOption_Schriftgroesse" -->
+return array('id'=>'schriftgroesse_select','size'=>'1','class'=>'input_select','style'=>'width:100px;');<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="SelectOption_Farbe" -->
+return array('id'=>'farbe_select','size'=>'1','class'=>'input_select','style'=>'width:100px;');<!-- InstanceEndEditable -->
