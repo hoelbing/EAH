@@ -75,6 +75,17 @@
 	</div>
 	<!-- TemplateEndEditable -->
 	
+	<!-- test -->
+	<div class="frm_col"><label name="lbl_str" id="lbl_str" for="str" class="{fehler_str}">Stra&szlig;e</label><input type="text" name="str" id="str" value="{str}" class="input_text" style="width:350px;" /></div>
+		<div class="frm_col"><label name="lbl_plzort" id="lbl_plzort" for="plz" class="{fehler_anschrift}">PLZ, Ort</label><input type="text" name="plz" id="plz" value="{plz}" class="input_text" style="width:60px;" /><input type="text" name="ort" id="ort" value="{ort}" class="input_text" style="width:279px;" /></div>
+		<div class="frm_col"><label name="lbl_land" id="lbl_land" for="land" class="{fehler_land}">Land</label><input type="text" name="land" id="land" value="{land}" class="input_text" style="width:350px;" /></div>
+
+		<div class="clearfloat vspace_four">&nbsp;</div>
+
+		<div class="frm_col"><label name="lbl_fax" id="lbl_fax" for="fax" class="{fehler_fax}">Fax</label><input type="text" name="fax" id="fax" value="{fax}" class="input_text" style="width:150px;" /></div>
+		<div class="frm_col"><label name="lbl_email" id="lbl_email" for="email" class="{fehler_email}">E-Mail</label><input type="text" name="email" id="email" value="{email}" class="input_text" style="width:350px;" /></div>
+
+
 	<!-- TemplateBeginEditable name="Empfaenger" -->
 	 <div class="form-group {fehler_bezeichnung}">
 	    <label name="lbl_bezeichnung" id="lbl_bezeichnung" for="bezeichnung" class="col-sm-2 control-label">Empf&auml;nger:</label>
