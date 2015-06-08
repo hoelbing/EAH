@@ -51,7 +51,7 @@
 				<div class="col-lg-12">
 					<div id="header">
 						<div class="text-center">
-							<img src="image/logo.png" width="143" height="80" border="0" alt="iPosBu - Das Postbuch f&uuml;r die Universit&auml;t Leipzig" />
+							<img src="templates/default/image/logo.png" width="143" height="80" border="0" alt="iPosBu - Das Postbuch f&uuml;r EAH Jena" />
 						</div>
 					</div>
 				</div>
